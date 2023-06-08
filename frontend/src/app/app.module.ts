@@ -4,13 +4,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SigninComponent } from './components/signin/signin.component';
-import { SearchComponent } from './components/partials/search/search.component';
+
+import { TagsComponent } from './components/partials/tags/tags.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SigninComponent,
-    SearchComponent
+
+    TagsComponent
   ],
   imports: [
     BrowserModule,

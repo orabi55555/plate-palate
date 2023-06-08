@@ -1,8 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+
 import { Injectable } from '@angular/core';
-import { Observable, sample } from 'rxjs';
-import { sample_foods } from 'src/data';
-//import { FOODS_BY_SEARCH_URL, FOODS_BY_TAG_URL, FOODS_TAGS_URL, FOODS_URL, FOOD_BY_ID_URL } from '../shared/constants/urls';
+
+import { sample_foods, sample_tags } from 'src/data';
 import { Food } from '../shared/models/Food';
 import { Tag } from '../shared/models/Tag';
 
@@ -20,19 +19,17 @@ export class FoodService {
   getAllFoodsBySearchTerm(searchTerm: string) {
     return this.getAll().filter(food => food.name.toLowerCase().includes(searchTerm.toLowerCase()));
   }
+
+  getAllTags():Tag[] {
+    return sample_tags;
+  }
+
+  getAllFoodsByTag(tag: string):Food[] {
+    return tag === "All" ?
+      this.getAll() :
+      this.getAll().filter(food => food.tags?.includes(tag));
+  }
+
+ 
+
 }
-//   getAllTags(): Observable<Tag[]> {
-//     return this.http.get<Tag[]>(FOODS_TAGS_URL);
-//   }
-
-//   getAllFoodsByTag(tag: string): Observable<Food[]> {
-//     return tag === "All" ?
-//       this.getAll() :
-//       this.http.get<Food[]>(FOODS_BY_TAG_URL + tag);
-//   }
-
-//   getFoodById(foodId:string):Observable<Food>{
-//     return this.http.get<Food>(FOOD_BY_ID_URL + foodId);
-//   }
-
-// }
