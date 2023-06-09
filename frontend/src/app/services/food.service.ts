@@ -30,10 +30,10 @@ export class FoodService {
       this.getAll().filter(food => food.tags?.includes(tag));
   }
 
- 
+
 
 }
- 
+
 
 
 
