@@ -1,20 +1,37 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+//import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FoodPageComponent } from './components/pages/food-page/food-page.component';
+import { NotFoundComponent } from './components/partials/not-found/not-found.component';
 import { SigninComponent } from './components/signin/signin.component';
-import { SearchComponent } from './components/partials/search/search.component';
+import { HeaderComponent } from './components/partials/header/header.component';
+import { HomeComponent } from './components/pages/home/home.component';
+//import { NgxStarRatingModule } from 'ngx-star-rating';
+//import { RatingModule } from 'ngx-bootstrap/rating';
+// import { NgxStarRatingModule } from 'ngx-star-rating';
+// import { RatingModule } from 'ngx-bootstrap/rating';
+import { TagsComponent } from './components/partials/tags/tags.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    FoodPageComponent,
+    NotFoundComponent,
     SigninComponent,
-    SearchComponent
+    HeaderComponent,
+    HomeComponent,
+    TagsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+   // NgbRatingModule,
+   // NgbRatingModule,
+   // NgxStarRatingModule,
+   // RatingModule.forRoot(),
+
   ],
   providers: [],
   bootstrap: [AppComponent]
