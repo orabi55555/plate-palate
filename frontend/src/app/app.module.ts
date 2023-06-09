@@ -12,7 +12,7 @@ import { HomeComponent } from './components/pages/home/home.component';
 //import { RatingModule } from 'ngx-bootstrap/rating';
 // import { NgxStarRatingModule } from 'ngx-star-rating';
 // import { RatingModule } from 'ngx-bootstrap/rating';
-import { TagsComponent } from './components/partials/tags/tags.component';
+// import { TagsComponent } from './components/partials/tags/tags.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +22,7 @@ import { TagsComponent } from './components/partials/tags/tags.component';
     SigninComponent,
     HeaderComponent,
     HomeComponent,
-    TagsComponent
+    // TagsComponent
   ],
   imports: [
     BrowserModule,
