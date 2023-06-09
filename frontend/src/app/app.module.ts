@@ -18,8 +18,8 @@ import { TagsComponent } from './components/partials/tags/tags.component';
     FoodPageComponent,
     SigninComponent,
     HeaderComponent,
-    HomeComponent,
-    TagsComponent
+    // HomeComponent,
+    // TagsComponent
   ],
   imports: [
     BrowserModule,
