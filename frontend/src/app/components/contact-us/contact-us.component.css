@@ -1,0 +1,216 @@
+
+body{
+  background-color: rgba(0, 0, 0, 0.9);
+}
+.pq-breadcrumb{
+  background: var(--dark-color);
+  color: var(--white-color);
+  padding: 130px 0;
+  position: relative;
+  text-align: left;
+  background-size: cover;
+  background-position: top center;
+}
+
+.container {
+    max-width: 1300px;
+}
+li {
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
+.row {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(-1 * var(--bs-gutter-y));
+  margin-right: calc(-.5 * var(--bs-gutter-x));
+  margin-left: calc(-.5 * var(--bs-gutter-x));
+}
+.row>* {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  padding-right: calc(var(--bs-gutter-x) * .5);
+  padding-left: calc(var(--bs-gutter-x) * .5);
+  margin-top: var(--bs-gutter-y);
+}
+div {
+  display: block;
+}
+h1 {
+  font-family: var(--title-fonts);
+  color: var(--white-color);
+  font-style: normal;
+  text-transform: capitalize;
+  font-weight: 400;
+  margin: 0;
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
+}
+
+li {
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
+
+.container{
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  width: 100%;
+  padding-right: calc(var(--bs-gutter-x) * .5);
+  padding-left: calc(var(--bs-gutter-x) * .5);
+  margin-right: auto;
+  margin-left: auto;
+}
+.align-items-center {
+  align-items: center!important;
+}
+.pq-breadcrumb-title{
+  color: white;
+  font-size: 56px;
+  line-height: 64px;
+  margin-bottom: 15px;
+  font-family: 'Josefin Sans', sans-serif;;
+}
+
+
+
+
+
+/**************************************************/
+@media (max-width: 767px){
+  section {
+    padding: 60px 0;
+  }
+}
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  width: 100%;
+  padding-right: calc(var(--bs-gutter-x) * .5);
+  padding-left: calc(var(--bs-gutter-x) * .5);
+  margin-right: auto;
+  margin-left: auto;
+}
+.justify-content-center {
+  justify-content: center!important;
+}
+.row {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(-1 * var(--bs-gutter-y));
+  margin-right: calc(-.5 * var(--bs-gutter-x));
+  margin-left: calc(-.5 * var(--bs-gutter-x));
+}
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+.contact-icon-box {
+  text-align: center;
+}
+div {
+  display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* *******start SERVICES******* */
+#services{
+  background-color: #f5f5f5;
+}
+#services .dis-services{
+  position: relative;
+  padding-bottom: 20px;
+}
+#services .dis-services::after{
+  content: '';
+  width: 5%;
+  height: 5px;
+  background-color:var(--main-color) ;
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%);
+}
+#services .card{
+  border: none;
+  text-align: center;
+  border-radius: 16px !important;
+}
+#services .card-title{
+  font-size: 1.4rem;
+  padding: .4rem 0;
+}
+#services .card-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  left: 50%;
+  width: 90px;
+  height: 90px;
+  padding: 40px;
+  border: solid 7px var(--main-color);
+  border-radius: 50px;
+  transition: all 0.7s ease;
+}
+#services .card:hover .card-icon {
+  border-color: rgb(205 225 248);
+  background-color: var(--main-color);
+  color: white;
+}
+#services-footer {
+  /* background: url(../img/counters-bg.jpg) no-repeat center fixed; */
+background-size: cover;
+position:relative;
+overflow:hidden;
+  z-index: -99;
+}
+.bg-ly-history{
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 100%;
+  z-index: -80;
+  background-color: #0078ff;
+  opacity: 0.7;
+}
+#services-footer .card-icon-history{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  left: 50%;
+  width: 70px;
+  height: 70px;
+  padding: 30px;
+  border: solid 7px #cde1f8;
+  border-radius: 50px;
+}
+.history-card{
+  text-align: center;
+  padding-block: 40px;
+}
+/* *******end SERVICES******* */
+
+
+
