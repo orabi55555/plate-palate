@@ -9,6 +9,9 @@ import { HeaderComponent } from './components/partials/header/header.component';
 import { HomeComponent } from './components/pages/home/home.component';
 //import { NgxStarRatingModule } from 'ngx-star-rating';
 //import { RatingModule } from 'ngx-bootstrap/rating';
+// import { NgxStarRatingModule } from 'ngx-star-rating';
+// import { RatingModule } from 'ngx-bootstrap/rating';
+import { TagsComponent } from './components/partials/tags/tags.component';
 
 @NgModule({
   declarations: [
@@ -16,16 +19,16 @@ import { HomeComponent } from './components/pages/home/home.component';
     NotFoundComponent,
     SigninComponent,
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    TagsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    // NgbRatingModule,
-    // NgxStarRatingModule,
-    // RatingModule.forRoot(),
-
-
+   // NgbRatingModule,
+   // NgbRatingModule,
+   // NgxStarRatingModule,
+   // RatingModule.forRoot(),
 
   ],
   providers: [],
