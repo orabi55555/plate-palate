@@ -1,48 +1,48 @@
 <p>cart-page works!</p>
-<app-not-found
+<!-- <app-not-found
   [visible]="!food"
   notFoundMessage="Food Not Found"
   resetLinkText="Back To Homepage">
-</app-not-found>
-<div *ngIf="food" class="container">
-  <img [src]="food.imageUrl" [alt]="food.name"/>
+</app-not-found> -->
+<!-- <div *ngIf="food" class="container"> -->
+  <!-- <img [src]="food.imageUrl" [alt]="food.name"/> -->
 
   <div class="details">
     <div class="header">
-      <span class="name">
+      <!-- <span class="name">
         {{food.name}}
-      </span>
-      <span class="favorite {{food.favorite? '': 'not'}}">❤</span>
+      </span> -->
+      <!-- <span class="favorite {{food.favorite? '': 'not'}}">❤</span> -->
     </div>
     <div class="rating">
-      <star-rating [stars]="food.stars" [size]="1.8" />
+      <!-- <star-rating [stars]="food.stars" [size]="1.8" /> -->
     </div>
 
     <div class="origins">
-      <span *ngFor="let origin of food.origins">
+      <!-- <span *ngFor="let origin of food.origins">
         {{origin}}
-      </span>
+      </span> -->
     </div>
 
     <div class="tags">
-      <a *ngFor="let tag of food.tags" routerLink="/tag/{{tag}}">
+      <!-- <a *ngFor="let tag of food.tags" routerLink="/tag/{{tag}}">
         {{tag}}
-      </a>
+      </a> -->
     </div>
 
     <div class="cook-time">
       <span>
-        Time to cook about <strong>{{food.cookTime}}</strong> minutes
+        <!-- Time to cook about <strong>{{food.cookTime}}</strong> minutes -->
       </span>
     </div>
 
     <div class="price">
-      <span>
+      <!-- <span>
         {{food.price | currency}}
-      </span>
+      </span> -->
     </div>
 
-    <button (click)="addToCart()">Add To Cart</button>
+   <!-- <button (click)="addToCart()">Add To Cart</button> -->
 
   </div>
-</div>
+<!-- </div> -->
