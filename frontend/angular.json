@@ -38,6 +38,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+
             "outputPath": "dist/frontend",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -53,7 +54,9 @@
               "src/styles.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -113,9 +116,14 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+               "node_modules/popper.js/dist/umd/popper.min.js",
+               "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           }
         }
       }
@@ -123,5 +131,8 @@
   },
   "cli": {
     "analytics": "433b54ba-6845-46eb-adf6-178eb46053c8"
+    "analytics": "b668a09f-0cc5-473b-81ba-020655ff1190"
+    "analytics": false
+    "analytics": "c4a0cec0-d2c1-4035-96ec-992053a32705"
   }
 }
