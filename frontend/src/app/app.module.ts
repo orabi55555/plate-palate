@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 //import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { LoginPageComponent } from './components/pages/login-page/login-page.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { CartPageComponent } from './components/pages/cart-page/cart-page.component';
 import { TitleComponent } from './components/partials/title/title.component';
@@ -28,11 +30,13 @@ import { HomeComponent } from './components/pages/home/home.component';
     SigninComponent,
     HeaderComponent,
     HomeComponent,
+    LoginPageComponent,
     // TagsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
    // NgbRatingModule,
    // NgbRatingModule,
    // NgxStarRatingModule,
@@ -40,6 +44,6 @@ import { HomeComponent } from './components/pages/home/home.component';
 
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
