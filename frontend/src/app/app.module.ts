@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 //import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { CartPageComponent } from './components/pages/cart-page/cart-page.component';
 import { TitleComponent } from './components/partials/title/title.component';
 import { FoodPageComponent } from './components/pages/food-page/food-page.component';
@@ -16,10 +17,10 @@ import { HomeComponent } from './components/pages/home/home.component';
 // import { RatingModule } from 'ngx-bootstrap/rating';
 // import { TagsComponent } from './components/partials/tags/tags.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
+    ContactUsComponent
     CartPageComponent,
     TitleComponent
     FoodPageComponent,
