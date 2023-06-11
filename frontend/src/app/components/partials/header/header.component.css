@@ -1,9 +1,4 @@
-header{
-  position : relative;
-  background: white;
-  padding :0;
-  border-bottom: 1px solid #e72929;
-}
+
 
 a{
   color:#af1313;
@@ -13,6 +8,7 @@ a:hover{
   background:#e72929;
   color:white;
   cursor: pointer;
+  border-radius: 3px;
 }
 
 .container{
