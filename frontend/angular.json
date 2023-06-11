@@ -38,6 +38,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+
             "outputPath": "dist/frontend",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -51,6 +52,7 @@
             ],
             "styles": [
               "src/styles.css"
+              ,"node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": []
           },
@@ -124,5 +126,9 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
+    "analytics": "c4a0cec0-d2c1-4035-96ec-992053a32705"
   }
 }
