@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 //import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FooterComponent } from './components/partials/footer/footer.component';
 import { ProfileComponent } from './components/pages/profile/profile.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginPageComponent } from './components/pages/login-page/login-page.component';
@@ -23,6 +24,7 @@ import { HomeComponent } from './components/pages/home/home.component';
 @NgModule({
   declarations: [
     AppComponent,
+    FooterComponent
     ProfileComponent
     ContactUsComponent
     CartPageComponent,
