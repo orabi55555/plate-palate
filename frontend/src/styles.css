@@ -5,3 +5,27 @@ body{
   display: inline;
   background-color: #13181c;
 }
+
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
+
+*{
+  box-sizing: border-box;
+
+}
+
+html{
+  font-size: 16px;
+}
+
+html,button{
+  font-family: 'Quicksand', sans-serif;
+}
+
+body{
+  margin: 0;
+}
+
+a{
+  text-decoration: none;
+}
+
