@@ -1,35 +1,71 @@
-<header>
-  <div class="container">
-    <a routerLink="/" class="logo">Plate Palate</a>
-    <nav>
-      <ul>
-        <li>
-          <a routerLink="/login">Login</a>
+<nav class="navbar navbar-expand-md navbar-light bg-light" >
+  <div class="container-fluid">
+  <a class="navbar-brand mr-auto"
+  [routerLinkActiveOptions]="{exact:true}"
+  routerLinkActive="active"
+  routerLink="/"
+  >
+<h2 class=" m-0">  <i class="fa fa-utensils me-3">
+
+PLATE PALATE</i></h2>
+  </a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ml-auto">
+
+        <li class="nav-item">
+          <a class="nav-link" href="/contact-us">Contact Us</a>
         </li>
-        <li class ="menu-container">
-          <a routerLink="/dashboard">John</a>
-          <div class ="menu">
-            <a routerLink="/profile">Profile</a>
-            <a routerLink="/orders">Orders</a>
-            <a>Logout</a>
-          </div>
+        <li class="nav-item">
+          <a class="nav-link" href="/login"> Login</a>
         </li>
-        <li>
-          <a routerLink="/cart-page">
-            Cart <span>3</span>
-          </a>
+          <li class="nav-item"  >
+            <a class="nav-link" href="/profile">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+                  </svg>
+            </a>
 
-        </li>
-
-
-
+          </li>
+          <li class="nav-item" >
+            <a class="nav-link" href="./checkout">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-basket-fill" viewBox="0 0 16 16">
+                    <path d="M5.071 1.243a.5.5 0 0 1 .858.514L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v5a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 6h1.717L5.07 1.243zM3.5 10.5a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3z"/>
+                  </svg><span>3</span>
+            </a>
+          </li>
+          <li class="nav-item" >
+            <a class="nav-link" href="#" >
+              Logout
+            </a>
+          </li>
+          <ng-template #elseBlock>
+            <li class="nav-item" >
+                <a
+                [routerLinkActiveOptions]="{exact:true}"
+                routerLinkActive="active"
+                routerLink="/login"
+                 class="nav-link">Login</a>
+              </li>
+          </ng-template>
 
       </ul>
-    </nav>
+
+    <ng-template #SignUpElseBlock>
+      <button class="btn btn-secondary" style="background-color: lightgray;">
+        <a
+          [routerLinkActiveOptions]="{exact:true}"
+          routerLinkActive="active"
+          routerLink="/register"
+        >
+        Sign Up
+      </a></button>
+   </ng-template>
+ </div>
+</div>
+</nav>
 
 
-  </div>
 
-
-
-</header>
