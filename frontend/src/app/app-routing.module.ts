@@ -18,8 +18,9 @@ const routes: Routes = [
   { path: 'about-us', component: AboutUsComponent },
   { path:'food/:id', component:FoodPageComponent },
   { path: 'profile', component: ProfileComponent },
-  { path: '**', component: NotFoundComponent },
   { path: 'recipes', component: RecipesComponent },
+  { path: '**', component: NotFoundComponent },
+
 
 ];
 
