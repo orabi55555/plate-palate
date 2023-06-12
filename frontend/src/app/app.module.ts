@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
 import { FooterComponent } from './components/partials/footer/footer.component';
 import { ProfileComponent } from './components/pages/profile/profile.component';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -12,9 +13,11 @@ import { NotFoundComponent } from './components/partials/not-found/not-found.com
 import { HeaderComponent } from './components/partials/header/header.component';
 import { HomeComponent } from './components/pages/home/home.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
+    AboutUsComponent
     HomeComponent,
     FooterComponent,
     ProfileComponent,
