@@ -1,9 +1,30 @@
+.meal{
+  text-align: center;
+  margin-top: 80px;
+  /* display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 1.5rem; */
+}
+.meal h1{
+  font-size: 35px;
+  color: rgb(214, 192, 125);
+  font-family: 'Miniver', cursive;
+}
 .container{
-  display: flex;
+  /* display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  margin: 3rem;
+  margin: 3rem; */
+  display: flex;
+  background-color: #080b0e;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+  margin-top: 50px;
+  padding: 50px;
 }
 
 .container > *{
@@ -12,7 +33,7 @@
 }
 
 img{
-  border-radius: 3rem;
+  /* border-radius: 3rem; */
   flex: 1 0;
   object-fit: cover;
   height: 35rem;
@@ -33,10 +54,22 @@ img{
   display: flex;
   justify-content: space-between;
 }
-
-.name{
-  font-size: 2rem;
+.pricee{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.pricee .name{
+  font-size: 25px;
+  color: #f0f0f0;
+  font-family: 'Josefin Sans', sans-serif;
   font-weight: bold;
+}
+
+.header .name{
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
 }
 
 .favorite{
@@ -47,7 +80,14 @@ img{
 .favorite.not{
   color: grey;
 }
-
+.rating{
+  display: inline;
+  margin-left: 40px;
+}
+.rating .fa{
+  color: rgb(214, 192, 125);
+  font-size: 19px;
+}
 .origins{
   display: flex;
   flex-wrap: wrap;
@@ -56,24 +96,34 @@ img{
 
 .origins span{
   padding: 0.5rem;
-  font-size: 1.2rem;
+  /* font-size: 1.2rem; */
   margin: 0.5rem 0.5rem 0.5rem 0;
-  border-radius: 2rem;
-  background-color: aliceblue;
+  /* border-radius: 2rem; */
+  /* background-color: aliceblue; */
+  color: rgb(214, 192, 125);
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 28px;
 }
 
 .tags{
   display: flex;
   flex-wrap: wrap;
+  margin-top: 20px;
 }
 
 .tags a{
-  background-color: #f0f0f0;
+  background-color: rgb(214, 192, 125);
   padding: 0.3rem 1rem;
   margin: 0.2rem 0.15rem;
   border-radius: 10rem;
   font-weight: 600;
-  color: blue;
+  font-size: 18px;
+  color: white;
+}
+.tags a:hover{
+  border: 1px solid rgb(214, 192, 125);
+  background-color: #080b0e;
+
 }
 
 .cook-time{
@@ -99,11 +149,11 @@ img{
 
 button{
   color: white;
-  background: #e72929;
+  background: rgb(214, 192, 125);
   border: none;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   padding: 1rem;
-  border-radius: 10rem;
+  /* border-radius: 10rem; */
   outline: none;
 }
 
