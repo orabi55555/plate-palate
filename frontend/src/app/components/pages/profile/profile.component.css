@@ -73,7 +73,7 @@
   button {
     position: relative;
     padding: 15px 45px;
-    background: #ff0000;
+    background: rgb(220, 20, 20);
     margin-left: 30px;
     font-size: 17px;
     font-weight: 500;
