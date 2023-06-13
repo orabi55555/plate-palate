@@ -1,6 +1,6 @@
 .meal{
   text-align: center;
-  margin-top: 80px;
+  margin-top: 20px;
   /* display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
@@ -8,7 +8,7 @@
 }
 .meal h1{
   font-size: 35px;
-  color: rgb(214, 192, 125);
+  color: red;
   font-family: 'Miniver', cursive;
 }
 .container{
@@ -18,7 +18,8 @@
   flex-wrap: wrap;
   margin: 3rem; */
   display: flex;
-  background-color: #080b0e;
+  /* border: 1px solid red; */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
@@ -61,7 +62,7 @@ img{
 }
 .pricee .name{
   font-size: 25px;
-  color: #f0f0f0;
+  color: black;
   font-family: 'Josefin Sans', sans-serif;
   font-weight: bold;
 }
@@ -69,7 +70,7 @@ img{
 .header .name{
   font-size: 3rem;
   font-weight: bold;
-  color: white;
+  color: black;
 }
 
 .favorite{
@@ -85,7 +86,7 @@ img{
   margin-left: 40px;
 }
 .rating .fa{
-  color: rgb(214, 192, 125);
+  color: red;
   font-size: 19px;
 }
 .origins{
@@ -100,9 +101,10 @@ img{
   margin: 0.5rem 0.5rem 0.5rem 0;
   /* border-radius: 2rem; */
   /* background-color: aliceblue; */
-  color: rgb(214, 192, 125);
-  font-family: 'Josefin Sans', sans-serif;
+  color: rgb(83, 80, 80);
+  /* font-family: 'Josefin Sans', sans-serif; */
   font-size: 28px;
+  font-weight: 100;
 }
 
 .tags{
@@ -112,7 +114,7 @@ img{
 }
 
 .tags a{
-  background-color: rgb(214, 192, 125);
+  background-color: red;
   padding: 0.3rem 1rem;
   margin: 0.2rem 0.15rem;
   border-radius: 10rem;
@@ -121,8 +123,9 @@ img{
   color: white;
 }
 .tags a:hover{
-  border: 1px solid rgb(214, 192, 125);
-  background-color: #080b0e;
+  border: 1px solid red;
+  background-color: white;
+  color: red;
 
 }
 
@@ -149,7 +152,7 @@ img{
 
 button{
   color: white;
-  background: rgb(214, 192, 125);
+  background: red;
   border: none;
   font-size: 1.4rem;
   padding: 1rem;
