@@ -8,7 +8,7 @@
 }
 .meal h1{
   font-size: 35px;
-  color: red;
+  color: rgb(220, 20, 20);
   font-family: 'Miniver', cursive;
 }
 .container{
@@ -74,7 +74,7 @@ img{
 }
 
 .favorite{
-  color: #e72929;
+  color: rgb(220, 20, 20);
   font-size: 2.5rem;
 }
 
@@ -86,7 +86,7 @@ img{
   margin-left: 40px;
 }
 .rating .fa{
-  color: red;
+  color: rgb(220, 20, 20);
   font-size: 19px;
 }
 .origins{
@@ -114,7 +114,7 @@ img{
 }
 
 .tags a{
-  background-color: red;
+  background-color: rgb(220, 20, 20);
   padding: 0.3rem 1rem;
   margin: 0.2rem 0.15rem;
   border-radius: 10rem;
@@ -123,9 +123,9 @@ img{
   color: white;
 }
 .tags a:hover{
-  border: 1px solid red;
+  border: 1px solid rgb(220, 20, 20);
   background-color: white;
-  color: red;
+  color: rgb(220, 20, 20);
 
 }
 
@@ -152,7 +152,7 @@ img{
 
 button{
   color: white;
-  background: red;
+  background: rgb(220, 20, 20);
   border: none;
   font-size: 1.4rem;
   padding: 1rem;
