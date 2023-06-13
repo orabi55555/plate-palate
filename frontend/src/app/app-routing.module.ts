@@ -8,6 +8,7 @@ import { ContactUsComponent } from './components/pages/contact-us/contact-us.com
 import { NotFoundComponent } from './components/partials/not-found/not-found.component';
 import { ProfileComponent } from './components/pages/profile/profile.component';
 import { AboutUsComponent } from './components/pages/about-us/about-us.component';
+import { PaymentPageComponent } from './components/pages/payment-page/payment-page.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path:'food/:id', component:FoodPageComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'recipes', component: RecipesComponent },
+  { path: 'payment', component: PaymentPageComponent },
   { path: '**', component: NotFoundComponent },
 
 
