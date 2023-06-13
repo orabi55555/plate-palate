@@ -21,6 +21,7 @@ import { CountriesRecipesComponent } from './components/pages/recipes/countries-
 import { PaymentPageComponent } from './components/pages/payment-page/payment-page.component';
 import { PaypalButtonComponent } from './components/partials/paypal-button/paypal-button.component';
 import { OrderTrackPageComponent } from './components/pages/order-track-page/order-track-page.component';
+import { FoodrecipeComponent } from './components/pages/foodrecipe/foodrecipe.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { OrderTrackPageComponent } from './components/pages/order-track-page/ord
     PaymentPageComponent,
     PaypalButtonComponent,
     OrderTrackPageComponent,
+    FoodrecipeComponent,
 
   ],
 

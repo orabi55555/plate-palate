@@ -12,6 +12,7 @@ import { ProfileComponent } from './components/pages/profile/profile.component';
 import { AboutUsComponent } from './components/pages/about-us/about-us.component';
 import { PaymentPageComponent } from './components/pages/payment-page/payment-page.component';
 import { OrderTrackPageComponent } from './components/pages/order-track-page/order-track-page.component';
+import { FoodrecipeComponent } from './components/pages/foodrecipe/foodrecipe.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -26,7 +27,9 @@ const routes: Routes = [
   { path: 'recipes', component: RecipesComponent },
   { path: 'payment', component: PaymentPageComponent },
   { path: 'track', component: OrderTrackPageComponent },
+  { path: 'foodrecipe/:id', component: FoodrecipeComponent },
   { path: '**', component: NotFoundComponent },
+
 
 ];
 
