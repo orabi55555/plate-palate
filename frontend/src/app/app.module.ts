@@ -8,6 +8,7 @@ import { FooterComponent } from './components/partials/footer/footer.component';
 import { ProfileComponent } from './components/pages/profile/profile.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginPageComponent } from './components/pages/login-page/login-page.component';
+import { GoogleButtonComponent } from './components/pages/login-page/thirdPartyLoginButtons/google-button/google-button.component';
 import { ContactUsComponent } from './components/pages/contact-us/contact-us.component';
 import { FoodPageComponent } from './components/pages/food-page/food-page.component';
 import { NotFoundComponent } from './components/partials/not-found/not-found.component';
@@ -20,33 +21,32 @@ import { PaymentPageComponent } from './components/pages/payment-page/payment-pa
 import { PaypalButtonComponent } from './components/partials/paypal-button/paypal-button.component';
 import { OrderTrackPageComponent } from './components/pages/order-track-page/order-track-page.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
+    ContactUsComponent,
     FoodPageComponent,
     NotFoundComponent,
-    LoginPageComponent,
     HeaderComponent,
     HomeComponent,
+    LoginPageComponent,
+    GoogleButtonComponent,
     RecipesComponent,
     HorizontalScrollComponent,
     CountriesRecipesComponent,
     FooterComponent,
     ProfileComponent,
     AboutUsComponent,
-    ContactUsComponent,
     PaymentPageComponent,
     PaypalButtonComponent,
     OrderTrackPageComponent,
+
   ],
 
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-
-
 
   ],
   providers: [],
