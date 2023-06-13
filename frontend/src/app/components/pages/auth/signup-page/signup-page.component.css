@@ -1,0 +1,77 @@
+.signup {
+  min-height: 100vh;
+}
+
+.bg-image {
+  background-image: url("https://images.unsplash.com/photo-1612392062126-5cc76074df9c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80");
+  background-size: cover;
+  background-position: center;
+  filter: brightness(70%);
+  animation: pulsate 5s ease-in-out infinite alternate;
+}
+
+@keyframes pulsate {
+  0% {
+    filter: brightness(70%);
+  }
+  100% {
+    filter: brightness(90%);
+  }
+}
+
+.signup-heading {
+  font-weight: 300;
+  color: #080808;
+  font-family: "Arial", sans-serif;
+  animation: slideIn 1s ease-in-out forwards;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.btn-signup {
+  font-size: 0.9rem;
+  letter-spacing: 0.05rem;
+  padding: 0.75rem 1rem;
+  background-color: #4285f4;
+  border: none;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.btn-signup:hover {
+  background-color: #0d47a1;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.btn-google {
+  background-color: #db4437;
+  color: #fff;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-google:hover {
+  background-color: #c6271f;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.forgot-password {
+  color: #4285f4;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.forgot-password:hover {
+  color: #0d47a1;
+}
