@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
+import { UpdateUserProfileComponent } from './components/update-user-profile/update-user-profile.component';
 import { SignupPageComponent } from './components/pages/auth/signup-page/signup-page.component';
 import { AboutUsComponent } from './components/pages/about-us/about-us.component';
 import { FooterComponent } from './components/partials/footer/footer.component';
@@ -28,6 +29,7 @@ import { FoodrecipeComponent } from './components/pages/foodrecipe/foodrecipe.co
 @NgModule({
   declarations: [
     AppComponent,
+    UpdateUserProfileComponent
     ContactUsComponent,
     FoodPageComponent,
     NotFoundComponent,
@@ -48,7 +50,6 @@ import { FoodrecipeComponent } from './components/pages/foodrecipe/foodrecipe.co
     PaypalButtonComponent,
     OrderTrackPageComponent,
     FoodrecipeComponent,
-
 
   ],
 
