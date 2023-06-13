@@ -1,0 +1,163 @@
+.meal{
+  text-align: center;
+  margin-top: 80px;
+  /* display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 1.5rem; */
+}
+.meal h1{
+  font-size: 35px;
+  color: rgb(214, 192, 125);
+  font-family: 'Miniver', cursive;
+}
+.container{
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 3rem; */
+  display: flex;
+  background-color: #080b0e;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+  margin-top: 50px;
+  padding: 50px;
+}
+
+.container > *{
+  min-width: 25rem;
+  max-width: 40rem;
+}
+
+img{
+  /* border-radius: 3rem; */
+  flex: 1 0;
+  object-fit: cover;
+  height: 35rem;
+  margin: 1rem;
+}
+
+.details{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex:1 0;
+  padding: 2rem;
+  color: black;
+  margin-left: 1rem;
+}
+
+.header{
+  display: flex;
+  justify-content: space-between;
+}
+.pricee{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.pricee .name{
+  font-size: 25px;
+  color: #f0f0f0;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: bold;
+}
+
+.header .name{
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+}
+
+.favorite{
+  color: #e72929;
+  font-size: 2.5rem;
+}
+
+.favorite.not{
+  color: grey;
+}
+.rating{
+  display: inline;
+  margin-left: 40px;
+}
+.rating .fa{
+  color: rgb(214, 192, 125);
+  font-size: 19px;
+}
+.origins{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+}
+
+.origins span{
+  padding: 0.5rem;
+  /* font-size: 1.2rem; */
+  margin: 0.5rem 0.5rem 0.5rem 0;
+  /* border-radius: 2rem; */
+  /* background-color: aliceblue; */
+  color: rgb(214, 192, 125);
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 28px;
+}
+
+.tags{
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.tags a{
+  background-color: rgb(214, 192, 125);
+  padding: 0.3rem 1rem;
+  margin: 0.2rem 0.15rem;
+  border-radius: 10rem;
+  font-weight: 600;
+  font-size: 18px;
+  color: white;
+}
+.tags a:hover{
+  border: 1px solid rgb(214, 192, 125);
+  background-color: #080b0e;
+
+}
+
+.cook-time{
+  margin-top: 1rem;
+}
+
+.cook-time span{
+  padding: 0.6rem 2rem 0.6rem 0;
+  border-radius: 10rem;
+  font-size: 1.3rem;
+}
+
+.price{
+  font-size: 1.8rem;
+  margin: 2rem 2rem 2rem 0;
+  color: green;
+}
+
+.price::before{
+  content: "Price: ";
+  color: darkgrey;
+}
+
+button{
+  color: white;
+  background: rgb(214, 192, 125);
+  border: none;
+  font-size: 1.4rem;
+  padding: 1rem;
+  /* border-radius: 10rem; */
+  outline: none;
+}
+
+button:hover{
+  opacity: 0.9;
+  cursor: pointer;
+}
