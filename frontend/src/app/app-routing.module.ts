@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { SignupPageComponent } from './components/pages/auth/signup-page/signup-page.component';
 import { LoginPageComponent } from './components/pages/auth/login-page/login-page.component';
 import { GoogleButtonComponent } from './components/pages/auth/thirdPartyLoginButtons/google-button/google-button.component';
 import { HomeComponent } from './components/pages/home/home.component';
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path:'food/:id', component:FoodPageComponent },
   { path: 'login', component: LoginPageComponent },
+  { path: 'signup', component: SignupPageComponent },
   { path: 'google', component: GoogleButtonComponent },
   { path: 'recipes', component: RecipesComponent },
   { path: 'payment', component: PaymentPageComponent },
@@ -27,7 +29,6 @@ const routes: Routes = [
   { path: '**', component: NotFoundComponent },
 
 ];
-
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
