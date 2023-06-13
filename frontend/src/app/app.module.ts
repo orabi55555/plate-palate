@@ -17,6 +17,7 @@ import { RecipesComponent } from './components/pages/recipes/recipes.component';
 import { HorizontalScrollComponent } from './components/pages/recipes/horizontal-scroll/horizontal-scroll.component';
 import { CountriesRecipesComponent } from './components/pages/recipes/countries-recipes/countries-recipes.component';
 import { PaymentPageComponent } from './components/pages/payment-page/payment-page.component';
+import { PaypalButtonComponent } from './components/partials/paypal-button/paypal-button.component';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { PaymentPageComponent } from './components/pages/payment-page/payment-pa
     AboutUsComponent,
     ContactUsComponent,
     PaymentPageComponent,
+    PaypalButtonComponent,
   ],
 
   imports: [

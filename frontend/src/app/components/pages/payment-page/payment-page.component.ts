@@ -1,5 +1,6 @@
 import { Component ,OnInit } from '@angular/core';
 
+declare var paypal:any;
 @Component({
   selector: 'app-payment-page',
   templateUrl: './payment-page.component.html',
