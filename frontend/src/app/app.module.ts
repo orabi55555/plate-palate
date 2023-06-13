@@ -18,10 +18,12 @@ import { HomeComponent } from './components/pages/home/home.component';
 import { RecipesComponent } from './components/pages/recipes/recipes.component';
 import { HorizontalScrollComponent } from './components/pages/recipes/horizontal-scroll/horizontal-scroll.component';
 import { CountriesRecipesComponent } from './components/pages/recipes/countries-recipes/countries-recipes.component';
+import { ClickedCountryRecipeComponent } from './components/pages/clicked-country-recipe/clicked-country-recipe.component';
 import { PaymentPageComponent } from './components/pages/payment-page/payment-page.component';
 import { PaypalButtonComponent } from './components/partials/paypal-button/paypal-button.component';
 import { OrderTrackPageComponent } from './components/pages/order-track-page/order-track-page.component';
 import { FoodrecipeComponent } from './components/pages/foodrecipe/foodrecipe.component';
+
 
 @NgModule({
   declarations: [
@@ -40,10 +42,13 @@ import { FoodrecipeComponent } from './components/pages/foodrecipe/foodrecipe.co
     FooterComponent,
     ProfileComponent,
     AboutUsComponent,
+    ContactUsComponent,
+    ClickedCountryRecipeComponent,
     PaymentPageComponent,
     PaypalButtonComponent,
     OrderTrackPageComponent,
     FoodrecipeComponent,
+
 
   ],
 

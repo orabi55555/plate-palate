@@ -10,9 +10,11 @@ import { ContactUsComponent } from './components/pages/contact-us/contact-us.com
 import { NotFoundComponent } from './components/partials/not-found/not-found.component';
 import { ProfileComponent } from './components/pages/profile/profile.component';
 import { AboutUsComponent } from './components/pages/about-us/about-us.component';
+import { ClickedCountryRecipeComponent } from './components/pages/clicked-country-recipe/clicked-country-recipe.component';
 import { PaymentPageComponent } from './components/pages/payment-page/payment-page.component';
 import { OrderTrackPageComponent } from './components/pages/order-track-page/order-track-page.component';
 import { FoodrecipeComponent } from './components/pages/foodrecipe/foodrecipe.component';
+
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -25,9 +27,11 @@ const routes: Routes = [
   { path: 'signup', component: SignupPageComponent },
   { path: 'google', component: GoogleButtonComponent },
   { path: 'recipes', component: RecipesComponent },
+  { path: 'recipe/:id', component: ClickedCountryRecipeComponent },
   { path: 'payment', component: PaymentPageComponent },
   { path: 'track', component: OrderTrackPageComponent },
   { path: 'foodrecipe/:id', component: FoodrecipeComponent },
+
   { path: '**', component: NotFoundComponent },
 
 
