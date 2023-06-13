@@ -7,8 +7,8 @@ import { AboutUsComponent } from './components/pages/about-us/about-us.component
 import { FooterComponent } from './components/partials/footer/footer.component';
 import { ProfileComponent } from './components/pages/profile/profile.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { LoginPageComponent } from './components/pages/login-page/login-page.component';
-import { GoogleButtonComponent } from './components/pages/login-page/thirdPartyLoginButtons/google-button/google-button.component';
+import { LoginPageComponent } from './components/pages/auth/login-page/login-page.component';
+import { GoogleButtonComponent } from './components/pages/auth/thirdPartyLoginButtons/google-button/google-button.component';
 import { ContactUsComponent } from './components/pages/contact-us/contact-us.component';
 import { FoodPageComponent } from './components/pages/food-page/food-page.component';
 import { NotFoundComponent } from './components/partials/not-found/not-found.component';
