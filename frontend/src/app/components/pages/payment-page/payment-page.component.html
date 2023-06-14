@@ -1,34 +1,145 @@
-<div class="container">
-    <div class="content">
-        <h1>Order Summary</h1>
-      <!-- <app-title title="Order Summary" fontSize="1.6rem"></app-title> -->
-      <div class="summary">
-        <div>
-          <h3>Name:</h3>
-          <span>Viola</span>
-          <!-- <span>{{order.name}}</span> -->
+<section class="page-header">
+  <div class="overly"></div>   
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <div class="content text-center">
+          <h1 class="mb-3">Payment</h1>
+
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb bg-transparent justify-content-center">
+            <li class="breadcrumb-item"><a class="text-danger" routerLink="/">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Payment</li>
+          </ol>
+        </nav>
         </div>
-        <div>
-          <h3>Address:</h3>
-          <span>st akjxshlxksh</span>
-          <!-- <span>{{order.address}}</span> -->
-        </div>
-      </div>
-      <!-- <order-items-list [order]="order"></order-items-list> -->
-    </div>
-    <div class="map">
-      <!-- <app-title
-      title="Shipping Address"
-      fontSize="1.6rem"></app-title> -->
-      <!-- <map [order]="order" [readonly]="true"></map> -->
-      <map></map>
-    </div>
-    <div class="buttons-container">
-      <div class="buttons">
-        <button class="btn btn-danger"></button>
-        <!-- <paypal-button [order]="order">
-        </paypal-button> -->
       </div>
     </div>
   </div>
-  
+</section>
+            <div class="container">
+                    <div class="row">
+                    <div class="col-lg-4 mb-lg-0 mb-3">
+                <div class="card p-3">
+                    <div class="img-box">
+                        <img src="https://www.freepnglogos.com/uploads/visa-logo-download-png-21.png" alt="">
+                    </div>
+                    <div class="number">
+                        <label class="fw-bold" for="">**** **** **** 1060</label>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <small><span class="fw-bold">Expiry date:</span><span>10/16</span></small>
+                        <small><span class="fw-bold">Name:</span><span>Kumar</span></small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-lg-0 mb-3">
+                <div class="card p-3">
+                    <div class="img-box">
+                        <img src="https://www.freepnglogos.com/uploads/mastercard-png/file-mastercard-logo-svg-wikimedia-commons-4.png"
+                            alt="">
+                    </div>
+                    <div class="number">
+                        <label class="fw-bold">**** **** **** 1060</label>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <small><span class="fw-bold">Expiry date:</span><span>10/16</span></small>
+                        <small><span class="fw-bold">Name:</span><span>Kumar</span></small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-lg-0 mb-3">
+                <div class="card p-3">
+                    <div class="img-box">
+                        <img src="https://www.freepnglogos.com/uploads/discover-png-logo/credit-cards-discover-png-logo-4.png"
+                            alt="">
+                    </div>
+                    <div class="number">
+                        <label class="fw-bold">**** **** **** 1060</label>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <small><span class="fw-bold">Expiry date:</span><span>10/16</span></small>
+                        <small><span class="fw-bold">Name:</span><span>Kumar</span></small>
+                    </div>
+                </div>
+            </div>
+                        <div class="col-12 mt-4">
+                           <div class="card p-3">
+                             <p class="mb-0 fw-bold h4">Payment Methods</p>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                           <div class="card p-3">
+                           <div class="card-body border p-0">
+                        <p>
+                            <a class="btn btn-primary p-2 w-100 h-100 d-flex align-items-center justify-content-between"
+                                data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="true"
+                                aria-controls="collapseExample">
+                                <span class="fw-bold">Credit Card</span>
+                                <span class="">
+                             
+                                    <!-- <span class="fab fa-cc-amex"></span>
+                                    <span class="fab fa-cc-mastercard"></span>
+                                    <span class="fab fa-cc-discover"></span> -->
+                                </span>
+                            </a>
+                        </p>
+                        <div class="collapse show p-3 pt-0" id="collapseExample">
+                            <div class="row">
+                                <div class="col-lg-5 mb-lg-0 mb-3">
+                                    <p class="h4 m-4">Summary</p>
+                                  <br>
+                                    
+                                    <p style="color: black;" class="mb-0 m-t">
+                                                                Your Informations have been Securited – as any expert should tell you <br> isn’t just about keeping your data secret: it’s also about ensuring it is available when you need it, and that it can be believed. In the industry jargon you ensure information’s.
+
+                                                            </p>
+                                    
+                                </div>
+                                <div class="col-lg-7">
+                                <form role="form" action="#" method="post" class="form form-group " id="payment-form" data-aos="fade-up" data-aos-delay="400" role="form">
+
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="form_div">
+                                                    <input type="text" class="mt-4 form-control"name="creditcardno"  placeholder=" ">
+                                                    <label for="" class="form_label">Card Number</label>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-6">
+                                                <div class="form_div">
+                                                    <input type="text" class="form-control" name="expirymonth" placeholder=" ">
+                                                    <label for="" class="form_label">MM / yy</label>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-6">
+                                                <div class="form_div">
+                                                    <input type="password" class="form-control"name="CVV"  placeholder=" ">
+                                                    <label for="" class="form_label">cvv code</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form_div">
+                                                  <label for="" class="form_label">name on the card</label>
+
+                                                    <input type="text" class="form-control" name="nameoncard" placeholder=" ">
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                            <button class="p-2 btn-main btn-danger" name="submit" type="submit">Make a payment!</button>
+
+                                                <!-- <div class="btn btn-primary w-100">Sumbit</div> -->
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            </div>

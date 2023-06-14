@@ -10,6 +10,7 @@ import { ProfileComponent } from './components/pages/profile/profile.component';
 import { AboutUsComponent } from './components/pages/about-us/about-us.component';
 import { PaymentPageComponent } from './components/pages/payment-page/payment-page.component';
 import { CheckoutComponent } from './components/pages/checkout/checkout.component';
+import { OrdersComponent } from './components/pages/orders/orders.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -21,8 +22,9 @@ const routes: Routes = [
   { path:'food/:id', component:FoodPageComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'recipes', component: RecipesComponent },
-  { path: 'payment', component: PaymentPageComponent },
+  { path: 'payment-page', component: PaymentPageComponent },
   { path: 'checkout', component: CheckoutComponent },
+  { path: 'orders', component: OrdersComponent },
 
   { path: '**', component: NotFoundComponent },
 
