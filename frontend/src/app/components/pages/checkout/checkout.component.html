@@ -1,0 +1,136 @@
+
+<section class="page-header">
+    <div class="overly"></div>   
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-6">
+          <div class="content text-center">
+            <h1 class="mb-3">Checkout</h1>
+  
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb bg-transparent justify-content-center">
+              <li class="breadcrumb-item"><a class="text-danger" routerLink="/">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Checkout</li>
+            </ol>
+          </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="page-wrapper">
+     <div class="checkout shopping">
+        <div class="container">
+           <div class="row">
+              <div class="pb-5 col-lg-8 pr-5">
+                <div class="billing-details mt-5">
+                    <h4 class="mb-4">Billing Details</h4>
+                    <form class="checkout-form">
+                       <div class="row">
+                          <div class="col-lg-6">
+                              <div class="form-group mb-4">
+                                <label for="first_name">First Name</label>
+                                <input type="text" class="form-control" id="first_name" placeholder="">
+                             </div>
+                          </div>
+                          <div class="col-lg-6">
+                              <div class="form-group mb-4">
+                                <label for="last_name">Last Name</label>
+                                <input type="text" class="form-control" id="last_name" placeholder="">
+                             </div>
+                          </div>
+                       
+                          <div class="col-lg-6">
+                            <div class="form-group mb-4">
+                              <label for="first_name">Phone</label>
+                              <input type="text" class="form-control" id="phone" placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group mb-4">
+                              <label for="last_name">Email </label>
+                              <input type="text" class="form-control" id="email" placeholder="">
+                            </div>
+                        </div>
+                          <div class="col-lg-12">
+                              <div class="form-group mb-4">
+                                <label for="first_name">Address</label>
+                                <input type="text" class="form-control" id="street" placeholder="">
+                             </div>
+                          </div>
+                   
+                          
+  
+                         
+                          
+                       </div>
+                    </form>
+                 </div>
+              </div>
+  
+              <!-- Order sidebar Summery -->
+              <div class="pt-5 col-md-6 col-lg-4">
+                 <div class="product-checkout-details mt-5 mt-lg-0">
+                       <h4 class="mb-4 border-bottom pb-4">Order Summary</h4>
+  
+                       <div class="media product-card">
+                           <p>Egyption Dish</p>
+                          <div class="media-body text-right">
+                             <p class="h5">1 x $200</p>
+                          </div>
+                       </div>
+  
+                       <ul class="summary-prices list-unstyled mb-4">
+                          <li class="d-flex justify-content-between">
+                             <span >Subtotal:</span>
+                             <span class="h5">$50</span>
+                          </li>
+                          <li class="d-flex justify-content-between">
+                             <span >Shipping:</span>
+                             <span class="h5">Free</span>
+                          </li>
+                          <li class="d-flex justify-content-between">
+                             <span>Total</span>
+                             <span class="h5">$250</span>
+                          </li>
+                       </ul>
+                       <div class="Container product-checkout-details mt-5 mt-lg-0">
+                        <h4 class="mb-4 border-bottom pb-4">Items in cart</h4>
+                       <div class="row">
+
+                        <div class="col-lg-8">
+                            <div class="form-group mb-4">
+                                <a href="#" class="title">Egyption Dish</a>
+                                <div class="price text-muted ml-4">Total: $295.99</div> <!-- price .// -->
+                                
+
+                           </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="form-group mb-4">
+                               <img src="assets/img/menu/menu-item-1.png" class="w-50 ">
+
+                            </div>
+                        </div>
+                       </div>
+                       </div>
+                     
+                   
+                     
+                    
+                       
+                 </div>
+                 
+              </div>
+              <br><br>
+              <div class="text-center">
+              <a routerLink="/orders" class="btn btn-main btn-light">Cancel</a>
+              <a routerLink="/payment-page" class="btn btn-main btn-danger">Place Order</a>
+            </div>
+           </div>
+        </div>
+     </div>
+  </div>
+  
+  
+  
