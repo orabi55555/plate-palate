@@ -19,6 +19,8 @@ import { CountriesRecipesComponent } from './components/pages/recipes/countries-
 import { PaymentPageComponent } from './components/pages/payment-page/payment-page.component';
 import { PaypalButtonComponent } from './components/partials/paypal-button/paypal-button.component';
 import { OrderTrackPageComponent } from './components/pages/order-track-page/order-track-page.component';
+import { CheckoutComponent } from './components/pages/checkout/checkout.component';
+import { OrdersComponent } from './components/pages/orders/orders.component';
 
 
 @NgModule({
@@ -39,6 +41,8 @@ import { OrderTrackPageComponent } from './components/pages/order-track-page/ord
     PaymentPageComponent,
     PaypalButtonComponent,
     OrderTrackPageComponent,
+    CheckoutComponent,
+    OrdersComponent
   ],
 
   imports: [
