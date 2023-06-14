@@ -29,7 +29,7 @@ import { FoodrecipeComponent } from './components/pages/foodrecipe/foodrecipe.co
 @NgModule({
   declarations: [
     AppComponent,
-    UpdateUserProfileComponent
+    UpdateUserProfileComponent,
     ContactUsComponent,
     FoodPageComponent,
     NotFoundComponent,
