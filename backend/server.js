@@ -44,3 +44,4 @@ mongoose.connection.on("connected", () => {
 app.listen(PORT, () => {
   console.log(`Server is up : http://localhost:${PORT}`);
 });
+  

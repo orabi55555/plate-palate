@@ -8,8 +8,8 @@ const dotenv = require("dotenv").config();
 
 var userSchema = new mongoose.Schema({
   user_name: { type: String, required: true, minlength: 3, maxlength: 50 },
-  email: { type: String, required: true
-  },
+  email: { type: String, required: true,unique: true}, 
+  
   password: { type: String, minlength: 6, required: true },
   otp: { type: String, required: false },
   user_image: { type: String },
