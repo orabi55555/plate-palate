@@ -14,7 +14,7 @@ import { ClickedCountryRecipeComponent } from './components/pages/clicked-countr
 import { PaymentPageComponent } from './components/pages/payment-page/payment-page.component';
 import { CheckoutComponent } from './components/pages/checkout/checkout.component';
 import { OrdersComponent } from './components/pages/orders/orders.component';
-import { OrderTrackPageComponent } from './components/pages/order-track-page/order-track-page.component';
+// import { OrderTrackPageComponent } from './components/pages/order-track-page/order-track-page.component';
 import { FoodrecipeComponent } from './components/pages/foodrecipe/foodrecipe.component';
 
 const routes: Routes = [
@@ -33,7 +33,7 @@ const routes: Routes = [
   { path: 'orders', component: OrdersComponent },
   { path: 'recipe/:id', component: ClickedCountryRecipeComponent },
   { path: 'payment', component: PaymentPageComponent },
-  { path: 'track', component: OrderTrackPageComponent },
+  // { path: 'track', component: OrderTrackPageComponent },
   { path: 'foodrecipe/:id', component: FoodrecipeComponent },
   { path: '**', component: NotFoundComponent },
 

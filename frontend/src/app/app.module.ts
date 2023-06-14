@@ -24,7 +24,7 @@ import { PaymentPageComponent } from './components/pages/payment-page/payment-pa
 import { PaypalButtonComponent } from './components/partials/paypal-button/paypal-button.component';
 import { CheckoutComponent } from './components/pages/checkout/checkout.component';
 import { OrdersComponent } from './components/pages/orders/orders.component';
-import { OrderTrackPageComponent } from './components/pages/order-track-page/order-track-page.component';
+// import { OrderTrackPageComponent } from './components/pages/order-track-page/order-track-page.component';
 import { FoodrecipeComponent } from './components/pages/foodrecipe/foodrecipe.component';
 
 
@@ -52,7 +52,7 @@ import { FoodrecipeComponent } from './components/pages/foodrecipe/foodrecipe.co
     PaypalButtonComponent,
     CheckoutComponent,
     OrdersComponent,
-    OrderTrackPageComponent,
+    // OrderTrackPageComponent,
     FoodrecipeComponent,
 
   ],
