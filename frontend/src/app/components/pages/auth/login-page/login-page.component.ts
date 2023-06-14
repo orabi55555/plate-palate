@@ -35,7 +35,14 @@ export class LoginPageComponent {
     //Add User form validations
     this.registerForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required]],
+      password: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(8),
+          Validators.maxLength(60),
+        ],
+      ],
     });
   }
 }
