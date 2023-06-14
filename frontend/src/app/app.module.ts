@@ -18,7 +18,6 @@ import { HorizontalScrollComponent } from './components/pages/recipes/horizontal
 import { CountriesRecipesComponent } from './components/pages/recipes/countries-recipes/countries-recipes.component';
 import { PaymentPageComponent } from './components/pages/payment-page/payment-page.component';
 import { PaypalButtonComponent } from './components/partials/paypal-button/paypal-button.component';
-import { OrderTrackPageComponent } from './components/pages/order-track-page/order-track-page.component';
 import { CheckoutComponent } from './components/pages/checkout/checkout.component';
 import { OrdersComponent } from './components/pages/orders/orders.component';
 
@@ -40,7 +39,6 @@ import { OrdersComponent } from './components/pages/orders/orders.component';
     ContactUsComponent,
     PaymentPageComponent,
     PaypalButtonComponent,
-    OrderTrackPageComponent,
     CheckoutComponent,
     OrdersComponent
   ],

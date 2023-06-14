@@ -9,7 +9,6 @@ import { NotFoundComponent } from './components/partials/not-found/not-found.com
 import { ProfileComponent } from './components/pages/profile/profile.component';
 import { AboutUsComponent } from './components/pages/about-us/about-us.component';
 import { PaymentPageComponent } from './components/pages/payment-page/payment-page.component';
-import { OrderTrackPageComponent } from './components/pages/order-track-page/order-track-page.component';
 import { CheckoutComponent } from './components/pages/checkout/checkout.component';
 
 const routes: Routes = [
@@ -23,7 +22,6 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'recipes', component: RecipesComponent },
   { path: 'payment', component: PaymentPageComponent },
-  { path: 'track', component: OrderTrackPageComponent },
   { path: 'checkout', component: CheckoutComponent },
 
   { path: '**', component: NotFoundComponent },
