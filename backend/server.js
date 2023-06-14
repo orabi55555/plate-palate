@@ -7,7 +7,7 @@ const cors = require("cors");
 const path = require("path");
 mongoose.set("strictQuery", false);
 
-const Recipe = require("./Routes/RecipeRoutes");
+// const Recipe = require("./Routes/RecipeRoutes");
 
 
 //#endregion
@@ -34,7 +34,7 @@ app.get("/", (req, res) => {
 
 //#region
 
-app.use("/recipes", Recipe);
+// app.use("/recipes", Recipe);
 
 //#endregion
 
