@@ -7,6 +7,8 @@ const cors = require("cors");
 const path = require("path");
 mongoose.set("strictQuery", false);
 
+import recipeRoutes from "./routes/recipeRoutes";
+
 //#endregion
 
 //#region config
@@ -30,7 +32,8 @@ app.get("/", (req, res) => {
 //#endregion
 
 //#region
-// app.use("/register", userRoutes);
+
+app.use('/recipes', recipeRoutes);
 
 //#endregion
 
