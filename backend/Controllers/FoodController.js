@@ -50,27 +50,27 @@ const deleteFoodById = async (req, res) => {
 
 
 // Update a food item by ID
-// const updateFoodById = async (req, res) => {
-//   try {
-//     const { title, summary, image, category, price } = req.body;
-//     const food = await Food.findByIdAndUpdate(
-//       req.params.id,
-//       { title, summary, image, category, price },
-//       { new: true }
-//     );
-//     if (!food) {
-//       return res.status(404).json({ error: 'Food item not found' });
-//     }
-//     res.json(food);
-//   } catch (err) {
-//     console.error(err.message);
-//     res.status(500).send('Server Error');
-//   }
-// };
+const updateFoodById = async (req, res) => {
+  try {
+    const { title, summary, image, category, price } = req.body;
+    const food = await Food.findByIdAndUpdate(
+      req.params.id,
+      { title, summary, image, category, price },
+      { new: true }
+    );
+    if (!food) {
+      return res.status(404).json({ error: 'Food item not found' });
+    }
+    res.json(food);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+};
 
 module.exports = {
   getFoodById,
   getAllFoods,
   deleteFoodById,
-  // updateFoodById,
+  updateFoodById,
 };
