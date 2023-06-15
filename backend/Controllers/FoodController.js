@@ -3,18 +3,18 @@
 const Food = require('../Models/FoodModel');
 
 // Get a food item by ID
-// const getFoodById = async (req, res) => {
-//   try {
-//     const food = await Food.findById(req.params.id);
-//     if (!food) {
-//       return res.status(404).json({ error: 'Food item not found' });
-//     }
-//     res.json(food);
-//   } catch (err) {
-//     console.error(err.message);
-//     res.status(500).send('Server Error');
-//   }
-// };
+const getFoodById = async (req, res) => {
+  try {
+    const food = await Food.findById(req.params.id);
+    if (!food) {
+      return res.status(404).json({ error: 'Food item not found' });
+    }
+    res.json(food);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+};
 
 
 
@@ -69,7 +69,7 @@ const Food = require('../Models/FoodModel');
 // };
 
 module.exports = {
-  // getFoodById,
+  getFoodById,
   // getAllFoods,
   // deleteFoodById,
   // updateFoodById,
