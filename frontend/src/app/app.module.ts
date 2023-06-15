@@ -22,7 +22,9 @@ import { CountriesRecipesComponent } from './components/pages/recipes/countries-
 import { ClickedCountryRecipeComponent } from './components/pages/clicked-country-recipe/clicked-country-recipe.component';
 import { PaymentPageComponent } from './components/pages/payment-page/payment-page.component';
 import { PaypalButtonComponent } from './components/partials/paypal-button/paypal-button.component';
-import { OrderTrackPageComponent } from './components/pages/order-track-page/order-track-page.component';
+import { CheckoutComponent } from './components/pages/checkout/checkout.component';
+import { OrdersComponent } from './components/pages/orders/orders.component';
+// import { OrderTrackPageComponent } from './components/pages/order-track-page/order-track-page.component';
 import { FoodrecipeComponent } from './components/pages/foodrecipe/foodrecipe.component';
 
 
@@ -48,7 +50,9 @@ import { FoodrecipeComponent } from './components/pages/foodrecipe/foodrecipe.co
     ClickedCountryRecipeComponent,
     PaymentPageComponent,
     PaypalButtonComponent,
-    OrderTrackPageComponent,
+    CheckoutComponent,
+    OrdersComponent,
+    // OrderTrackPageComponent,
     FoodrecipeComponent,
 
   ],

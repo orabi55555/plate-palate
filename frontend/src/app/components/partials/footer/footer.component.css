@@ -13,7 +13,8 @@
 }
 
 .footer .btn.btn-social:hover {
-    color:red
+    color: var(--danger);
+    color:red;
 }
 
 .footer .btn.btn-link {
