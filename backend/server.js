@@ -16,6 +16,7 @@ mongoose.set("strictQuery", false);
 dotenv.config();
 const PORT = process.env.PORT || 3000;
 const app = express();
+app.use(bodyParser.json());
 //#endregion
 
 //#region Middlewares
@@ -32,7 +33,9 @@ app.get("/", (req, res) => {
 });
 //#endregion
 
-//#region
+//#region Food
+const FoodRoutes = require("./Routes/FoodRoutes");
+app.use("/api/food", FoodRoutes);
 
 // app.use("/recipes", Recipe);
 
