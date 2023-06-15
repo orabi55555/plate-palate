@@ -11,10 +11,10 @@ router.get('/:id', FoodController.getFoodById);
 router.delete('/delete/:id', FoodController.deleteFoodById);
 
 // Define a route handler for PUT /api/food/:id
-//router.put('/update/:id', FoodController.updateFoodById);
+// router.put('/update/:id', FoodController.updateFoodById);
 
 // Define a route handler for GET /api/food
-//router.get('', FoodController.getAllFoods);
+router.get('', FoodController.getAllFoods);
 
 
 module.exports = router;

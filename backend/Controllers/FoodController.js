@@ -32,18 +32,18 @@ const getAllFoods = async (req, res) => {
 
 
 // Delete a food item by ID
-// const deleteFoodById = async (req, res) => {
-//   try {
-//     const food = await Food.findByIdAndDelete(req.params.id);
-//     if (!food) {
-//       return res.status(404).json({ error: 'Food item not found' });
-//     }
-//     res.json({ message: 'Food item deleted successfully' });
-//   } catch (err) {
-//     console.error(err.message);
-//     res.status(500).send('Server Error');
-//   }
-// };
+const deleteFoodById = async (req, res) => {
+  try {
+    const food = await Food.findByIdAndDelete(req.params.id);
+    if (!food) {
+      return res.status(404).json({ error: 'Food item not found' });
+    }
+    res.json({ message: 'Food item deleted successfully' });
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+};
 
 
 
@@ -71,6 +71,6 @@ const getAllFoods = async (req, res) => {
 module.exports = {
   getFoodById,
   getAllFoods,
-  // deleteFoodById,
+  deleteFoodById,
   // updateFoodById,
 };
