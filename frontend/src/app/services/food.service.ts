@@ -20,8 +20,11 @@ export class FoodService {
     console.log(`getUserById(${id})`);
     return this.http.get(`${this.baseUrl}/api/profile/user/${id}`);
   }
-
+  getAllFoods() {
  
+    return this.http.get<any[]>(`${this.baseUrl}/api/food/foods`);
+   
+  }
 
   // getAll(): Food[] {
   //   return sample_foods;
