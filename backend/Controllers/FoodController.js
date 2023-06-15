@@ -12,3 +12,15 @@ exports.getFoodById = function(req, res) {
       return res.status(500).json({ message: err.message });
     });
  };
+ 
+ exports.getAllFood = function(req, res) {
+  Food.find()
+    .then(foods => {
+      res.json(foods);
+    })
+    .catch(err => {
+      return res.status(500).json({ message: err.message });
+    });
+};
+
+ 
