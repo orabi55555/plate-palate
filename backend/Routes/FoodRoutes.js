@@ -8,7 +8,7 @@ const FoodController = require('../Controllers/FoodController');
 router.get('/:id', FoodController.getFoodById);
 
 // Define a route handler for DELETE /api/food/:id
-//router.delete('/delete/:id', FoodController.deleteFoodById);
+router.delete('/delete/:id', FoodController.deleteFoodById);
 
 // Define a route handler for PUT /api/food/:id
 //router.put('/update/:id', FoodController.updateFoodById);

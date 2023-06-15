@@ -20,15 +20,15 @@ const getFoodById = async (req, res) => {
 
 
 // Get all food items
-// const getAllFoods = async (req, res) => {
-//   try {
-//     const foods = await Food.find();
-//     res.json(foods);
-//   } catch (err) {
-//     console.error(err.message);
-//     res.status(500).send('Server Error');
-//   }
-// };
+const getAllFoods = async (req, res) => {
+  try {
+    const foods = await Food.find();
+    res.json(foods);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+};
 
 
 // Delete a food item by ID
@@ -70,7 +70,7 @@ const getFoodById = async (req, res) => {
 
 module.exports = {
   getFoodById,
-  // getAllFoods,
+  getAllFoods,
   // deleteFoodById,
   // updateFoodById,
 };
