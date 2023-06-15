@@ -142,7 +142,7 @@ rel="stylesheet">
                 <span>LET'S TALK </span>
                 <h3 class="mb-4">Get In Touch</h3>
                 <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC,</p>
-                <form id="contactForm" name="contactForm" class="contactForm">
+                <form id="contactForm" name="contactForm" class="contactForm" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
                   <div class="row">
                     <div class="col-md-8">
                       <div class="form-group">
@@ -153,8 +153,22 @@ rel="stylesheet">
                     <div class="col-md-6">
                       <div class="form-group">
                         <label class="label" for="email">Email Address</label>
-                        <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+                        <input type="email" class="form-control" name="email" id="email" placeholder="Email"
+                          formControlName="email"
+                          class="form-control"
+                          [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+                          id="inputEmail4"
+                        >
                       </div>
+                      <div
+                    *ngIf="submitted && f.email.errors"
+                    class="invalid-feedback"
+                  >
+                    <div *ngIf="f.email.errors.required">Email is required</div>
+                    <div *ngIf="f.email.errors.email">
+                      Email must be a valid email address
+                    </div>
+                  </div>
                     </div>
                     <div class="col-md-12">
                       <div class="form-group">
