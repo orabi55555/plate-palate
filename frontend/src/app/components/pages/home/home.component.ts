@@ -7,5 +7,14 @@ import { Food } from 'src/app/shared/models/Food';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent  {
+  foods: any[] | undefined;
+
+  constructor(private foodService: FoodService) { }
+
+  ngOnInit(): void {
+    this.foodService.getAllFoods().subscribe(data => {
+      this.foods = data;
+    });
+  }
 
 }
