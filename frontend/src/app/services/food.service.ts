@@ -12,6 +12,14 @@ import { Food } from '../shared/models/Food';
 export class FoodService {
 
   
+  private baseUrl = 'http://localhost:7000';
+
+  constructor(private http: HttpClient) { }
+
+  getFoodById(id: string): Observable<any> {
+    console.log(`getUserById(${id})`);
+    return this.http.get(`${this.baseUrl}/api/profile/user/${id}`);
+  }
 
  
 
