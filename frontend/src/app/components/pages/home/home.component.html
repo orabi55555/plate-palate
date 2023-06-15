@@ -135,7 +135,13 @@
       <div class="card-body">
         <div class="content">
           <div class="name">
-            {{food.name}}
+            {{food.title}}
+          </div>
+          <div class="name">
+            {{food.sumarry}}
+          </div>
+          <div class="name">
+            {{food.category}}
           </div>
           <span class="favorite {{food.favorite?'':'not'}}">
             ❤
@@ -144,7 +150,7 @@
           <!-- <div class ="stars">
            </div> -->
   
-          <div class="product-item-footer">
+          <!-- <div class="product-item-footer">
             <div class="origins">
   
               <span *ngFor="let origin of food.origins">
@@ -156,7 +162,7 @@
               <span>🕒</span>
               {{food.cookTime}}
             </div>
-          </div>
+          </div> -->
   
           <div class="price">
             <span>
