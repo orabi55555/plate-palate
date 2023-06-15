@@ -26,6 +26,7 @@ import { CheckoutComponent } from './components/pages/checkout/checkout.componen
 import { OrdersComponent } from './components/pages/orders/orders.component';
 // import { OrderTrackPageComponent } from './components/pages/order-track-page/order-track-page.component';
 import { FoodrecipeComponent } from './components/pages/foodrecipe/foodrecipe.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -61,6 +62,7 @@ import { FoodrecipeComponent } from './components/pages/foodrecipe/foodrecipe.co
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    HttpClientModule
 
   ],
   providers: [],

@@ -36,6 +36,7 @@ const routes: Routes = [
   // { path: 'track', component: OrderTrackPageComponent },
   { path: 'foodrecipe/:id', component: FoodrecipeComponent },
   { path: '**', component: NotFoundComponent },
+  // { path: 'users', component: ProfileComponent },
 
 
 ];
