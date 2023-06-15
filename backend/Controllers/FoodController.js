@@ -22,5 +22,27 @@ exports.getFoodById = function(req, res) {
       return res.status(500).json({ message: err.message });
     });
 };
-
+exports.createFood = function (req, res) {
+  const{title,summary,image,category,price} = req.body;
+ //const { title, summary, image, category, price } = req.body;
+   console.log(req.body);  
+   if (!(title && summary && category && price)) {
+     return res.status(400).json({ message: "Please provide all required fields" });
+   }
+ 
+   const food = new Food({
+     title,
+     summary,
+     image,
+     category,
+     price,
+   });
+ 
+   try {
+     const result =  food.save();
+     res.status(200).json({ message: "Food created successfully", food: result });
+   } catch (error) {
+     res.status(500).json({ message: error.message });
+   }
+ };
  
