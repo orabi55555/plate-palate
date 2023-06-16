@@ -45,5 +45,18 @@ exports.createFood = function (req, res) {
      res.status(500).json({ message: error.message });
    }
  };
+ exports.deleteFoodById = function(req, res) {
+  const id = req.params.id;
 
+  Food.findByIdAndDelete(id)
+    .then(result => {
+      if (!result) {
+        return res.status(404).json({ message: 'Food not found' });
+      }
+      res.status(200).json({ message: 'Food deleted successfully' });
+    })
+    .catch(err => {
+      return res.status(500).json({ message: err.message });
+    });
+};
  
