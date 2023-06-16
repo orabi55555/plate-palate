@@ -6,6 +6,8 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const path = require("path");
 mongoose.set("strictQuery", false);
+const ordersRoutes = require('./Routes/OrderRoutes');
+
 
 // const Recipe = require("./Routes/RecipeRoutes");
 // Router
@@ -49,13 +51,13 @@ app.get("/", (req, res) => {
 // Routes
 app.use("/api/profile", userRouter);
 app.use("/api/Food", foodRouter);
+app.use('/api/orders', ordersRoutes);
+
 // app.use("/recipes", Recipe);
 
 //#endregion
 
-const ordersRoutes = require('./Routes/OrderRoutes');
 
- app.use('/api/orders', ordersRoutes);
 
 //#region Database Connetion
 mongoose.connect(process.env.DATABASE);

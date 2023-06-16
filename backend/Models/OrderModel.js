@@ -29,14 +29,14 @@ const OrderSchema = new mongoose.Schema({
         required: true,
       },
 
-      // meals: [
-      //    {
-      //   mealID: {
-      //     type: mongoose.Schema.Types.ObjectId,
-      //    ref: "Food",
-      //     required: true,
-      //      },}
-      //     ],   
+      meals: [
+         {
+        mealID: {
+          type: mongoose.Schema.Types.ObjectId,
+         ref: "Food",
+          required: true,
+           },}
+          ],   
           
        
 });
