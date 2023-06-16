@@ -17,19 +17,21 @@ import { OrdersComponent } from './components/pages/orders/orders.component';
 // import { OrderTrackPageComponent } from './components/pages/order-track-page/order-track-page.component';
 import { FoodrecipeComponent } from './components/pages/foodrecipe/foodrecipe.component';
 import { CreatfoodComponent } from './components/creatfood/creatfood.component';
+import { UpdateFoodComponent } from './components/update-food/update-food.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path:"home", component:HomeComponent  },
+  { path:'food/:id', component:FoodPageComponent },
   { path: 'contact-us', component: ContactUsComponent },
   { path: 'about-us', component: AboutUsComponent },
   { path: 'profile', component: ProfileComponent },
-  { path:'food/:id', component:FoodPageComponent },
   { path: 'login', component: LoginPageComponent },
   { path: 'signup', component: SignupPageComponent },
-  {path:'creatfood',component:CreatfoodComponent},
+  { path:'creatfood',component:CreatfoodComponent},
   { path: 'google', component: GoogleButtonComponent },
   { path: 'recipes', component: RecipesComponent },
+  { path: 'update-food/:id', component: UpdateFoodComponent },
   { path: 'payment-page', component: PaymentPageComponent },
   { path: 'checkout', component: CheckoutComponent },
   { path: 'orders', component: OrdersComponent },
@@ -38,7 +40,7 @@ const routes: Routes = [
   // { path: 'track', component: OrderTrackPageComponent },
   { path: 'foodrecipe/:id', component: FoodrecipeComponent },
   { path: '**', component: NotFoundComponent },
- 
+
   // { path: 'users', component: ProfileComponent },
 
 

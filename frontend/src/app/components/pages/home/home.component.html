@@ -134,11 +134,12 @@
 <div class="container">
 <div class="row row-cols-1 row-cols-md-3 g-4">
   <div class="col animate__animated animate__zoomIn" *ngFor="let food of foods">
-    <!-- <a routerLink="/food/{{food.id}}" class="text-decoration-none"> -->
+    <a routerLink="/food/{{food._id}}" class="text-decoration-none">
     <div class="card">
-      <a routerLink="/food/{{food.id}}" class="text-decoration-none">
+      <!-- <a routerLink="/food/{{food.id}}" class="text-decoration-none"> -->
       <!-- <img [src]="food.imageUrl" [alt]="food.name" class="card-img-top border-5" > -->
-      <img src="../../../../assets/food-2.jpg" [alt]="food.name" class="card-img-top border-5" ></a>
+      <img src="../../../../assets/food-2.jpg" [alt]="food.name" class="card-img-top border-5" >
+    <!-- </a> -->
       <div class="card-body">
         <div class="content">
           <div class="name">
@@ -153,39 +154,40 @@
           <span class="favorite {{food.favorite?'':'not'}}">
             ❤
           </span>
-          <!-- <button class="btn btn-danger" (click)="deleteFood(food._id)">Delete</button> -->
+          <!-- <button class="btn btn-danger" (click)="updateFoodById(food._id)">Delete</button> -->
+          <!-- <button routerLink="/update-food/{{food._id}}">Update Food</button> -->
 
-          
+
           <!-- <div class ="stars">
            </div> -->
-  
+
           <!-- <div class="product-item-footer">
             <div class="origins">
-  
+
               <span *ngFor="let origin of food.origins">
                 {{origin}}
               </span>
             </div>
-  
+
             <div class="cook-time">
               <span>🕒</span>
               {{food.cookTime}}
             </div>
           </div> -->
-  
+
           <div class="price">
             <span>
-  
+
               {{food.price | currency}}
             </span>
           </div>
-  
+
         </div>
       </div>
     </div>
-  <!-- </a> -->
+  </a>
   </div>
-  
+
 </div></div>
 
 
