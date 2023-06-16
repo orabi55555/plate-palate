@@ -6,6 +6,16 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const path = require("path");
 mongoose.set("strictQuery", false);
+const authController = require("./Controllers/AuthController");
+const userRoutes = require("./Routes/UserRoutes");
+const app = express();
+const User = require("./Models/UserModel");
+const accessTokenSecret = process.env.ACCESS_TOKEN_SECRET;
+
+
+
+app.use(bodyParser.json());
+
 
 // const Recipe = require("./Routes/RecipeRoutes");
 // Router
@@ -19,6 +29,11 @@ const Country=require("./Routes/CountryRoutes");
 //#endregion
 
 //#region config
+dotenv.config( {
+  
+});
+const PORT = process.env.PORT || 7000;
+
 dotenv.config();
 const PORT = process.env.PORT || 7000;
 const app = express();
@@ -41,6 +56,9 @@ app.get("/", (req, res) => {
   console.log("PlatePalate backend!");
   res.end();
 });
+
+app.use("/api/v1/users", userRoutes);
+
 //#endregion
 
 //#region Food
@@ -71,4 +89,4 @@ mongoose.connection.on("connected", () => {
 app.listen(PORT, () => {
   console.log(`Server is up : http://localhost:${PORT}`);
 });
-  
+  module.exports = app;
