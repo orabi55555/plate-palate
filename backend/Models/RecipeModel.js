@@ -17,10 +17,10 @@ const recipeSchema = new mongoose.Schema({
         type: String,
         required: true
       },
-      servings: {
-        type: Number,
-        required: true
-      },
+      // servings: {
+      //   type: Number,
+      //   required: true
+      // },
       ingredients: {
         type: String,
         required: true
@@ -28,7 +28,12 @@ const recipeSchema = new mongoose.Schema({
       instructions: {
         type: String,
         required: true
-      }
+      },
+      country: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Country',
+        required: true,
+      },
 });
 
 const Recipe = mongoose.model('Recipe', recipeSchema);

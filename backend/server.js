@@ -12,6 +12,10 @@ mongoose.set("strictQuery", false);
 const userRouter=require("./Routes/UserRoutes");
 
 const foodRouter=require("./Routes/FoodRoutes");
+
+const Recipe=require("./Routes/RecipeRoutes");
+
+const Country=require("./Routes/CountryRoutes");
 //#endregion
 
 //#region config
@@ -51,6 +55,8 @@ app.get("/", (req, res) => {
 // Routes
 app.use("/api/profile", userRouter);
 app.use("/api/Food", foodRouter);
+app.use("/api/Recipe", Recipe);
+app.use("/api/Country", Country);
 // app.use("/recipes", Recipe);
 
 //#endregion
