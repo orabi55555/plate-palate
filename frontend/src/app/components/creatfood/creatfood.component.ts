@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FoodService } from 'src/app/services/food.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-creatfood',
   templateUrl: './creatfood.component.html',
@@ -13,7 +14,7 @@ export class CreatfoodComponent {
     price: number | undefined;
 
   
-    constructor(private foodService: FoodService) {}
+    constructor(private foodService: FoodService ,private router: Router) {}
   
     onSubmit() {
       const newFood = {
@@ -28,5 +29,6 @@ export class CreatfoodComponent {
           data => console.log(data),
           error => console.log(error)
         );
+        this.router.navigateByUrl('/dashboard_food');
     }
   }
