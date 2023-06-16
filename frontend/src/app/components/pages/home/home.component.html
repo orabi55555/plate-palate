@@ -123,7 +123,10 @@
   </div>
 </div>
 
-
+<form (ngSubmit)="searchByCategory()">
+  <input type="text" placeholder="Search by category" [(ngModel)]="category" name="category">
+  <button type="submit">Search</button>
+</form>
 
 <h1 class="mb-5 text-center" id="menu" style="font-family: 'Miniver', cursive" >Our Meal</h1>
 <div class="container">

@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent  {
   foods: any[] | undefined;
-
+category: any;
   constructor(private foodService: FoodService,private router: Router) { }
 
   ngOnInit(): void {
@@ -24,6 +24,13 @@ export class HomeComponent  {
           this.foods = this.foods.filter(food => food._id !== id);
         }
         this.router.navigateByUrl('/home');
+      });
+  }
+  searchByCategory() {
+    this.foodService.searchFoodsByCategory(this.category)
+      .subscribe(foods => {
+        this.foods = foods;
+        console.log(foods)
       });
   }
 }

@@ -42,7 +42,9 @@ export class FoodService {
     return this.http.post(`${this.baseUrl}/api/food/create`, body, { headers });
   }
 
-
+  searchFoodsByCategory(category: string): Observable<Food[]> {
+    return this.http.get<Food[]>(`${this.baseUrl}/api/food/foods/category/${category}`);
+  }
 
 }
 
