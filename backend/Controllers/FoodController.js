@@ -59,4 +59,14 @@ exports.createFood = function (req, res) {
       return res.status(500).json({ message: err.message });
     });
 };
- 
+exports.getFoodByCategory = function(req, res) {
+  const category = req.params.category;
+
+  Food.find({ category: category })
+    .then(foods => {
+      res.json(foods);
+    })
+    .catch(err => {
+      return res.status(500).json({ message: err.message });
+    });
+};
