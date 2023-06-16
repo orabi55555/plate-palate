@@ -1,0 +1,14 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-recipes',
+  templateUrl: './recipes.component.html',
+  styleUrls: ['./recipes.component.css']
+})
+export class RecipesComponent {
+  public randomNumber: number;
+
+  constructor() {
+    this.randomNumber = Math.floor(Math.random() * 1000);
+  }
+}
