@@ -130,6 +130,41 @@ li a img{
   margin-top: 0.7rem;
   font-size: 1.1rem;
 }
+.search{
+  background-color: beige;
+margin: auto;
+  max-width: 800px;
+  height:200px;
+  padding: 50px;
+  border-radius: 30%;
+}
+.search input{
+  display: block;
+  margin: auto;
+  
+  width: 500px;
+  height: 50px;
+  border-radius: 5px;
+}
+.search button{
+  display: block;
+  margin: auto;
+  width: 200px;
+  height: 50px;
+  border-radius: 5px;
+  background-color: #e72929;
+margin-top: 30px;
+
+}
+.search button:hover{
+  display: block;
+  margin: auto;
+  max-width: 250px;
+  height: 50px;
+  border-radius: 5px;
+  background:linear-gradient(85deg, #a82828, #d34f3a, #ea6f6f, #d82f2f, #f52828);
+  margin-top: 10px;
+}
 
 
 
