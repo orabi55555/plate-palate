@@ -20,23 +20,25 @@ const OrderSchema = new mongoose.Schema({
         required: true,
         default: Date.now,
       },
-      meals: [
-        {
-          mealID: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "Food",
-            required: true,
-          },}],   
-          
-          quantity:{
-            type: Number,
+      quantity:{
+        type: Number,
         required: true,
-          },
-          address:{
-            type: String,
-            required: true,
-          },
+      },
+      address:{
+        type: String,
+        required: true,
+      },
 
+      // meals: [
+      //    {
+      //   mealID: {
+      //     type: mongoose.Schema.Types.ObjectId,
+      //    ref: "Food",
+      //     required: true,
+      //      },}
+      //     ],   
+          
+       
 });
 
 module.exports = mongoose.model("Order", OrderSchema);
