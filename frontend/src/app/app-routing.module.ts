@@ -18,6 +18,9 @@ import { OrdersComponent } from './components/pages/orders/orders.component';
 import { FoodrecipeComponent } from './components/pages/foodrecipe/foodrecipe.component';
 import { CreatfoodComponent } from './components/creatfood/creatfood.component';
 import { UpdateFoodComponent } from './components/update-food/update-food.component';
+import { DashboardComponent } from './components/pages/dashboard/dashboard.component';
+import { DashboardFoodComponent } from './components/pages/dashboard-food/dashboard-food.component';
+
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -37,6 +40,8 @@ const routes: Routes = [
   { path: 'orders', component: OrdersComponent },
   { path: 'recipe/:id', component: ClickedCountryRecipeComponent },
   { path: 'payment', component: PaymentPageComponent },
+  {path:'dashboard',component:DashboardComponent},
+  {path:'dashboard_food',component:DashboardFoodComponent},
   // { path: 'track', component: OrderTrackPageComponent },
   { path: 'foodrecipe/:id', component: FoodrecipeComponent },
   { path: '**', component: NotFoundComponent },

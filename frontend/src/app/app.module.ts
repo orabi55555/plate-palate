@@ -29,6 +29,9 @@ import { FoodrecipeComponent } from './components/pages/foodrecipe/foodrecipe.co
 import { HttpClientModule } from '@angular/common/http';
 import { CreatfoodComponent } from './components/creatfood/creatfood.component';
 import { UpdateFoodComponent } from './components/update-food/update-food.component';
+import { DashboardComponent } from './components/pages/dashboard/dashboard.component';
+import { SidebarComponent } from './components/pages/sidebar/sidebar.component';
+import { DashboardFoodComponent } from './components/pages/dashboard-food/dashboard-food.component';
 
 
 @NgModule({
@@ -59,6 +62,9 @@ import { UpdateFoodComponent } from './components/update-food/update-food.compon
     FoodrecipeComponent,
     CreatfoodComponent,
     UpdateFoodComponent,
+    DashboardComponent,
+    SidebarComponent,
+    DashboardFoodComponent,
 
   ],
 
