@@ -2,7 +2,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormControlName, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { UpdateUserProfileComponent } from './components/update-user-profile/update-user-profile.component';
 import { SignupPageComponent } from './components/pages/auth/signup-page/signup-page.component';
@@ -27,6 +27,7 @@ import { OrdersComponent } from './components/pages/orders/orders.component';
 // import { OrderTrackPageComponent } from './components/pages/order-track-page/order-track-page.component';
 import { FoodrecipeComponent } from './components/pages/foodrecipe/foodrecipe.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CreatfoodComponent } from './components/creatfood/creatfood.component';
 
 
 @NgModule({
@@ -55,6 +56,7 @@ import { HttpClientModule } from '@angular/common/http';
     OrdersComponent,
     // OrderTrackPageComponent,
     FoodrecipeComponent,
+    CreatfoodComponent,
 
   ],
 
@@ -62,7 +64,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+   FormsModule
 
   ],
   providers: [],

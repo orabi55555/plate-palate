@@ -25,24 +25,22 @@ export class FoodService {
     return this.http.get<any[]>(`${this.baseUrl}/api/food/foods`);
    
   }
-
-  // getAll(): Food[] {
-  //   return sample_foods;
-  // }
-
-  // getAllFoodsBySearchTerm(searchTerm: string) {
-  //   return this.getAll().filter(food => food.name.toLowerCase().includes(searchTerm.toLowerCase()));
-  // }
-
-  // // getAllTags():Tag[] {
-  // //   return sample_tags;
-  // // }
-
-  // getAllFoodsByTag(tag: string):Food[] {
-  //   return tag === "All" ?
-  //     this.getAll() :
-  //     this.getAll().filter(food => food.tags?.includes(tag));
-  // }
+  deleteFoodById(id: string): Observable<any> {
+    return this.http.delete(`${this.baseUrl}/api/food/delete/${id}`);
+  }
+  
+  createFood(food: any) {
+    const headers = { 'content-type': 'application/json' };
+    const body = JSON.stringify({
+      title: food.title,
+      summary: food.summary,
+      image: food.image,
+      category: food.category,
+      price: food.price
+    });
+    console.log(body);
+    return this.http.post(`${this.baseUrl}/api/food/create`, body, { headers });
+  }
 
 
 

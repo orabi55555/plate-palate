@@ -16,6 +16,7 @@ import { CheckoutComponent } from './components/pages/checkout/checkout.componen
 import { OrdersComponent } from './components/pages/orders/orders.component';
 // import { OrderTrackPageComponent } from './components/pages/order-track-page/order-track-page.component';
 import { FoodrecipeComponent } from './components/pages/foodrecipe/foodrecipe.component';
+import { CreatfoodComponent } from './components/creatfood/creatfood.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path:'food/:id', component:FoodPageComponent },
   { path: 'login', component: LoginPageComponent },
   { path: 'signup', component: SignupPageComponent },
+  {path:'creatfood',component:CreatfoodComponent},
   { path: 'google', component: GoogleButtonComponent },
   { path: 'recipes', component: RecipesComponent },
   { path: 'payment-page', component: PaymentPageComponent },
@@ -36,6 +38,7 @@ const routes: Routes = [
   // { path: 'track', component: OrderTrackPageComponent },
   { path: 'foodrecipe/:id', component: FoodrecipeComponent },
   { path: '**', component: NotFoundComponent },
+ 
   // { path: 'users', component: ProfileComponent },
 
 

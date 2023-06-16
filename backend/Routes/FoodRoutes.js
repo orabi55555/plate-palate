@@ -6,4 +6,5 @@ router.get('/:id', foodController.getFoodById);
 
 // router.post('/', userController.createFood);
 router.post('/create',foodController.createFood);
+router.delete('/delete/:id',foodController.deleteFoodById);
 module.exports = router;
