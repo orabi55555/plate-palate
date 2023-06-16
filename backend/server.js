@@ -38,6 +38,10 @@ app.get("/", (req, res) => {
 
 //#endregion
 
+const ordersRoutes = require('./Routes/OrderRoutes');
+
+ app.use('/api/orders', ordersRoutes);
+
 //#region Database Connetion
 mongoose.connect(process.env.DATABASE);
 mongoose.connection.on("connected", () => {
@@ -48,4 +52,3 @@ mongoose.connection.on("connected", () => {
 app.listen(PORT, () => {
   console.log(`Server is up : http://localhost:${PORT}`);
 });
-  
