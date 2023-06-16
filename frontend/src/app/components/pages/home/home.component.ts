@@ -17,15 +17,15 @@ category: any;
     });
    
   }
-  deleteFood(id: string): void {
-    console.log(id);
-    this.foodService.deleteFoodById(id) .subscribe(() => {
-        if (this.foods) {
-          this.foods = this.foods.filter(food => food._id !== id);
-        }
-        this.router.navigateByUrl('/home');
-      });
-  }
+  // deleteFood(id: string): void {
+  //   console.log(id);
+  //   this.foodService.deleteFoodById(id) .subscribe(() => {
+  //       if (this.foods) {
+  //         this.foods = this.foods.filter(food => food._id !== id);
+  //       }
+  //       this.router.navigateByUrl('/home');
+  //     });
+  // }
   searchByCategory() {
     this.foodService.searchFoodsByCategory(this.category)
       .subscribe(foods => {

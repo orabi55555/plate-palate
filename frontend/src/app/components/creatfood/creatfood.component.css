@@ -1,10 +1,9 @@
-.box{
+/*  .box{
 
    
-    /* border: 3px solid rgb(28, 18, 18); */
+ 
     box-shadow: 10px 10px 10px rgb(212, 185, 185);
-   
-    /* box-shadow: 12px 12px 2px 2px rgba(188, 188, 193, 0.2); */
+ 
     max-width: 900px;
     margin:  20px auto;
    
@@ -12,9 +11,7 @@
     .shape{
         text-align: center;
         margin-bottom: 20px;
-        /* clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%); */
-        /* clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); */
-       /* background-color:rgb(214, 188, 238) ; */
+       
       
     }
   
@@ -104,4 +101,4 @@
         transition-duration: .3s;
     -webkit-box-shadow: 2px 2px 0px rgb(140, 32, 212);
             box-shadow: 2px 2px 0px rgb(140, 32, 212);
-}
+}  */
