@@ -29,18 +29,18 @@ export class FoodService {
   //   return this.http.delete(`${this.baseUrl}/api/food/delete/${id}`);
   // }
 
-  // createFood(food: any) {
-  //   const headers = { 'content-type': 'application/json' };
-  //   const body = JSON.stringify({
-  //     title: food.title,
-  //     summary: food.summary,
-  //     image: food.image,
-  //     category: food.category,
-  //     price: food.price
-  //   });
-  //   console.log(body);
-  //   return this.http.post(`${this.baseUrl}/api/food/create`, body, { headers });
-  // }
+  createFood(food: any) {
+    const headers = { 'content-type': 'application/json' };
+    const body = JSON.stringify({
+      title: food.title,
+      summary: food.summary,
+      image: food.image,
+      category: food.category,
+      price: food.price
+    });
+    console.log(body);
+    return this.http.post(`${this.baseUrl}/api/food/create`, body, { headers });
+  }
 
   searchFoodsByCategory(category: string): Observable<Food[]> {
     return this.http.get<Food[]>(`${this.baseUrl}/api/food/foods/category/${category}`);

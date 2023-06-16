@@ -31,7 +31,7 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'login', component: LoginPageComponent },
   { path: 'signup', component: SignupPageComponent },
-  { path:'creatfood',component:CreatfoodComponent},
+  { path:'dashboard_food/creatfood',component:CreatfoodComponent},
   { path: 'google', component: GoogleButtonComponent },
   { path: 'recipes', component: RecipesComponent },
   { path: 'update-food/:id', component: UpdateFoodComponent },
