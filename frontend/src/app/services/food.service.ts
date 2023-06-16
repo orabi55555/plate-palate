@@ -17,8 +17,8 @@ export class FoodService {
   constructor(private http: HttpClient) { }
 
   getFoodById(id: string): Observable<any> {
-    console.log(`getUserById(${id})`);
-    return this.http.get(`${this.baseUrl}/api/profile/user/${id}`);
+    console.log(`getFoodById(${id})`);
+    return this.http.get(`${this.baseUrl}/api/food/${id}`);
   }
   getAllFoods() {
  
