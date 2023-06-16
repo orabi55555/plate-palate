@@ -1,19 +1,32 @@
 <app-sidebar></app-sidebar>
-<table class="table table-striped" style="max-width: 700px; height: 700px; margin: 30px auto; ">
-    <thead>
+<div class="container">
+    <div class="d-flex ">
+    <button class=" btn btn-success     mt-5 ms-1  ">New food</button>
+  
+  
+</div>
+  <table class="table " style="max-width: 700px; height: 700px; margin: 30px auto;">
+
+  
+    <thead class="table-dark text-center"> 
       <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
+        <th scope="col"style="background-color: black">image</th>
+        <th scope="col" style="background-color: black">title</th>
+        <th scope="col"style="background-color: black">category</th>
+        <th scope="col"style="background-color: black">price</th>
+        <th scope="col"style="background-color: black">action</th>
+      
       </tr>
     </thead>
-    <tbody>
+    <tbody class="text-center">
       <tr>
         <th scope="row">1</th>
         <td>Mark</td>
         <td>Otto</td>
         <td>@mdo</td>
+        <td><button class="btn  btn-info" style="background-color:#b2c7d3 mx-3">update</button>
+            <button class="btn btn-danger" >delete</button>
+        </td>
       </tr>
       <tr>
         <th scope="row">2</th>
@@ -28,3 +41,4 @@
       </tr>
     </tbody>
   </table>
+  </div>
