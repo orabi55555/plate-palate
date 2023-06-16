@@ -47,7 +47,7 @@ app.get("/", (req, res) => {
 //   next();
 // });
 // Routes
-app.use("/api/profile", userRouter);
+app.use("/api/user", userRouter);
 app.use("/api/Food", foodRouter);
 // app.use("/recipes", Recipe);
 

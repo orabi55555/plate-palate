@@ -23,7 +23,7 @@ const routes: Routes = [
   { path:"home", component:HomeComponent  },
   { path: 'contact-us', component: ContactUsComponent },
   { path: 'about-us', component: AboutUsComponent },
-  { path: 'profile', component: ProfileComponent },
+  { path: 'user/:id', component: ProfileComponent },
   { path:'food/:id', component:FoodPageComponent },
   { path: 'login', component: LoginPageComponent },
   { path: 'signup', component: SignupPageComponent },
