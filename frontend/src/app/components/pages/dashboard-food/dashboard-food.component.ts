@@ -15,6 +15,17 @@ category: any;
     this.foodService.getAllFoods().subscribe(data => {
       this.foods = data;
     });
+    
 
   }
+   deleteFood(id: string): void {
+    console.log(id);
+    this.foodService.deleteFoodById(id).subscribe(() => {
+        if (this.foods) {
+          this.foods = this.foods.filter(food => food._id !== id);
+        }
+        this.router.navigateByUrl('/dashboard_food');
+      });
+  }
+  
 }
