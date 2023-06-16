@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 //import { Food } from 'src/app/'; //not completed
 import { ActivatedRoute } from '@angular/router';
-//import { FoodService } from 'src/app/Services/food.service';
+import { FoodService } from 'src/app/services/food.service';
 
 
 @Component({
@@ -20,9 +20,22 @@ export class FoodPageComponent implements OnInit {
 
 // })
 
+ID:any;
+food:any;
+constructor(myRoute:ActivatedRoute,public myService: FoodService ){
+  this.ID = myRoute.snapshot.params["id"];
+}
 
-  ngOnInit(): void {
 
-  }
 
+ngOnInit(): void {
+  this.myService.getFoodById(this.ID).subscribe(
+    {
+      next:(data)=>{
+        this.food = data;
+      },
+      error:(err)=>{console.log(err)}
+    }
+  );
+}
 }

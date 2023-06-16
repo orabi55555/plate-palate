@@ -28,6 +28,7 @@ import { OrdersComponent } from './components/pages/orders/orders.component';
 import { FoodrecipeComponent } from './components/pages/foodrecipe/foodrecipe.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CreatfoodComponent } from './components/creatfood/creatfood.component';
+import { UpdateFoodComponent } from './components/update-food/update-food.component';
 
 
 @NgModule({
@@ -57,6 +58,7 @@ import { CreatfoodComponent } from './components/creatfood/creatfood.component';
     // OrderTrackPageComponent,
     FoodrecipeComponent,
     CreatfoodComponent,
+    UpdateFoodComponent,
 
   ],
 

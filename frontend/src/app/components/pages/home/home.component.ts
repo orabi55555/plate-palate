@@ -15,7 +15,7 @@ category: any;
     this.foodService.getAllFoods().subscribe(data => {
       this.foods = data;
     });
-   
+
   }
   // deleteFood(id: string): void {
   //   console.log(id);
@@ -26,6 +26,8 @@ category: any;
   //       this.router.navigateByUrl('/home');
   //     });
   // }
+
+
   searchByCategory() {
     this.foodService.searchFoodsByCategory(this.category)
       .subscribe(foods => {
