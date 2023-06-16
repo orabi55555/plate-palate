@@ -18,27 +18,18 @@
       
       </tr>
     </thead>
-    <tbody class="text-center">
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
+    <tbody class="text-center" >
+      <tr *ngFor="let food of foods">
+        <td>{{food.image}}</td>
+        <td>{{food.title}}</td>
+        <td>{{food.category}}</td>
+        <td>{{food.price}}</td>
+
         <td><button class="btn  btn-info mx-4" style="background-color:#b2c7d3 ">update</button>
             <button class="btn btn-danger" >delete</button>
         </td>
       </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td colspan="2">Larry the Bird</td>
-        <td>@twitter</td>
-      </tr>
+      
     </tbody>
   </table>
   </div>
