@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
  import { sample_foods } from 'src/data';
   // import  sample_tags  from 'src/data';
 import { Food } from '../shared/models/Food';
@@ -9,27 +11,40 @@ import { Food } from '../shared/models/Food';
 })
 export class FoodService {
 
-  constructor() { }
+  
+  private baseUrl = 'http://localhost:7000';
 
-  getAll(): Food[] {
-    return sample_foods;
+  constructor(private http: HttpClient) { }
+
+  getFoodById(id: string): Observable<any> {
+    console.log(`getUserById(${id})`);
+    return this.http.get(`${this.baseUrl}/api/profile/user/${id}`);
   }
-
-  getAllFoodsBySearchTerm(searchTerm: string) {
-    return this.getAll().filter(food => food.name.toLowerCase().includes(searchTerm.toLowerCase()));
+  getAllFoods() {
+ 
+    return this.http.get<any[]>(`${this.baseUrl}/api/food/foods`);
+   
   }
-
-  // getAllTags():Tag[] {
-  //   return sample_tags;
+  // deleteFoodById(id: string): Observable<any> {
+  //   return this.http.delete(`${this.baseUrl}/api/food/delete/${id}`);
+  // }
+  
+  // createFood(food: any) {
+  //   const headers = { 'content-type': 'application/json' };
+  //   const body = JSON.stringify({
+  //     title: food.title,
+  //     summary: food.summary,
+  //     image: food.image,
+  //     category: food.category,
+  //     price: food.price
+  //   });
+  //   console.log(body);
+  //   return this.http.post(`${this.baseUrl}/api/food/create`, body, { headers });
   // }
 
-  getAllFoodsByTag(tag: string):Food[] {
-    return tag === "All" ?
-      this.getAll() :
-      this.getAll().filter(food => food.tags?.includes(tag));
+  searchFoodsByCategory(category: string): Observable<Food[]> {
+    return this.http.get<Food[]>(`${this.baseUrl}/api/food/foods/category/${category}`);
   }
-
-
 
 }
 

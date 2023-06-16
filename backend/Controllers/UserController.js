@@ -1,21 +1,14 @@
 const User = require("../Models/UserModel");
 
-
-exports.getUserById = async (req, res, next) => {
-    try {
-      userId = req.params.id;
-      const user = await User.findById(userId);
+exports.getUserById = function(req, res) {
+  User.findById(req.params.id)
+    .then(user => {
       if (!user) {
-        return next(new AppError("User not found", 404));
+        return res.status(404).json({ message: 'User not found' });
       }
-  
-      res.status(200).json({
-        status: "success",
-        data: {
-          user: user,
-        },
-      });
-    } catch (err) {
-      return next(new AppError(err.message, 404));
-    }
-  };
+      res.json(user);
+    })
+    .catch(err => {
+      return res.status(500).json({ message: err.message });
+    });
+};
