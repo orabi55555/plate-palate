@@ -4,7 +4,8 @@ const bodyParser = require("body-parser");
 const authController = require("../Controllers/AuthController");
 const userController = require("../Controllers/UserController");
 const express = require("express");
-const router = Router();
+const router = express.Router();
+
 const app = express();
 
 
@@ -49,9 +50,6 @@ router.delete('/:id', userController.deleteUserById);
 // router
 //   .route("/:id")
 //   .get( UserController.getUserById)
-const express = require('express');
-const router = express.Router();
-const userController = require('../Controllers/UserController');
 
 router.get('/user/:id', userController.getUserById);
 

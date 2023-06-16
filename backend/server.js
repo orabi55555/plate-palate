@@ -11,7 +11,11 @@ const userRoutes = require("./Routes/UserRoutes");
 const app = express();
 const User = require("./Models/UserModel");
 const accessTokenSecret = process.env.ACCESS_TOKEN_SECRET;
-
+const PORT = process.env.PORT || 7000;
+const userRouter=require("./Routes/UserRoutes");
+const foodRouter=require("./Routes/FoodRoutes");
+const Recipe=require("./Routes/RecipeRoutes");
+const Country=require("./Routes/CountryRoutes");
 
 
 app.use(bodyParser.json());
@@ -19,28 +23,15 @@ app.use(bodyParser.json());
 
 // const Recipe = require("./Routes/RecipeRoutes");
 // Router
-const userRouter=require("./Routes/UserRoutes");
-
-const foodRouter=require("./Routes/FoodRoutes");
-
-const Recipe=require("./Routes/RecipeRoutes");
-
-const Country=require("./Routes/CountryRoutes");
 //#endregion
 
 //#region config
 dotenv.config( {
   
 });
-const PORT = process.env.PORT || 7000;
 
-dotenv.config();
-const PORT = process.env.PORT || 7000;
-const app = express();
-mongoose.connect(process.env.DATABASE);
-mongoose.connection.on("connected", () => {
-  console.log("Connected to the database");
-});
+
+
 //#endregion
 //#endregion
 
@@ -57,7 +48,6 @@ app.get("/", (req, res) => {
   res.end();
 });
 
-app.use("/api/v1/users", userRoutes);
 
 //#endregion
 
@@ -71,6 +61,8 @@ app.use("/api/v1/users", userRoutes);
 //   next();
 // });
 // Routes
+app.use("/api/v1/users", userRoutes);
+
 app.use("/api/profile", userRouter);
 app.use("/api/Food", foodRouter);
 app.use("/api/Recipe", Recipe);
