@@ -40,8 +40,8 @@ app.get("/", (req, res) => {
 //#endregion
 
 //#region Food
-const FoodRoutes = require("./Routes/FoodRoutes");
-app.use("/api/food", FoodRoutes);
+// const FoodRoutes = require("./Routes/FoodRoutes");
+// app.use("/api/food", FoodRoutes);
 
 // app.use(function(req, res, next) {
 //   res.header("Access-Control-Allow-Origin", "http://localhost:4200");

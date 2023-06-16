@@ -18,7 +18,7 @@ export class FoodService {
 
   getFoodById(id: string): Observable<any> {
     console.log(`getUserById(${id})`);
-    return this.http.get(`${this.baseUrl}/api/profile/user/${id}`);
+    return this.http.get(`${this.baseUrl}/api/food/${id}`);
   }
   getAllFoods() {
  

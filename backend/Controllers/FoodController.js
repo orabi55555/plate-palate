@@ -150,7 +150,7 @@ exports.getFoodByCategory = function(req, res) {
 };
 
 //update
-exports.updateFoodById = async (req, res) => {
+ exports.updateFoodById = async (req, res) => {
     try {
       const { title, summary, image, category, price } = req.body;
       const food = await Food.findByIdAndUpdate(
@@ -167,3 +167,5 @@ exports.updateFoodById = async (req, res) => {
       res.status(500).send('Server Error');
     }
   };
+
+ 

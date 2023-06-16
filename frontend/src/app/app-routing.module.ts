@@ -21,10 +21,10 @@ import { CreatfoodComponent } from './components/creatfood/creatfood.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path:"home", component:HomeComponent  },
+  { path:'food/:id', component:FoodPageComponent },
   { path: 'contact-us', component: ContactUsComponent },
   { path: 'about-us', component: AboutUsComponent },
   { path: 'profile', component: ProfileComponent },
-  { path:'food/:id', component:FoodPageComponent },
   { path: 'login', component: LoginPageComponent },
   { path: 'signup', component: SignupPageComponent },
   {path:'creatfood',component:CreatfoodComponent},
@@ -38,7 +38,7 @@ const routes: Routes = [
   // { path: 'track', component: OrderTrackPageComponent },
   { path: 'foodrecipe/:id', component: FoodrecipeComponent },
   { path: '**', component: NotFoundComponent },
- 
+
   // { path: 'users', component: ProfileComponent },
 
 
