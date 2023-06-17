@@ -18,6 +18,14 @@ category: any;
     
 
   }
+  
+  searchByCategory() {
+    this.foodService.searchFoodsByCategory(this.category)
+      .subscribe(foods => {
+        this.foods = foods;
+        console.log(foods)
+      });
+  }
    deleteFood(id: string): void {
     console.log(id);
     this.foodService.deleteFoodById(id).subscribe(() => {
