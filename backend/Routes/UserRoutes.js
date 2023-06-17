@@ -51,7 +51,7 @@ router.delete('/:id', userController.deleteUserById);
 //   .route("/:id")
 //   .get( UserController.getUserById)
 
-router.get('/user/:id', userController.getUserById);
+router.get('/:id', userController.getUserById);
 
 
 module.exports = router;

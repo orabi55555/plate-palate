@@ -61,9 +61,10 @@ app.get("/", (req, res) => {
 //   next();
 // });
 // Routes
+
 app.use("/api/v1/users", userRoutes);
 
-app.use("/api/profile", userRouter);
+
 app.use("/api/Food", foodRouter);
 app.use('/api/orders', ordersRoutes);
 
