@@ -6,6 +6,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const path = require("path");
 mongoose.set("strictQuery", false);
+const ordersRoutes = require('./Routes/OrderRoutes');
 const authController = require("./Controllers/AuthController");
 const userRoutes = require("./Routes/UserRoutes");
 const app = express();
@@ -16,7 +17,6 @@ const userRouter=require("./Routes/UserRoutes");
 const foodRouter=require("./Routes/FoodRoutes");
 const Recipe=require("./Routes/RecipeRoutes");
 const Country=require("./Routes/CountryRoutes");
-
 
 app.use(bodyParser.json());
 
@@ -65,11 +65,15 @@ app.use("/api/v1/users", userRoutes);
 
 app.use("/api/profile", userRouter);
 app.use("/api/Food", foodRouter);
+app.use('/api/orders', ordersRoutes);
+
 app.use("/api/Recipe", Recipe);
 app.use("/api/Country", Country);
 // app.use("/recipes", Recipe);
 
 //#endregion
+
+
 
 //#region Database Connetion
 mongoose.connect(process.env.DATABASE);
