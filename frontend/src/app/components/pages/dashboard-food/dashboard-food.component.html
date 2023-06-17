@@ -1,7 +1,12 @@
 <app-sidebar></app-sidebar>
 <div class="container">
     <div class="d-flex ">
-    <button class=" btn btn-success     mt-5  " style="width: 140px;" ><a  style="text-decoration: none; color:white"    routerLink="creatfood">food</a></button>
+    <button class=" btn btn-success mt-5"
+     style="width: 140px;" >
+     <a  style="text-decoration: none; color:white"routerLink="creatfood">
+        add
+    </a>
+    </button>
   
   
 </div>
@@ -25,7 +30,7 @@
         <td>{{food.category}}</td>
         <td>{{food.price}}</td>
 
-        <td><button class="btn  btn-info mx-4" style="background-color:#b2c7d3 ">update</button>
+        <td><button class="btn  btn-info mx-4" style="background-color:#b2c7d3 "routerLink="/dashboard_food/update-food/{{food._id}}">update</button>
             <button class="btn btn-danger" (click)="deleteFood(food._id)">delete</button>
         </td>
       </tr>

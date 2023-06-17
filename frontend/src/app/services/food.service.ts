@@ -48,9 +48,9 @@ export class FoodService {
   }
 
   //update
-  // updateFoodById(id: string, food: Food): Observable<Food> {
-  //   return this.http.put<Food>(`${this.baseUrl}/api/food/update/${id}`, food);
-  // }
+  updateFoodById(id: string, food: Food): Observable<Food> {
+    return this.http.put<Food>(`${this.baseUrl}/api/food/update/${id}`, food);
+  }
 
 }
 
