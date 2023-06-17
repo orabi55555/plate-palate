@@ -1,0 +1,44 @@
+<app-sidebar></app-sidebar>
+<div class="container">
+    <div class="d-flex ">
+    <button class=" btn btn-success mt-5"
+     style="width: 140px;" >
+     <a  style="text-decoration: none; color:white"routerLink="creatfood">
+        add
+    </a>
+    </button>
+  
+<form (ngSubmit)="searchByCategory() " class="search">
+  <input type="text" placeholder="Search by category" [(ngModel)]="category" name="category">
+  <button type="submit">Search</button>
+</form>
+  
+</div>
+  <table class="table " style="max-width: 700px; height: 700px; margin: 30px auto;">
+
+  
+    <thead class="table-dark text-center"> 
+      <tr>
+        <th scope="col"style="background-color: black">image</th>
+        <th scope="col" style="background-color: black">title</th>
+        <th scope="col"style="background-color: black">category</th>
+        <th scope="col"style="background-color: black">price</th>
+        <th scope="col"style="background-color: black">action</th>
+      
+      </tr>
+    </thead>
+    <tbody class="text-center" >
+      <tr *ngFor="let food of foods">
+        <td>{{food.image}}</td>
+        <td>{{food.title}}</td>
+        <td>{{food.category}}</td>
+        <td>{{food.price}}</td>
+
+        <td><button class="btn  btn-info mx-4" style="background-color:#b2c7d3 "routerLink="/dashboard_food/update-food/{{food._id}}">update</button>
+            <button class="btn btn-danger" (click)="deleteFood(food._id)">delete</button>
+        </td>
+      </tr>
+      
+    </tbody>
+  </table>
+  </div>

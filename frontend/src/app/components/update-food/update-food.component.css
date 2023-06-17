@@ -1,105 +1,105 @@
-/* .box{
+.box{
 
+   
+ 
+  box-shadow: 10px 10px 10px rgb(212, 185, 185);
+height: 700px;
+  max-width: 900px;
+  margin:  20px auto;
+ 
+  }
+  .shape{
+      text-align: center;
+      margin-bottom: 20px;
+     
+    
+  }
 
-
-    box-shadow: 10px 10px 10px rgb(212, 185, 185);
-
-    max-width: 900px;
-    margin:  20px auto;
-
+  input,select{
+      width: 60%;
+      height:45px;
+     display: block;
+     margin: auto;
+      padding: 20px 20px;
+      margin: 20px 0;
+      box-sizing: border-box;
+      border: none;
+      border-bottom: 2px solid rgb(3, 3, 3);
+      background-color:rgb(238, 188, 188);
+      border-radius: 4px;
     }
-    .shape{
-        text-align: center;
-        margin-bottom: 20px;
-
-
+    textarea{
+      width: 60%;
+      height:80px;
+      padding: 12px 20px;
+      margin: 4px 0;
+      box-sizing: border-box;
+      border: none;
+      border-bottom: 2px solid rgb(3, 3, 3);
+      background-color:rgb(238, 188, 188);
+      border-radius: 4px;
     }
-
-    input,select{
-        width: 60%;
-        height:45px;
-
-        padding: 20px 20px;
-        margin: 20px 0;
-        box-sizing: border-box;
-        border: none;
-        border-bottom: 2px solid rgb(3, 3, 3);
-        background-color:rgb(238, 188, 188);
-        border-radius: 4px;
-      }
-      textarea{
-        width: 60%;
-        height:80px;
-        padding: 12px 20px;
-        margin: 4px 0;
-        box-sizing: border-box;
-        border: none;
-        border-bottom: 2px solid rgb(3, 3, 3);
-        background-color:rgb(238, 188, 188);
-        border-radius: 4px;
-      }
-
+  
 
 .Btn{
-        display: block;
-        margin: 0 auto;
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  width: 100px;
-  height: 50px;
-  border: none;
-  padding: 0px 20px;
-  background-color: rgb(255, 38, 38);
-  color: white;
-  font-weight: 500;
-  cursor: pointer;
-  border-radius: 10px;
-  -webkit-box-shadow: 5px 5px 0px rgb(212, 32, 32);
-          box-shadow: 5px 5px 0px rgb(212, 41, 32);
-  -webkit-transition-duration: .3s;
-          transition-duration: .3s;
-
-
-       margin-bottom: 20px;
-
+      display: block;
+      margin: 0 auto;
+position: relative;
+display: -webkit-box;
+display: -ms-flexbox;
+display: flex;
+-webkit-box-align: center;
+    -ms-flex-align: center;
+        align-items: center;
+-webkit-box-pack: start;
+    -ms-flex-pack: start;
+        justify-content: flex-start;
+width: 100px;
+height: 50px;
+border: none;
+padding: 0px 20px;
+background-color: rgb(255, 38, 38);
+color: white;
+font-weight: 500;
+cursor: pointer;
+border-radius: 10px;
+-webkit-box-shadow: 5px 5px 0px rgb(212, 32, 32);
+        box-shadow: 5px 5px 0px rgb(212, 41, 32);
+-webkit-transition-duration: .3s;
+        transition-duration: .3s;
+    
+    
+     margin-bottom: 20px;
+     
 }
 .svg{
-  width: 13px;
-  position: absolute;
-  right: 0;
-  margin-right:20px;
-  fill: white;
-  -webkit-transition-duration: .3s;
-          transition-duration: .3s;
+width: 13px;
+position: absolute;
+right: 0;
+margin-right:20px;
+fill: white;
+-webkit-transition-duration: .3s;
+        transition-duration: .3s;
 }
 
 .Btn:hover{
-  color: transparent;
+color: transparent;
 }
 
 .Btn:hover svg{
-  right:43%;
-  margin: 0;
-  padding: 0;
-  border: none;
-  -webkit-transition-duration: .3s;
-          transition-duration: .3s;
+right:43%;
+margin: 0;
+padding: 0;
+border: none;
+-webkit-transition-duration: .3s;
+        transition-duration: .3s;
 }
 .Btn:active{
 -webkit-transform: translate(3px , 3px);
-    -ms-transform: translate(3px , 3px);
-        transform: translate(3px , 3px);
+  -ms-transform: translate(3px , 3px);
+      transform: translate(3px , 3px);
 -webkit-transition-duration: .3s;
-        transition-duration: .3s;
-    -webkit-box-shadow: 2px 2px 0px rgb(140, 32, 212);
-            box-shadow: 2px 2px 0px rgb(140, 32, 212);
-}
- */
+      transition-duration: .3s;
+  -webkit-box-shadow: 2px 2px 0px rgb(140, 32, 212);
+          box-shadow: 2px 2px 0px rgb(140, 32, 212);
+} 
