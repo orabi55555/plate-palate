@@ -4,14 +4,14 @@ const FoodSchema = new mongoose.Schema({
 
   title: { 
     type: String
-    , required: [true,"Title is required more than 3 characters and less than 50"] 
+    , required: [true,"Title is required "] 
     
     },
 
 
   summary: { 
     type: String, 
-    required: [true,"Summary is required more than 3 characters and less than 50"], 
+    required: [true, "summary is required"]
 
      },
 
@@ -21,7 +21,7 @@ const FoodSchema = new mongoose.Schema({
     },
   category: 
   { type: String
-    , required: [true,"Category is required more than 3 characters and less than 50"]
+    , required: [true,"Category is required "]
    },
   price: { 
     type: Number,
