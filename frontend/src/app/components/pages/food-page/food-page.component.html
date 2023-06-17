@@ -9,13 +9,13 @@
   <div class="details">
     <div class="header">
       <span class="name">
-        Burger
+        {{food.title}}
       </span>
       <span class="favorite">❤</span>
     </div>
     <div class="pricee">
       <span class="name">
-        Price: <span>500$</span>
+        Price: <span>{{food.price}} $</span>
       </span>
       <div class="rating">
         <span><i class="fa fa-star"></i></span>
@@ -38,21 +38,21 @@
     </div> -->
     <div class="tags">
       <a>
-        beaf
+        {{food.category}}
       </a>
-      <a>
+      <!-- <a>
         checken
       </a>
       <a>
         burger
-      </a>
+      </a> -->
     </div>
 
 
 
     <div class="origins">
       <span>
-        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal.
+        {{food.summary}}
       </span>
     </div>
 
