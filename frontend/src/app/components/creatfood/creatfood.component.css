@@ -1,4 +1,9 @@
- .container {
+#page-content-wrapper {
+  min-width: 0;
+  width: 100%;
+}
+/**************************************page style*****************************/
+.container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
@@ -148,4 +153,3 @@ input[type="file"]:hover{
   border: 1px solid white;
   color: white;
 }
-
