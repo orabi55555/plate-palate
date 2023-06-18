@@ -32,6 +32,7 @@ import { UpdateFoodComponent } from './components/update-food/update-food.compon
 import { DashboardComponent } from './components/pages/dashboard/dashboard.component';
 import { SidebarComponent } from './components/pages/sidebar/sidebar.component';
 import { DashboardFoodComponent } from './components/pages/dashboard-food/dashboard-food.component';
+import { NavbarComponent } from './components/pages/navbar/navbar.component';
 
 
 @NgModule({
@@ -65,6 +66,7 @@ import { DashboardFoodComponent } from './components/pages/dashboard-food/dashbo
     DashboardComponent,
     SidebarComponent,
     DashboardFoodComponent,
+    NavbarComponent,
 
   ],
 
