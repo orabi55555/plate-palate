@@ -33,7 +33,7 @@ import { DashboardComponent } from './components/pages/dashboard/dashboard.compo
 import { SidebarComponent } from './components/pages/sidebar/sidebar.component';
 import { DashboardFoodComponent } from './components/pages/dashboard-food/dashboard-food.component';
 import { NavbarComponent } from './components/pages/navbar/navbar.component';
-
+import { CartComponent } from './components/pages/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +67,7 @@ import { NavbarComponent } from './components/pages/navbar/navbar.component';
     SidebarComponent,
     DashboardFoodComponent,
     NavbarComponent,
-
+    CartComponent,
   ],
 
   imports: [
