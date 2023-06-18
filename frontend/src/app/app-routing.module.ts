@@ -25,9 +25,11 @@ import { DashboardFoodComponent } from './components/pages/dashboard-food/dashbo
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path:"home", component:HomeComponent  },
-  { path:'food/:id', component:FoodPageComponent },
+  
   { path: 'contact-us', component: ContactUsComponent },
   { path: 'about-us', component: AboutUsComponent },
+ 
+  { path:'food/:id', component:FoodPageComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'login', component: LoginPageComponent },
   { path: 'signup', component: SignupPageComponent },

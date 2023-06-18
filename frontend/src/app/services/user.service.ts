@@ -6,6 +6,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UserService {
+  logout() {
+    throw new Error('Method not implemented.');
+  }
 
 
   private baseUrl = 'http://localhost:7000';
@@ -14,7 +17,7 @@ export class UserService {
 
   getUserById(id: string): Observable<any> {
     console.log(`getUserById(${id})`);
-    return this.http.get(`${this.baseUrl}/api/profile/user/${id}`);
+    return this.http.get(`${this.baseUrl}/api/user/${id}`);
   }
 
 }

@@ -24,7 +24,7 @@ const userSchema = new Schema({
   },
   otp: {
     type: String,
-    required: true,
+    required: false,
     minlength: 6,
     maxlength: 6
   },
@@ -34,18 +34,18 @@ const userSchema = new Schema({
   },
   gender: {
     type: String,
-    required: true,
+    required: false,
     enum: ['male', 'female']
   },
   role: {
     type: String,
-    required: true,
+    required: false,
     enum: ['user', 'admin'],
     default: 'user'
   },
   mobile: {
     type: String,
-    required: true,
+    required: false,
     minlength: 10,
     maxlength: 10
   },

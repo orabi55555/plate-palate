@@ -17,23 +17,23 @@
                     class="form-control"
                     id="floatingUsername"
                     placeholder="Username"
-                    [formControlName]="'username'"
-                    [ngClass]="{ 'is-invalid': submitted && f['username'].errors }"
+                    [formControlName]="'user_name'"
+                    [ngClass]="{ 'is-invalid': submitted && f['user_name'].errors }"
                   />
                   <div
-                    *ngIf="submitted && f['username'].errors"
+                    *ngIf="submitted && f['user_name'].errors"
                     class="invalid-feedback"
                   >
-                    <div *ngIf="f['username'].errors['required']">
+                    <div *ngIf="f['user_name'].errors['required']">
                       Username is required
                     </div>
-                    <div *ngIf="f['username'].errors['minlength']">
+                    <div *ngIf="f['user_name'].errors['minlength']">
                       Username must be at least 3 characters
                     </div>
-                    <div *ngIf="f['username'].errors['maxlength']">
+                    <div *ngIf="f['user_name'].errors['maxlength']">
                       Username cannot exceed 20 characters
                     </div>
-                    <div *ngIf="f['username'].errors['pattern']">
+                    <div *ngIf="f['user_name'].errors['pattern']">
                       Username can only contain alphanumeric characters
                     </div>
                   </div>

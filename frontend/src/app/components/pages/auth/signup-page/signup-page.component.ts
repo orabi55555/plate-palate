@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AuthService } from 'src/app/services/auth.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-signup-page',
@@ -11,7 +14,7 @@ export class SignupPageComponent implements OnInit {
   signupForm!: FormGroup;
   submitted = false;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router) {}
 
   get f() {
     return this.signupForm.controls;
@@ -23,15 +26,21 @@ export class SignupPageComponent implements OnInit {
       return;
     }
     if (this.submitted) {
-      alert('Great! Signup successful.');
-    }
+      this.authService.register(this.signupForm.value).subscribe({
+        next: response => {console.log (response);
+          this.router.navigateByUrl('/home');
+        },
+
+      })
+      console.log (this.signupForm.value);    }
   }
 
   ngOnInit() {
     this.signupForm = this.formBuilder.group({
-      username: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(20), Validators.pattern('^[a-zA-Z0-9]+$')]],
+      user_name: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(20), Validators.pattern('^[a-zA-Z0-9]+$')]],
       email: ['', [Validators.required, Validators.email]],
       password: [
+
         '',
         [
           Validators.required,
@@ -43,6 +52,12 @@ export class SignupPageComponent implements OnInit {
         '',
         [Validators.required, this.matchPasswords.bind(this)],
       ],
+      // gender : ['', [Validators.required]],
+      // role : ['', [Validators.required]],
+      // mobile: ['', [Validators.required]],
+
+
+
     });
   }
 

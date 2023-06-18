@@ -28,7 +28,7 @@ router.post('/login', authController.login);
 router.post('/logout', authController.logout);
 router.post('/reset-password', authController.resetPassword);
 // Reset user password
-router.post('/reset-password', authController.resetPassword);
+// router.post('/reset-password', authController.resetPassword);
 
 // Change user password
 router.post('/reset-password/:resetToken', authController.changePassword);
@@ -51,7 +51,7 @@ router.delete('/:id', userController.deleteUserById);
 //   .route("/:id")
 //   .get( UserController.getUserById)
 
-router.get('/user/:id', userController.getUserById);
+router.get('/:id', userController.getUserById);
 
 
 module.exports = router;
