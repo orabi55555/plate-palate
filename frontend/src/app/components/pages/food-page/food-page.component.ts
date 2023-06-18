@@ -11,8 +11,6 @@ import { FoodService } from 'src/app/services/food.service';
 })
 export class FoodPageComponent implements OnInit {
   //food! : Food;
-
-
 //   constructor(activatedRoute:ActivatedRoute, foodService:FoodService) {
 //     activatedRoute.params.subscribe((params) => {
 //       if(params.id)
@@ -25,9 +23,6 @@ food:any;
 constructor(myRoute:ActivatedRoute,public myService: FoodService ){
   this.ID = myRoute.snapshot.params["id"];
 }
-
-
-
 ngOnInit(): void {
   this.myService.getFoodById(this.ID).subscribe(
     {

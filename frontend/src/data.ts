@@ -1,5 +1,6 @@
 import{Food} from './app/shared/models/Food';
 // import{Tag} from './app/shared/models/Tag';
+import{Order} from './app/shared/models/Order';
 
 
 export const sample_foods: Food[] = [
@@ -70,6 +71,45 @@ export const sample_foods: Food[] = [
     tags: ['FastFood', 'Pizza', 'Lunch'],
   },
 ]
+
+
+// export const sample_orders: Order[] = [
+//   {
+//     address: '123 Main St',
+//   quantity: 12,
+//   status: 'pending',
+//   totalPrice: 10.99,
+//   date: '2023-06-18',
+//   meals: [
+//     {
+//       mealID: '1',
+//       quantity: 1
+//     },
+//     {
+//       mealID: '2',
+//       quantity: 1
+//     }
+//   ]
+//      },
+//   {
+//     address: '123 Main St',
+//      quantity: 2,
+//      status: 'pending',
+//   totalPrice: 10.99,
+//   date: '2023-06-18',
+//   meals: [
+//     {
+//       mealID: '1',
+//       quantity: 1
+//     },
+//     {
+//       mealID: '2',
+//       quantity: 1
+//     }
+//   ]
+//   },
+ 
+// ]
 
 // export const sample_tags:Tag[] = [
 //   { name: 'All', count: 6 },

@@ -32,7 +32,11 @@ import { UpdateFoodComponent } from './components/update-food/update-food.compon
 import { DashboardComponent } from './components/pages/dashboard/dashboard.component';
 import { SidebarComponent } from './components/pages/sidebar/sidebar.component';
 import { DashboardFoodComponent } from './components/pages/dashboard-food/dashboard-food.component';
-
+import { NgxStarRatingComponent } from 'ngx-star-rating';
+import { NgxStripeModule } from 'ngx-stripe';
+import { StripeService, Elements, Element as StripeElement, ElementsOptions } from "ngx-stripe";
+import { CartPageComponent } from './components/pages/cart-page/cart-page.component';
+// import { DataService } from '../services/data.service';
 
 @NgModule({
   declarations: [
@@ -65,6 +69,7 @@ import { DashboardFoodComponent } from './components/pages/dashboard-food/dashbo
     DashboardComponent,
     SidebarComponent,
     DashboardFoodComponent,
+    CartPageComponent
 
   ],
 
@@ -73,7 +78,8 @@ import { DashboardFoodComponent } from './components/pages/dashboard-food/dashbo
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-   FormsModule
+    FormsModule,
+    NgxStripeModule.forRoot('pk_test_51NJxg7BGD9Zc1S0a9lRRzkGSf3CEKZA92KQeKgn6eSMs6hhgpoSRdpcYHbzjXklQvG4iAQ16blP5HoEOeIor1NDE00i2n4clcN')
 
   ],
   providers: [],

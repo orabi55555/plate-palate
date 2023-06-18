@@ -73,7 +73,25 @@ app.use("/api/Country", Country);
 
 //#endregion
 
+// const stripe = require('stripe') (config.stripeSecret);
+// router.post('/stripe/payment', (req, res, next) => {
+// stripe.charges.create({
+// amount: req.body.amount, currency: 'USD',
+// description: 'One-time setup fee',
+// source: req.body.token.id
+// }, (err, charge)=>{
+// if(err) {
+// }
+// next(err);
+// res.json({success: true, status: "Payments Successfull"})
+// })
+// });
+// console.log(req.body);
 
+//PAYMENT STRIPE
+app.post("./payment-page", async(req,res) => {
+  console.log(req.body);
+});
 
 //#region Database Connetion
 mongoose.connect(process.env.DATABASE);

@@ -1,5 +1,24 @@
+<div class="container">
+    <div class="content" *ngIf="order">
+      <!-- <h1>Order #{{order.id}}</h1> -->
+      <div class="details">
+        <!-- <div><strong>Date</strong> {{order.createdAt | date:'medium'}}</div> -->
+        <div><strong>Name</strong></div>
+        <div><strong>Address</strong> {{order.address}}</div>
+        <div><strong>Status</strong> {{order.status}}</div>
+        <div *ngIf="order.paymentId">
+          <strong>Payment ID</strong> {{order.paymentId}}
+        </div>
+      </div>
+  
+    </div>
+  
+    <div>
+    </div>
+  </div>
+  <!-- my vision -->
 
-<section class="page-header">
+<!-- <section class="page-header">
     <div class="overly"></div>   
     <div class="container">
       <div class="row justify-content-center">
@@ -121,7 +140,7 @@
     
     
     
- </main>
+ </main> -->
 
  <!-- ANTHER ONE -->
 
