@@ -27,7 +27,7 @@ mobile:any;
 
      
  
-      this.user_name = userData.firstName + userData.lastName;
+      this.user_name = userData.user_name;
       this.email = userData.email;
       this.gender = userData.gender;
       this.address = userData.address;
