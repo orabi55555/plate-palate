@@ -25,17 +25,16 @@ mobile:any;
       // parse the user object into a JavaScript object
       const userData = JSON.parse(user);
 
-     
- 
+
       this.user_name = userData.user_name;
       this.email = userData.email;
       this.gender = userData.gender;
       this.address = userData.address;
       this.mobile = userData.mobile;
 
-    
+
     }
-  
+
 
 }
 }
