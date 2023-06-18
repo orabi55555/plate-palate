@@ -57,6 +57,7 @@ authController.login = async (req, res, next) => {
     if (!user) {
       return res.status(401).json({ message: 'Invalid email or password' });
     }
+    console.log (user);
 
     // Check if password is correct
     const passwordMatch = await bcrypt.compare(password, user.password);
@@ -66,8 +67,10 @@ authController.login = async (req, res, next) => {
 
     // Generate access token
     const accessToken = jwt.sign({ userId: user._id }, process.env.ACCESS_TOKEN_SECRET);
+    console.log (accessToken);
+    
 
-    res.status(200).json({ message: 'Logged in successfully', accessToken });
+    res.status(200).json({ message: 'Logged in successfully', accessToken,user });
   } catch (err) {
     next(err);
   }
