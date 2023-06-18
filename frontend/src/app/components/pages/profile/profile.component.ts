@@ -26,7 +26,6 @@ mobile:any;
       const userData = JSON.parse(user);
 
 
-
       this.user_name = userData.user_name;
       this.email = userData.email;
       this.gender = userData.gender;
