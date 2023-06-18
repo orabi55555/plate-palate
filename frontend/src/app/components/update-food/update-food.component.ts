@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FoodService } from 'src/app/services/food.service';
 import{ Router } from '@angular/router';
+import { FormsModule } from '@angular/forms'; 
 @Component({
   selector: 'app-update-food',
   templateUrl: './update-food.component.html',
