@@ -28,6 +28,9 @@
   font-weight: bold;
   letter-spacing: 1.5px;
 }
+a{
+  color: rgb(226, 44, 44);
+}
 
 #sidebar-wrapper .sidebar-heading {
   padding: 0.875rem 1.25rem;
