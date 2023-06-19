@@ -25,10 +25,10 @@ import { DashboardFoodComponent } from './components/pages/dashboard-food/dashbo
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path:"home", component:HomeComponent  },
-  
+
   { path: 'contact-us', component: ContactUsComponent },
   { path: 'about-us', component: AboutUsComponent },
- 
+
   { path:'food/:id', component:FoodPageComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'login', component: LoginPageComponent },
@@ -40,6 +40,7 @@ const routes: Routes = [
   { path: 'payment-page', component: PaymentPageComponent },
   { path: 'checkout', component: CheckoutComponent },
   { path: 'orders', component: OrdersComponent },
+  // { path: 'recipe/:id', component: ClickedCountryRecipeComponent },
   { path: 'recipe/:id', component: ClickedCountryRecipeComponent },
   { path: 'payment', component: PaymentPageComponent },
   {path:'dashboard',component:DashboardComponent},

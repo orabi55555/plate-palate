@@ -33,6 +33,7 @@ import { DashboardComponent } from './components/pages/dashboard/dashboard.compo
 import { SidebarComponent } from './components/pages/sidebar/sidebar.component';
 import { DashboardFoodComponent } from './components/pages/dashboard-food/dashboard-food.component';
 import { NavbarComponent } from './components/pages/navbar/navbar.component';
+import { CountryService } from './services/country.service';
 
 
 @NgModule({
@@ -78,7 +79,7 @@ import { NavbarComponent } from './components/pages/navbar/navbar.component';
    FormsModule
 
   ],
-  providers: [],
+  providers: [CountryService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

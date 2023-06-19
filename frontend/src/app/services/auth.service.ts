@@ -2,6 +2,10 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
+import { from,lastValueFrom } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { catchError } from 'rxjs/operators';
+import { throwError } from 'rxjs';
 
 
 interface ApiResponse {
@@ -30,20 +34,22 @@ export class AuthService {
     return this.http.post<ApiResponse>(`${this.apiUrl}/login`, credentials).pipe(
       tap(response => {
         this.accessToken = response.accessToken || null;
-        localStorage.setItem('accessToken', response['token']);
+        this.accessToken = response.accessToken|| null ;
+        localStorage.setItem('accessToken', response['accessToken']);
         localStorage.setItem('user', JSON.stringify(response['user']));
       })
     );
   }
 
-  logout(): Observable<ApiResponse> {
-    return this.http.post<ApiResponse>(`${this.apiUrl}/logout`, null).pipe(
-      tap(() => {
-        this.accessToken = null;
-      })
-    );
+  logout() {
+    localStorage.removeItem('accessToken');
+    localStorage.removeItem('user');
+    this.accessToken = null;
+    window.location.href = '/';
+
   }
 
+  
   resetPassword(email: string): Observable<ApiResponse> {
     return this.http.post<ApiResponse>(`${this.apiUrl}/reset-password`, { email });
   }
