@@ -1,6 +1,24 @@
 const Country = require('../Models/CountryModel');
 class CountryController {
  
+// Controller function to get a specific country
+  async getCountry(req, res) {
+    const { countryId } = req.params;
+  
+    try {
+      // Find the country by its ID
+      const country = await Country.findById(countryId);
+  
+      if (!country) {
+        return res.status(404).json({ message: 'Country not found' });
+      }
+  
+      res.status(200).json({ country });
+    } catch (error) {
+      res.status(500).json({ error: error.message });
+    }
+  }
+  
   // Controller function to get all countries
   async getAllCountries(req, res) {
     try {

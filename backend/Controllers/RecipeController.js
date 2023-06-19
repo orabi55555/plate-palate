@@ -2,6 +2,29 @@ const Recipe = require("../Models/RecipeModel");
 const Country = require("../Models/CountryModel");
 
 class RecipeController {
+
+// Controller function to get a specific recipe
+async getRecipe(req, res) {
+  const { recipeId } = req.params;
+
+  try {
+    // Find the recipe by ID
+    const recipe = await Recipe.findById(recipeId);
+
+    if (!recipe) {
+      return res.status(404).json({ message: 'Recipe not found' });
+    }
+
+    res.status(200).json({
+      message: 'Recipe retrieved successfully',
+      recipe: recipe,
+    });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+}
+
+  
   // Controller function to retrieve recipes by country
 async getAllRecipes(req, res) {
     const { countryId } = req.params;

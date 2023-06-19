@@ -2,6 +2,9 @@ const express = require('express');
 const router = express.Router();
 const recipeController = require('../Controllers/RecipeController');
 
+// Route to get a specific recipe
+router.get('/:recipeId', recipeController.getRecipe);
+
 // Route to display all recipes for a specific country
 router.get('/:countryId/recipes', recipeController.getAllRecipes);
 
