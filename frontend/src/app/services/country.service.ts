@@ -10,8 +10,14 @@ export class CountryService {
 
   constructor(private http: HttpClient) {}
 
+  getCountryWithRecipes(countryId: string): Observable<any> {
+    const url = `${this.baseUrl}/${countryId}/getallrecipes`;
+    return this.http.get<any>(url);
+  }
+
   getAllCountries(): Observable<any> {
     const url = `${this.baseUrl}/countries/getall`;
     return this.http.get<any>(url);
   }
 }
+

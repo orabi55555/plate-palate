@@ -10,7 +10,9 @@ export class RecipeService {
 
   constructor(private http: HttpClient) { }
 
-  // getRecipesByCountry(countryId: string) {
+  // getRecipesByCountry(countryId: string) : Observable<any> {
+  //   console.log(`getRecipesByCountry(${countryId})`);
+
   //   return this.http.get<any[]>(`${this.baseUrl}/${countryId}/recipes`);
   // }
 
