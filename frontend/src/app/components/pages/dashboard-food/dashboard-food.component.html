@@ -1,44 +1,84 @@
-<app-sidebar></app-sidebar>
-<div class="container">
-    <div class="d-flex ">
-    <button class=" btn btn-success mt-5"
-     style="width: 140px;" >
-     <a  style="text-decoration: none; color:white"routerLink="creatfood">
-        add
-    </a>
-    </button>
-  
-<form (ngSubmit)="searchByCategory() " class="search">
-  <input type="text" placeholder="Search by category" [(ngModel)]="category" name="category">
-  <button type="submit">Search</button>
-</form>
-  
-</div>
-  <table class="table " style="max-width: 700px; height: 700px; margin: 30px auto;">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+<div class="d-flex" id="wrapper">
+  <app-sidebar></app-sidebar>
+  <div id="page-content-wrapper" style="background-image: url('../../../../assets/ff\ \(3\).jpg'); background-size: cover; background-repeat: no-repeat;">
+  <app-navbar></app-navbar>
 
-  
-    <thead class="table-dark text-center"> 
-      <tr>
-        <th scope="col"style="background-color: black">image</th>
-        <th scope="col" style="background-color: black">title</th>
-        <th scope="col"style="background-color: black">category</th>
-        <th scope="col"style="background-color: black">price</th>
-        <th scope="col"style="background-color: black">action</th>
-      
-      </tr>
-    </thead>
-    <tbody class="text-center" >
-      <tr *ngFor="let food of foods">
-        <td>{{food.image}}</td>
-        <td>{{food.title}}</td>
-        <td>{{food.category}}</td>
-        <td>{{food.price}}</td>
+      <div class="container-fluid px-4">
+        <div class="container col-8 justify-content-center align-items-center  flex-column">
+          <div class="d-flex justify-content-between align-items-center mb-5 ">
+            <button class="btn btn-success" routerLink="creatfood" style="width: 150px; height: 40px;">
+              <i class="bi bi-plus-lg me-2"></i>Add Food
+            </button>
 
-        <td><button class="btn  btn-info mx-4" style="background-color:#b2c7d3 "routerLink="/dashboard_food/update-food/{{food._id}}">update</button>
-            <button class="btn btn-danger" (click)="deleteFood(food._id)">delete</button>
-        </td>
-      </tr>
-      
-    </tbody>
-  </table>
+            <form (ngSubmit)="searchByCategory()" class="search">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search by category" [(ngModel)]="category" name="category">
+                <button type="submit" class="btn btn-outline-secondary">
+                  <span class="fa fa-search"></span>
+                </button>
+              </div>
+            </form>
+          </div>
+
+        <div class="row my-5">
+          <!-- <div class="col"> -->
+              <table class="table bg-white rounded shadow-sm  table-hover ">
+                  <thead>
+                      <tr style="text-align: center;">
+                          <th scope="col" [width]="10">Image</th>
+                          <th scope="col" [width]="15">Title</th>
+                          <th scope="col" [width]="15">Category</th>
+                          <th scope="col" [width]="15">Price</th>
+                          <th scope="col" [width]="30">Action</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let food of foods">
+                      <td  style="text-align: center;">
+                        <img  class="img-thumbnail" [src]="food.image">
+                      </td>
+                      <td  style="text-align: center;">{{ food.title }}</td>
+                      <td  style="text-align: center;">{{ food.category }}</td>
+                      <td  style="text-align: center;">{{ food.price }}</td>
+                  <td class="d-flex justify-content-center align-items-center mt-3">
+                    <button class="btn btn-info me-3" routerLink="/dashboard_food/update-food/{{ food._id }}" style="background-color: rgb(69, 125, 215)">
+                      Update
+                    </button>
+                    <button class="btn btn-danger" (click)="deleteFood(food._id)">
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+                  </tbody>
+              </table>
+          </div>
+
+        </div>
+
+      </div>
   </div>
+</div>
+<!-- /#page-content-wrapper -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  var el = document.getElementById("wrapper");
+  var toggleButton = document.getElementById("menu-toggle");
+
+  toggleButton.onclick = function () {
+      el.classList.toggle("toggled");
+  };
+</script>
+
+
+
+
+
+
+
+
+
+
+
+

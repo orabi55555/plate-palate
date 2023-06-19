@@ -34,6 +34,7 @@ export class AuthService {
     return this.http.post<ApiResponse>(`${this.apiUrl}/login`, credentials).pipe(
       tap(response => {
         this.accessToken = response.accessToken || null;
+        this.accessToken = response.accessToken|| null ;
         localStorage.setItem('accessToken', response['accessToken']);
         localStorage.setItem('user', JSON.stringify(response['user']));
       })

@@ -17,7 +17,7 @@ category: any;
     });
 
   }
- 
+
 
 
   searchByCategory() {

@@ -6,6 +6,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UserService {
+  logout() {
+    throw new Error('Method not implemented.');
+  }
 
 
   private baseUrl = 'http://localhost:7000';
