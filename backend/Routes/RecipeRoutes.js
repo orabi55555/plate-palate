@@ -6,7 +6,7 @@ const recipeController = require('../Controllers/RecipeController');
 router.get('/:recipeId', recipeController.getRecipe);
 
 // Route to display all recipes for a specific country
-router.get('/:countryId/recipes', recipeController.getAllRecipes);
+// router.get('/:countryId/recipes', recipeController.getAllRecipes);
 
 // Route to add a new recipe
 router.post('/create', recipeController.addRecipe);
