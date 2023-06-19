@@ -1,6 +1,5 @@
 const Cart = require("../Models/CartModel");
 
-// Get the user's cart by user ID
 exports.getCart = async (req, res) => {
   const { userId } = req.params;
 
