@@ -33,6 +33,9 @@ import { DashboardComponent } from './components/pages/dashboard/dashboard.compo
 import { SidebarComponent } from './components/pages/sidebar/sidebar.component';
 import { DashboardFoodComponent } from './components/pages/dashboard-food/dashboard-food.component';
 import { NavbarComponent } from './components/pages/navbar/navbar.component';
+import { CreaterecipeComponent } from './components/createrecipe/createrecipe.component';
+import { UpdateRecipeComponent } from './components/update-recipe/update-recipe.component';
+import { DashboardRecipeComponent } from './components/pages/dashboard-recipe/dashboard-recipe.component';
 
 
 @NgModule({
@@ -67,6 +70,9 @@ import { NavbarComponent } from './components/pages/navbar/navbar.component';
     SidebarComponent,
     DashboardFoodComponent,
     NavbarComponent,
+    CreaterecipeComponent,
+    UpdateRecipeComponent,
+    DashboardRecipeComponent,
 
   ],
 
