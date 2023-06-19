@@ -17,6 +17,8 @@ const userRouter=require("./Routes/UserRoutes");
 const foodRouter=require("./Routes/FoodRoutes");
 const Recipe=require("./Routes/RecipeRoutes");
 const Country=require("./Routes/CountryRoutes");
+const cartRoutes = require('./Routes/CartRoutes');
+const stripe = require('stripe')('sk_test_51N7xC8JE4XJyAewFAKBbMWTHt4CxD9pFGKiN2iDcLNyAotUtNandnrcPUlQk21hip66Mj3eL1otFahphkLuj8uYe00Bkkh20Tu');
 
 app.use(bodyParser.json());
 
@@ -71,10 +73,11 @@ app.use('/api/orders', ordersRoutes);
 app.use("/api/Recipe", Recipe);
 app.use("/api/Country", Country);
 // app.use("/recipes", Recipe);
+app.use('/api/cart', cartRoutes);
 
 //#endregion
 
-
+// Routes
 
 //#region Database Connetion
 mongoose.connect(process.env.DATABASE);

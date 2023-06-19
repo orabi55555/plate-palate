@@ -5,28 +5,28 @@ const OrderSchema = new mongoose.Schema({
     userID: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",
-        required: false,
+        required: true,
       },
       totalPrice: {
         type: Number,
-        required: false,
+        required: true,
       },
       status: {
         type: String,
-        required: false,
+        required: true,
       },
       date: {
         type: Date,
-        required: false,
+        required: true,
         default: Date.now,
       },
       quantity:{
         type: Number,
-        required: false,
+        required: true,
       },
       address:{
         type: String,
-        required: false,
+        required: true,
       },
 
       meals: [
@@ -34,7 +34,7 @@ const OrderSchema = new mongoose.Schema({
         mealID: {
           type: mongoose.Schema.Types.ObjectId,
          ref: "Food",
-          required: false,
+          required: true,
            },}
           ],   
           
