@@ -1,0 +1,31 @@
+<h1>Cart Page</h1>
+
+<div>
+  <h1>My Cart</h1>
+
+<ul>
+    <li>
+  <!-- <li *ngFor="let item of cart.items"> -->
+    <!-- {{item.foodId}} - {{item.quantity}} -->
+    <!-- <button (click)="removeFromCart(item.foodId)">Remove</button> -->
+    <!-- <input type="number" [value]="item.quantity" (input)="changeCartItemQuantity(item.foodId, $event.target.value)"> -->
+  </li>
+</ul>
+
+<!-- <form (submit)="addToCart(foodId.value, quantity.value)"> -->
+  <form>
+  <label>
+    Food ID:
+    <input type="text" #foodId required>
+  </label>
+  <!-- <label>
+    Quantity:
+    <inputtype="number" #quantity required>
+  </label> -->
+  <button type="submit">Add to Cart</button>
+</form>
+  <div class="checkout">
+    <a routerLink="/checkout">Proceed to Checkout</a>
+  </div>
+</div>
+
