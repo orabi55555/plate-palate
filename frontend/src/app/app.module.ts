@@ -33,9 +33,6 @@ import { DashboardComponent } from './components/pages/dashboard/dashboard.compo
 import { SidebarComponent } from './components/pages/sidebar/sidebar.component';
 import { DashboardFoodComponent } from './components/pages/dashboard-food/dashboard-food.component';
 import { NavbarComponent } from './components/pages/navbar/navbar.component';
-import { CartPageComponent } from './components/pages/cart-page/cart-page.component';
-import { StripeModule } from 'stripe-angular';
-import { environment } from '../environments/environment';
 
 
 @NgModule({
@@ -83,7 +80,7 @@ import { environment } from '../environments/environment';
    StripeModule.forRoot(environment.stripePublishableKey)
 
   ],
-  providers: [],
+  providers: [CountryService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

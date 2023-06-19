@@ -13,10 +13,10 @@ const app = express();
 const User = require("./Models/UserModel");
 const accessTokenSecret = process.env.ACCESS_TOKEN_SECRET;
 const PORT = process.env.PORT || 7000;
-const userRouter=require("./Routes/UserRoutes");
 const foodRouter=require("./Routes/FoodRoutes");
 const Recipe=require("./Routes/RecipeRoutes");
 const Country=require("./Routes/CountryRoutes");
+const cartRoutes=require("./Routes/CartRoutes");
 
 app.use(bodyParser.json());
 
@@ -63,6 +63,7 @@ app.get("/", (req, res) => {
 // Routes
 
 app.use("/api/v1/users", userRoutes);
+app.use("/api/v1/carts",cartRoutes); 
 
 
 app.use("/api/Food", foodRouter);

@@ -2,34 +2,64 @@ const Recipe = require("../Models/RecipeModel");
 const Country = require("../Models/CountryModel");
 
 class RecipeController {
-  // Controller function to retrieve recipes by country
-async getAllRecipes(req, res) {
-    const { countryId } = req.params;
-  
-    try {
-      // Check if the country exists in the database
-      const country = await Country.findById(countryId);
-      if (!country) {
-        return res.status(404).json({ message: 'Country not found' });
-      }
-  
-      // Retrieve the recipes for the specified country
-      const recipes = await Recipe.find({ country: countryId });
-  
-      if (recipes.length === 0) {
-        return res.status(200).json({
-          message: 'No recipes found for this country',
-        });
-      }
-  
-      res.status(200).json({
-        message: 'Recipes retrieved successfully',
-        recipes: recipes,
-      });
-    } catch (error) {
-      res.status(500).json({ error: error.message });
+
+// Controller function to get a specific recipe
+async getRecipe(req, res) {
+  const { recipeId } = req.params;
+
+  try {
+
+    console.log('Recipe ID:', recipeId);
+    // Find the recipe by ID
+    const recipe = await Recipe.findById(recipeId);
+    console.log('Recipe:', recipe);
+
+    if (!recipe) {
+      return res.status(404).json({ message: 'Recipe not found' });
     }
+
+    res.status(200).json({
+      message: 'Recipe retrieved successfully',
+      recipe: recipe,
+    });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
   }
+}
+
+  
+  // Controller function to retrieve recipes by country
+// async getAllRecipes(req, res) {
+//     const { countryId } = req.params;
+  
+//     try {
+//       console.log('Country ID:', countryId);
+//       // Check if the country exists in the database
+//       const country = await Country.findById(countryId);
+//       // console.log(countryId);
+//       if (!country) {
+//         return res.status(404).json({ message: 'Country not found' });
+//       }
+  
+//       // Retrieve the recipes for the specified country
+//       const recipes = await Recipe.find({ country: countryId });
+//       // console.log(recipes);
+//       console.log('Recipes:', recipes);
+  
+//       if (recipes.length === 0) {
+//         return res.status(200).json({
+//           message: 'No recipes found for this country',
+//         });
+//       }
+  
+//       res.status(200).json({
+//         message: 'Recipes retrieved successfully',
+//         recipes: recipes,
+//       });
+//     } catch (error) {
+//       res.status(500).json({ error: error.message });
+//     }
+//   }
   
   
 
