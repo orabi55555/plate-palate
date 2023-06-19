@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-//import { CartService } from 'src/app/services/cart.service';
+import { CartService } from 'src/app/services/cart.service';
 //import { Cart } from 'src/app/shared/models/Cart';
 
 @Component({
@@ -8,23 +8,28 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-  //cart!: Cart;
-  // constructor(private cartService: CartService) {
-  //   this.cartService.getCartObservable().subscribe((cart) => {
-  //     this.cart = cart;
-  //   })
-  //  }
-
-  ngOnInit(): void {
+  userId: string = '';
+  cart: any;
+  constructor(private cartService: CartService) { }
+  ngOnInit(): void {// Replace with actual user ID
+     this.userId = '123'; 
+    this.getCart();
+  }
+  getCart(): void {
+    this.cartService.getCart(this.userId)
+      .subscribe(cart => this.cart = cart);
+  }
+  addToCart(foodId: string, quantity: number): void {
+    this.cartService.addToCart(this.userId, foodId, quantity)
+      .subscribe(cart => this.cart = cart);
+  }
+  removeFromCart(foodId: string): void {
+    this.cartService.removeFromCart(this.userId, foodId)
+      .subscribe(cart => this.cart = cart);
   }
 
-  // removeFromCart(cartItem:CartItem){
-  //   this.cartService.removeFromCart(cartItem.food.id);
-  // }
-
-  // changeQuantity(cartItem:CartItem,quantityInString:string){
-  //   const quantity = parseInt(quantityInString);
-  //   this.cartService.changeQuantity(cartItem.food.id, quantity);
-  // }
-
+  changeCartItemQuantity(foodId: string, quantity: number): void {
+    this.cartService.changeCartItemQuantity(this.userId, foodId, quantity)
+      .subscribe(cart => this.cart = cart);
+  }
 }

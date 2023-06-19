@@ -20,6 +20,7 @@ import { CreatfoodComponent } from './components/creatfood/creatfood.component';
 import { UpdateFoodComponent } from './components/update-food/update-food.component';
 import { DashboardComponent } from './components/pages/dashboard/dashboard.component';
 import { DashboardFoodComponent } from './components/pages/dashboard-food/dashboard-food.component';
+import { CartComponent } from './components/pages/cart/cart.component';
 
 
 const routes: Routes = [
@@ -44,7 +45,7 @@ const routes: Routes = [
   { path: 'payment', component: PaymentPageComponent },
   {path:'dashboard',component:DashboardComponent},
   {path:'dashboard_food',component:DashboardFoodComponent},
-  // { path: 'track', component: OrderTrackPageComponent },
+  { path: 'cart', component: CartComponent },
   { path: 'foodrecipe/:id', component: FoodrecipeComponent },
   { path: '**', component: NotFoundComponent },
 

@@ -34,6 +34,9 @@ import { SidebarComponent } from './components/pages/sidebar/sidebar.component';
 import { DashboardFoodComponent } from './components/pages/dashboard-food/dashboard-food.component';
 import { NavbarComponent } from './components/pages/navbar/navbar.component';
 import { CartComponent } from './components/pages/cart/cart.component';
+import { StripeModule } from 'stripe-angular';
+import { environment } from '../environments/environment';
+//import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   declarations: [
@@ -75,7 +78,9 @@ import { CartComponent } from './components/pages/cart/cart.component';
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-   FormsModule
+    FormsModule,
+    StripeModule.forRoot(environment.stripePublishableKey)
+
 
   ],
   providers: [],
