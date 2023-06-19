@@ -1,0 +1,49 @@
+#page-content-wrapper {
+  min-width: 0;
+  width: 100%;
+}
+
+/* td img {
+  height: 60px !important;
+  width: 60px !important;
+  border-radius: 100% !important;
+  border: 5px solid #e6e7e8 !important;
+} */
+
+#count{
+  position: relative;
+  animation: moveUpDown 1s ease-in-out infinite alternate;
+}
+@keyframes moveUpDown {
+  from {
+    top: 0;
+  }
+  to {
+    top: 10px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
