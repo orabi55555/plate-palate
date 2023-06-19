@@ -160,6 +160,42 @@ authController.logout = async (req, res, next) => {
     }
   };
   
+  authController.googleSignIn = async (req, res, next) => {
+    try {
+      const { tokenId } = req.body;
+  
+      const response = await client.verifyIdToken({
+        idToken: tokenId,
+        requiredAudience: process.env.GOOGLE_CLIENT_ID,
+      });
+  
+      const { email, name } = response.payload;
+  
+      let user = await User.findOne({ email });
+      if (!user) {
+        // create a new user if one doesn't exist
+        const password = crypto.randomBytes(16).toString('hex');
+        const hashedPassword = await bcrypt.hash(password, 10);
+  
+        user = new User({
+          user_name: name,
+          email,
+          password: hashedPassword,
+        });
+  
+        await user.save();
+      }
+  
+      // Generate access token
+      const accessToken = jwt.sign({ userId: user._id }, process.env.ACCESS_TOKEN_SECRET);
+  
+      res.status(200).json({ message: 'Google sign-in successful', accessToken, user });
+    } catch (err) {
+      next(err);
+    }
+  };
+  
+
 
 
 

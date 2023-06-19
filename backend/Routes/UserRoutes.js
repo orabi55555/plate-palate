@@ -13,12 +13,9 @@ const app = express();
 app.use(bodyParser.json());
 
 
+//googleroutes
+router.post('/auth/google', authController.googleSignIn);
 
-// Google Signup route
-// router.post('/auth/google/signup', authController.googleSignup);
-
-// Google Login route
-// router.post('/auth/google/login', authController.googleLogin);
 
 
 
