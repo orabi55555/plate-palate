@@ -1,0 +1,502 @@
+/* SCI Responsive Header w/o dropdown */
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+/* reset default */
+* {
+  margin: 0;
+  padding: 0;
+  /* redefine width to include padding and border, instead of only content area   */
+  box-sizing: border-box;
+}
+
+.header {
+  /* TODO make header occupy the whole row with display block */
+  display: block;
+  /* TODO make width 100% */
+  width: 100%;
+  /* TODO text align right   */
+  text-align: right;
+  /* rgba function for red/green/blue/transparency   */
+  background-color: rgba(135, 233, 238);
+}
+
+.header > .search {
+  display: none;
+}
+
+/* hide checkbox and label */
+.header > input,
+.header > label
+{
+  /* TODO use display none to hide */
+  display: none;
+}
+
+.header > .nav {
+  /* TODO make navbar display inline-block */
+  display: inline-block;
+  /* TODO make width 100%   */
+  width: 90%;
+  /* TODO make padding 16px */
+  padding: 14px;
+}
+
+.header > .nav > .user-group {
+  /* TODO make user-group links and quick-access links share with row using inline-block  */
+  display: inline-block;
+  /* TODO make user-group width 68% */
+  width: 67.5%;
+  /* TODO align text to right   */
+  text-align: left;
+}
+
+.header > .nav > .quick-access > li,
+.header > .nav > .user-group > li
+{
+  /* TODO make links side by side using inline-block */
+  display: inline-block;
+  /* TODO make left/right padding 4px */
+  padding: 0 26px;
+}
+
+.header > .nav > .quick-access > li > a,
+.header > .nav > .user-group > li > a
+{
+  /* TODO make all text color white */
+  color: black;
+  /* TODO set font type sans-serif */
+  font-family: Avantgarde;
+  /* TODO set font size smaller 75% */
+  font-size: 100%;
+  /* TODO set texts to be uppercase */
+  text-transform: uppercase;
+  /* TODO remove underline */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* add code for screen less than 700px */
+@media (max-width: 650px) {
+
+  .header > #nav + label + .nav {
+    /* TODO hide the navbar when checkbox is unchecked, using display: none */
+    display: none;
+    /* TODO set width 320px and padding 16px   */
+    width: 175px;
+    padding: 14px;
+
+    background-color: AliceBlue;
+  }
+
+  /* the key here is the :checked selector which only select checkbox when it is checked */
+  .header > #nav:checked + label + .nav {
+    /* TODO show navbar when checkbox is checked, using display: block */
+    display: block;
+  }
+
+
+  .header > .nav > .user-group {
+    /* TODO user-group does not share row with anyone, using display: block   */
+    display: block;
+    /* TODO set its width 100%   */
+    width: 100%;
+    /* TODO align text on the left   */
+    text-align: right;
+  }
+
+  .header > .nav > .user-group > li {
+    /* TODO place user-group links vertically, using display: block */
+    display: block;
+    /* TODO add margin top/right/bottom/left with 16px/4px/0/12px */
+    margin: 16px 0px 0px 12px;
+    /* TODO make font larger 130%    */
+    font-size: 130%;
+  }
+
+  /* TODO dropdown overlap other content. Use position   */
+  .header > .nav {
+    /* TODO position absolute */
+    position: absolute;
+    /* TODO top/right as 48px/0     */
+    top: 48px;
+    right: 0;
+    /* TODO z-index 100     */
+    z-index: 100;
+    /* TODO text align to left */
+    text-align: left;
+  }
+
+  /* make label as icon   */
+  .header > label {
+    display: inline-block;
+    width: 52px;
+    height: 52px;
+    padding: 16px;
+
+    color: black;
+  }
+
+  /* change text color to be black   */
+  .header > .nav > .quick-access > li > a,
+  .header > .nav > .user-group > li > a
+  {
+    color: black;
+  }
+}
+
+
+/* Slideshow */
+
+/* rset defaults */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*slideshow*/
+.slideshow {
+  /* TODO set the whole slidshow as a block */
+  display: block;
+  /* TODO set it as 100% wide and 840px high   */
+  width: 100%;
+  height: 840px;
+  /* TODO use "position: relative" to choose slideshow tag as coordinate origin for labels so they can be positioned on top of slide  */
+  position: relative;
+  /* hide anything beyond the border */
+  overflow: hidden;
+}
+
+/*slide*/
+.slide {
+  /* TODO hide all slides using display: none   */
+  display: none;
+  /* TODO set 100% wide and 100% high for each slide   */
+  width: 100%;
+  height: 100%;
+  /* hide anything beyond the border   */
+  overflow: hidden;
+}
+
+/*.slideshow > input*/
+.slideshow > input {
+  /* TODO hide radio button, instead we will use label to check/uncheck it, using display: none; */
+  display: none;
+}
+
+/*.slideshow > input:checked + label + .slide*/
+.slideshow > input:checked + label + .slide {
+  /* TODO only show slide if the radio button in front of it is checked, using :checked selector and display: block; */
+  display: block;
+}
+
+/*.slideshow > label*/
+.slideshow > label {
+  /* TODO use display: inline-block so labels will be side by side and share the row   */
+  display: inline-block;
+  /* TODO set width and height to be 8px so it looks like a small square button   */
+  width: 8px;
+  height: 8px;
+  /* TODO set label position: absolute and use bottome: 140px so they will be placed on top of slides at the bottom part of slideshow  */
+  position: absolute;
+  bottom: 180px;
+  /* TODO set z-index: 100, so it will be on top of the slides instead of behind them   */
+  z-index: 100;
+  /* make button lightgrey even it has no text content   */
+  background-color: lightgrey;
+}
+
+/* highlight checked button */
+.slideshow > input:checked + label {
+  background-color: white;
+}
+
+/* set differnt left: value to make labels position horizontally */
+.slideshow > label:nth-of-type(1) {
+  left: 75px;
+}
+.slideshow > label:nth-of-type(2) {
+  /* TODO set a differnt left value */
+  left: 100px;
+}
+.slideshow > label:nth-of-type(3) {
+  /* TODO set a differnt left value */
+  left: 125px;
+}
+
+/* set video and img inside of slideshow to be 100% high of its parent and hide anything outside of its border */
+.slide video, .slide img {
+  height: 100%;
+  overflow: hidden;
+}
+
+/*.slide > span*/
+.slide > span {
+  /* TODO set title to be 300px wide   */
+  width: 600px;
+  /* TODO use absolute position to place title text 440px from bottom and 60px from left   */
+  position: absolute;
+  bottom: 340px;
+  left: 60px;
+  /* set text color and font size   */
+  color: white;
+  font-size: 280%;
+}
+
+/* make the link as a square box */
+.slide > a {
+  /* TODO set display: block;   */
+  display: block;
+  /* TODO make it 104px wide and high   */
+  width: 90px;
+  height: 80px;
+  /* TODO make 14px padding   */
+  padding: 14px;
+  /* TODO add 5px solid white border   */
+  border: 5px solid white;
+  /* TODO use absolute position to place it 220px from bottom and 60px from left   */
+  position: absolute;
+  bottom: 220px;
+  left: 60px;
+  /* set font and text style   */
+  color: white;
+  font-family: sans-serif;
+  font-size: 120%;
+  text-decoration: none;
+}
+
+/* Slideshow Arrow Animations (sample code taken from a helpful individual) */
+.pic {
+  width: 71%;
+  height: 51vh;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.button {
+  position: absolute;
+  top: 75%;
+  left: 10%;
+  height: 60px;
+  width: 100px;
+  background-color: white;
+  margin:60px
+}
+
+.button:before {
+  content: "";
+  width: 25px;
+  height: 2px;
+  background: black;
+  position: absolute;
+  top: 50%;
+  margin-top: -1px;
+  right: 24px;
+  transition: all 0.7s ease;
+}
+
+.button:hover:before {
+  right: 34px;
+  width: 35px;
+}
+
+.button:after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-color: transparent transparent transparent #000000;
+  position: absolute;
+  top: 50%;
+  margin-top: -5px;
+  right: 20px;
+  transition: all 0.3s ease;
+}
+
+.button:hover:after {
+  right: 34px;
+  right: 30px;
+}
+
+
+/*Text Row */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.row {
+  /* TODO set display and width to take the whole row */
+  display: block;
+  width: 100%;
+}
+
+.row > a {
+  /* TODO set display and width so each link take 20% */
+  display: inline-block;
+  width: 100%;
+  /* TODO use -4px rigth margin to remove gap   */
+  margin-right: -4px;
+  /* TODO top/bottom padding 32px   */
+  padding: 14px 0 16px 0;
+
+
+  /* TODO align vertically at top */
+  vertical-align: top;
+  /* TODO white text color with #c03 background color */
+  color: black;
+  background-color: rgb(135, 233, 238);
+  font-weight: bold;
+  font-size: 30px;
+
+  /* TODO sans-serif font with text align in center */
+  font-family: Avantgarde;
+  text-align: center;
+
+  /* TODO remove underline and make all uppercase */
+  text-decoration: none;
+}
+
+
+/* Responsive Info */
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+/* reset defaults */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* complete CSS code based on TODO comments */
+
+.info > .info-box {
+  /* TODO each box share row with 50% width, 600px height */
+  display: inline-block;
+  width: 50%;
+  height: 600px;
+  /* TODO remove gap with -4px margin right   */
+  margin-right: -4px;
+  /* TODO padding 200px/32px/16px/16px   */
+  padding: 270px 32px 16px 16px;
+  /* TODO vertical align top  */
+  vertical-align: top;
+  /* TODO set background image size auto 100% */
+  background-size: auto 100%;
+  /* TODO do not repeat background image   */
+  background-repeat: no-repeat;
+  /* TODO position background image in the center  */
+  background-position: center center;
+  /* TODO remove underline using text-decoration   */
+  text-decoration: none;
+  /* TODO position as relative since button position depends on it */
+  position: relative;
+  /* This will create animated effect, more details later  */
+  transition: background-size ease-in-out 1s;
+}
+
+.info > .info-box:hover {
+  /* TODO make background image bigger when mouse hover over   */
+  background-size: auto 110%;
+  /* This will create animated effect, more details later  */
+  transition: background-size ease-in-out .5s;
+}
+
+/* set text content to be white and vertically one after another */
+.info > .info-box > span,
+.info > .info-box > div
+{
+  /* TODO display block   */
+  display: block;
+  /* TODO margin 16px   */
+  margin: 16px;
+  /* TODO text color white   */
+  color: white;
+}
+
+/* make title text bigger */
+.info > .info-box > span:first-child {
+  /* TODO set font size 200%   */
+  font-size: 200%;
+  /* TODO use sans-serif font   */
+  font-family: Avantgarde;
+  /* TODO make all uppercase   */
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+/* make detail text a little larger */
+.info > .info-box > span:nth-child(2) {
+  /* TODO font size 120%   */
+  font-size: 120%;
+}
+
+/* make learn more look like a square button */
+.info > .info-box > .button {
+  /* TODO display inline block   */
+  display: inline-block;
+  /* TODO 32px padding */
+  padding: 20px;
+  /* TODO create a 3px wide white border   */
+  border: 3px solid white;
+  /* TODO hide any overflow   */
+  overflow: hidden;
+  /* TODO set button text size 120%   */
+  font-size: 120%;
+  /* TODO set font as sans-serif   */
+  font-family: Avantgarde;
+  /* TODO make font be bold   */
+  font-weight: bold;
+  /* TODO position absolute button from bottom 48px  */
+  position: absolute;
+  bottom: 48px;
+}
+
+/* Adjust padding for button in second box */
+.info > .info-box:nth-child(2) > .button {
+  /* TODO padding 44px/10px  */
+  padding: 44px 10px;
+}
+
+/* set different background image and color for different infobox */
+.info > .info-box:nth-of-type(1) {
+  background-image: url("https://images.squarespace-cdn.com/content/v1/5db239c14644543229502b74/1606542456681-87NHWKYF1IDKZCBZU8VS/ke17ZwdGBToddI8pDm48kLkXF2pIyv_F2eUT9F60jBl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iyqMbMesKd95J-X4EagrgU9L3Sa3U8cogeb0tjXbfawd0urKshkc5MgdBeJmALQKw/Chinese+Egg+Tomato+Stir+Fry?format=2500w");
+}
+.info > .info-box:nth-of-type(2) {
+  background-image: url("https://www.kitchensanctuary.com/wp-content/uploads/2019/07/Pad-Thai-wide-FS-29.jpg");
+}
+.info > .info-box:nth-of-type(3) {
+  background-image: url("https://redhousespice.com/wp-content/uploads/2017/05/Zha-Jiang-Mian-landscape4.jpg");
+}
+.info > .info-box:nth-of-type(4) {
+  background-image: url("https://images.unsplash.com/photo-1596352670192-5a95e357df7b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80");
+}
+
+/* add code for screen less than 960px */
+@media (max-width: 960px) {
+  .info > .info-box {
+    /* TODO each box 100% width     */
+    width: 100%;
+    /* TODO set background size 200% auto    */
+    background-size: 200% auto;
+  }
+  .info > .info-box:hover {
+    /* TODO set background size 220% auto    */
+    background-size: 220% auto;
+  }
+}
+
+
+/* Bottom Bar ("footer") */
+.footer {
+  /* TODO take whole row and 32px/16px padding */
+  display: block;
+  width: 100%;
+  padding: 32px 16px;
+  background-color: rgba(135, 233, 238);
+
+}
+
+
+
