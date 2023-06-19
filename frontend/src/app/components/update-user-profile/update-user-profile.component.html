@@ -50,26 +50,26 @@
       <div class="col-md-12 personal-info">
         <h3>Personal info</h3><br>
 
-        <form  class="form-horizontal" role="form" enctype="multipart/form-data" >
+        <form  class="form-horizontal" role="form" enctype="multipart/form-data" (ngSubmit)="onSubmit()">
 
           <div class="form-group">
             <label class="col-md-2 control-label">User name:</label>
             <div class="col-md-8 mt-2">
-              <input class="form-control" type="text" class="field" value="Donia" name="username" #username>
+              <input class="form-control" type="text" class="field"  name="username" [(ngModel)]="user.user_name" #username>
             </div>
           </div>
           <br>
           <div class="form-group">
             <label class="col-md-2 control-label">Email:</label>
             <div class="col-md-8 mt-2">
-              <input class="form-control" type="email" class="field" value="donia@gmail.com"  name="email" #email>
+              <input class="form-control" type="email" class="field" [(ngModel)]="user.email" name="email" #email>
             </div>
             <br>
           </div>
           <div class="form-group">
-            <label class="col-md-2 control-label">Password:</label>
+            <label class="col-md-2 control-label">Phone:</label>
             <div class="col-md-8 mt-2">
-              <input class="form-control" type="Password" class="field" value="123456"  name="password" #password>
+              <input class="form-control" type="text" class="field" [(ngModel)]="user.mobile"  name="password" #password>
             </div>
             <br>
           </div>

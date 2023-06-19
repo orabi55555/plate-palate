@@ -10,6 +10,8 @@ const ordersRoutes = require('./Routes/OrderRoutes');
 const authController = require("./Controllers/AuthController");
 const userRoutes = require("./Routes/UserRoutes");
 const app = express();
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 const User = require("./Models/UserModel");
 const accessTokenSecret = process.env.ACCESS_TOKEN_SECRET;
 const PORT = process.env.PORT || 7000;

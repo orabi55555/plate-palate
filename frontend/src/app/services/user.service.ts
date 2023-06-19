@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -17,7 +17,18 @@ export class UserService {
 
   getUserById(id: string): Observable<any> {
     console.log(`getUserById(${id})`);
-    return this.http.get(`${this.baseUrl}/api/user/${id}`);
+    return this.http.get(`${this.baseUrl}/api/v1/users/${id}`);
+  }
+
+  // updateUserById(id: string, user: any, token:any): Observable<any> {
+  //   const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+  //   return this.http.put(`${this.baseUrl}api/user/${user.id}`, user, {headers});
+  // }
+
+
+  updateUserById(id: string, data: any): Observable<any> {
+      
+    return this.http.put(`${this.baseUrl}api/v1/users/${id}`, data);
   }
 
 }
