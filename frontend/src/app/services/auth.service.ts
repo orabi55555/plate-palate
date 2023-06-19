@@ -41,72 +41,15 @@ export class AuthService {
     );
   }
 
-  // logout(): Observable<ApiResponse> {
-  //   return this.http.post<ApiResponse>(`${this.apiUrl}/logout`, null).pipe(
-  //     tap(() => {
-  //       this.accessToken = null;
-  //     })
-  //   );
-  // }
+  logout() {
+    localStorage.removeItem('accessToken');
+    localStorage.removeItem('user');
+    this.accessToken = null;
+    window.location.href = '/';
 
-  // async logout(): Promise<void> {
-  //   // Set the authorization token in the header
-  //   const headers = { Authorization: `Bearer ${this.accessToken}` };
+  }
 
-  //   // Define the API base URL
-  //   const apiUrl = 'http://localhost:7000/api/v1/users';
-
-  //   // Send a POST request to the server's logout endpoint with the authorization header
-  //   await lastValueFrom(
-  //     from(
-  //       this.http.post<any>(`${apiUrl}/logout`, {}, { headers })
-  //     ).pipe(
-  //       map(response => {
-  //         localStorage.removeItem('user');
-  //         this.accessToken = null;
-  //       }),
-  //       catchError(error => {
-  //         console.error(`An error occurred: ${error.message}`);
-  //         return throwError(error);
-  //       })
-  //     )
-  //   );
-  // }
-
-
-  // async logout(): Promise<void> {
-  //   // Set the authorization token in the header
-  //   const headers = { Authorization: `Bearer ${this.accessToken}` };
-
-  //   // Send a POST request to the server's logout endpoint with the authorization header
-  //   await lastValueFrom(
-  //     from(
-  //       this.http.post<any>(`${this.apiUrl}/logout`, {}, { headers })
-  //     ).pipe(
-  //       map(response => {
-  //         localStorage.removeItem('user');
-  //         this.accessToken = null; // Move this line here
-  //       }),
-  //       catchError(error => {
-  //         console.error(`An error occurred: ${error.message}`);
-  //         return throwError(error);
-  //       })
-  //     )
-  //   );
-  // }
-
-  // async logout(): Promise<void> {
-  //   // Send a POST request to the server's logout endpoint
-  //   await lastValueFrom(from(this.http.post<any>(`${this.apiUrl}/logout`, {}))
-  //     .pipe(
-  //       map(response => {
-  //         this.accessToken = null;
-  //         localStorage.removeItem('user');
-  //       })
-  //     )
-  //   );
-  // }
-
+  
   resetPassword(email: string): Observable<ApiResponse> {
     return this.http.post<ApiResponse>(`${this.apiUrl}/reset-password`, { email });
   }

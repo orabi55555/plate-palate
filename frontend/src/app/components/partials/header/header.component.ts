@@ -23,15 +23,9 @@ user: any;
         console.log(user);
       });
 }
-
-// logout() {
-//   // Call the logout method on the UserService
-//   this.AuthService.logout().then(() => {
-//     // Redirect the user to the login page
-//     window.location.href = '/login';
-//     console.log("loggedout");
-//   });
-// }
+logout() {
+  this.AuthService.logout();
+}
 
 
 }
