@@ -1,0 +1,41 @@
+/* CSS for the country and recipes container */
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.recipes-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.recipe {
+  width: 300px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.recipe h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.recipe img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.recipe p {
+  font-size: 14px;
+}
+
+/* CSS for the "No recipes" message */
+.no-recipes {
+  font-size: 16px;
+  margin-top: 20px;
+}
