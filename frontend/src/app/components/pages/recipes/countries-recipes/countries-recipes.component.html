@@ -7,63 +7,17 @@
       </div>
       <div class="d-flex me-5 justify-content-end">
         <hr class="center-ball" />
-        <h4 class="welcome-logo">Recipes</h4>
+        <h4 class="welcome-logo">Countries to explore food all over the world</h4>
       </div>
       <div class="paragraph-container container px-5 py-3">
-
-  <div class="row justify-content-center country-section">
-    <div class="col-12 col-sm-8 col-md-6 col-lg-4 mb-3">
-      <a href="recipe/:id" class="d-block rounded-circle shadow-sm country-icon">
-        <img src="https://flagcdn.com/64x48/us.png" alt="USA Flag">
-      </a>
-    </div>
-
-
-<div class="col-12 col-sm-8 col-md-6 col-lg-4 mb-3">
-      <a href="recipe/:id" class="d-block rounded-circle shadow-sm country-icon">
-        <img src="https://flagcdn.com/64x48/jp.png" alt="Japan Flag">
-      </a>
-    </div>
-    <div class="col-12 col-sm-8 col-md-6 col-lg-4 mb-3">
-      <a href="recipe/:id" class="d-block rounded-circle shadow-sm country-icon">
-        <img src="https://flagcdn.com/64x48/fr.png" alt="France Flag">
-      </a>
-    </div>
-    <div class="col-12 col-sm-8 col-md-6 col-lg-4 mb-3">
-      <a href="recipe/:id" class="d-block rounded-circle shadow-sm country-icon">
-        <img src="https://flagcdn.com/64x48/br.png" alt="Brazil Flag">
-      </a>
-    </div>
-    <div class="col-12 col-sm-8 col-md-6 col-lg-4 mb-3">
-      <a href="recipe/:id" class="d-block rounded-circle shadow-sm country-icon">
-        <img src="https://flagcdn.com/64x48/eg.png" alt="Egypt Flag">
-      </a>
-    </div>
-    <div class="col-12 col-sm-8 col-md-6 col-lg-4 mb-3">
-      <a href="recipe/:id" class="d-block rounded-circle shadow-sm country-icon">
-        <img src="https://flagcdn.com/64x48/in.png" alt="India Flag">
-      </a>
-    </div>
-    <div class="col-12 col-sm-8 col-md-6 col-lg-4 mb-3">
-      <a href="recipe/:id" class="d-block rounded-circle shadow-sm country-icon">
-        <img src="https://flagcdn.com/64x48/ca.png" alt="Canada Flag">
-      </a>
-    </div>
-    <div class="col-12 col-sm-8 col-md-6 col-lg-4 mb-3">
-      <a href="recipe/:id" class="d-block rounded-circle shadow-sm country-icon">
-        <img src="https://flagcdn.com/64x48/ru.png" alt="Russia Flag">
-      </a>
-    </div>
-    <div class="col-12 col-sm-8 col-md-6 col-lg-4 mb-3">
-      <a href="recipe/:id" class="d-block rounded-circle shadow-sm country-icon">
-        <img src="https://flagcdn.com/64x48/sa.png" alt="Saudi Arabia Flag">
-      </a>
-    </div>
-    <div class="col-12 col-sm-8 col-md-6 col-lg-4 mb-3">
-      <a href="recipe/:id" class="d-block rounded-circle shadow-sm country-icon">
-        <img src="https://flagcdn.com/64x48/th.png" alt="Thailand Flag">
-      </a>
+        <div class="row justify-content-center country-section">
+          <div class="col-12 col-sm-8 col-md-6 col-lg-4 mb-3" *ngFor="let country of countries">
+            <a [routerLink]="'/recipe/' + country._id" class="d-block rounded-circle shadow-sm country-icon">
+              <img [src]="country.country_image" [alt]="country.name + ' Flag'">
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-
