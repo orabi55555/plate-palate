@@ -44,4 +44,8 @@ getAllRecipe() {
 updateRecipeById(id: string, recipe: Recipe): Observable<Recipe> {
   return this.http.put<Recipe>(`${this.baseUrl}/update/${id}`, recipe);
 }
+
+getAllCountries(){
+  return this.http.get<any[]>(`${this.baseUrl}/countries`);
+}
 }

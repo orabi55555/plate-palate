@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const recipeController = require('../Controllers/RecipeController');
-
+const Country = require('../Models/CountryModel');
 // Route to get a specific recipe
 router.get('/:recipeId', recipeController.getRecipe);
 
@@ -18,6 +18,17 @@ router.delete('/:recipeId', recipeController.deleteRecipe);
 router.get('/', recipeController.getAllRecipe);
 // Route to update a recipe
 router.put('/update/:id', recipeController.updateRecipeById);
-
+router.get('/countries', recipeController.getAllCountries);
+// router.get('/countries', (req, res) => {
+//     Country.find({}, (err, countries) => {
+//       if (err) {
+//         console.log(err);
+//         res.status(500).send('Error retrieving countries from database');
+//       } else {
+//         res.json({ countries });
+//       }
+//     });
+//   });
+  
 
 module.exports = router;

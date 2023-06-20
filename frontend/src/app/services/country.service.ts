@@ -31,6 +31,12 @@ export class CountryService {
   deleteCountry(id: string): Observable<any> {
     return this.http.delete(`${this.baseUrl}/delete/${id}`);
   }
+
+
+  addCountry(country: any) {
+    return this.http.post<any>(`${this.baseUrl}/create`, country);
+  }
+
 }
 
 

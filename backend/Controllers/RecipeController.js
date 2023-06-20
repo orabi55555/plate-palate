@@ -149,6 +149,16 @@ async getRecipe(req, res) {
       res.status(500).json({ message: err.message });
     }
   }
+//for Dashboard
+  async getAllCountries (req, res) {
+    try {
+      const countries = await Country.find({});
+      res.status(200).json({ countries });
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: 'An error occurred while fetching the countries.' });
+    }
+  };
 
 
 
