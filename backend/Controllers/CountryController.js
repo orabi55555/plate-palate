@@ -138,6 +138,20 @@ class CountryController {
       res.status(500).send('Error deleting country');
     }
   }
+
+  //Search
+  async getCountryByName (req, res) {
+  const name = req.params.name;
+  console.log(name);
+
+  Country.find({ name: name })
+    .then(countries => {
+      res.json(countries);
+    })
+    .catch(err => {
+      return res.status(500).json({ message: err.message });
+    });
+};
   
 }
 

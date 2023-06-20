@@ -17,4 +17,6 @@ router.post('/create', countryController.addCountry);
 router.delete('/delete/:countryId', countryController.deleteCountry);
 router.post('/create', countryController.addCountry);
 
+//search
+router.get('/country/name/:name', countryController.getCountryByName);
 module.exports = router;

@@ -11,9 +11,9 @@
               <i class="bi bi-plus-lg me-2"></i>Add Country
             </button>
 
-            <form  class="search">
+            <form (ngSubmit)="searchByName()" class="search">
               <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search by category"  name="category">
+                <input type="text" class="form-control" placeholder="Search by name" [(ngModel)]="name" name="name">
                 <button type="submit" class="btn btn-outline-secondary">
                   <span class="fa fa-search"></span>
                 </button>

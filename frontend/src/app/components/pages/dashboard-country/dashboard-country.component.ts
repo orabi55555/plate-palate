@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class DashboardCountryComponent {
   countries: any[] | undefined;
+  name: any;
 
   constructor(private countryService: CountryService,private router: Router) { }
 
@@ -21,13 +22,15 @@ export class DashboardCountryComponent {
 
   }
 
-  // searchByCategory() {
-  //   this.foodService.searchFoodsByCategory(this.category)
-  //     .subscribe(foods => {
-  //       this.foods = foods;
-  //       console.log(foods)
-  //     });
-  // }
+  searchByName() {
+    this.countryService.searchCountryByName(this.name)
+      .subscribe(countries => {
+        this.countries = countries;
+        console.log(countries)
+      });
+  }
+
+
    deleteCountry(id: string): void {
     console.log(id);
     this.countryService.deleteCountry(id).subscribe(() => {

@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import {Country } from '../shared/models/Country';
+
 
 @Injectable({
   providedIn: 'root'
@@ -35,6 +37,10 @@ export class CountryService {
 
   addCountry(country: any) {
     return this.http.post<any>(`${this.baseUrl}/create`, country);
+  }
+
+  searchCountryByName(name: string): Observable<Country[]> {
+    return this.http.get<Country[]>(`${this.baseUrl}/country/name/${name}`);
   }
 
 }
