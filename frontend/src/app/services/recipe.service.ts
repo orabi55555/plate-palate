@@ -23,9 +23,9 @@ export class RecipeService {
     return this.http.get(`${this.baseUrl}/${recipeId}`);
   }
 
-  // addRecipe(recipe: any) {
-  //   return this.http.post<any>(`${this.baseUrl}/create`, recipe);
-  // }
+  addRecipe(recipe: any) {
+    return this.http.post<any>(`${this.baseUrl}/create`, recipe);
+  }
 
   deleteRecipe(recipeId: string) {
     return this.http.delete(`${this.baseUrl}/${recipeId}`);

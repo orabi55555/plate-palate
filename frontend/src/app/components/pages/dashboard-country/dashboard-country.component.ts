@@ -28,15 +28,15 @@ export class DashboardCountryComponent {
   //       console.log(foods)
   //     });
   // }
-  //  deleteFood(id: string): void {
-  //   console.log(id);
-  //   this.foodService.deleteFoodById(id).subscribe(() => {
-  //       if (this.foods) {
-  //         this.foods = this.foods.filter(food => food._id !== id);
-  //       }
-  //       this.router.navigateByUrl('/dashboard_food');
-  //     });
-  // }
+   deleteCountry(id: string): void {
+    console.log(id);
+    this.countryService.deleteCountry(id).subscribe(() => {
+        if (this.countries) {
+          this.countries = this.countries.filter(country => country._id !== id);
+        }
+        this.router.navigateByUrl('/dashboard-country');
+      });
+  }
 
 }
 

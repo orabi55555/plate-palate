@@ -10,7 +10,7 @@ import{ Router } from '@angular/router';
   styleUrls: ['./update-recipe.component.css']
 })
 export class UpdateRecipeComponent {
-  
+
   recipe: any;
 
   constructor(
@@ -30,15 +30,14 @@ export class UpdateRecipeComponent {
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
     this.recipeService.getRecipe(id!)
-      .subscribe(recipe => {
-        this.recipe = recipe;
-        if (this.recipe) {
-          console.log(this.recipe);
-          console.log(id);
-          console.log(this.recipe.title);
-          console.log(this.recipe.preparationTime);
-        }
-      });
+      .subscribe(recipe => this.recipe = recipe);
+        // if (this.recipe) {
+        //   console.log(this.recipe);
+        //   console.log(id);
+        //   console.log(this.recipe.title);
+        //   console.log(this.recipe.preparationTime);
+        // }
+
   }
 
 

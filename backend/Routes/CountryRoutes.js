@@ -14,6 +14,6 @@ router.get('/:countryId/recipes', countryController.getAllRecipes);
 router.post('/create', countryController.addCountry);
 
 // Route to delete a country
-router.delete('/:countryId', countryController.deleteCountry);
+router.delete('/delete/:countryId', countryController.deleteCountry);
 
 module.exports = router;

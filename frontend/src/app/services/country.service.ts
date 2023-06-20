@@ -20,13 +20,17 @@ export class CountryService {
     return this.http.get<any>(url);
   }
 
-  // getRecipe(recipeId: string): Observable<any> {
-  //   console.log(`getRecipe(${recipeId})`);
-  //   return this.http.get(`${this.baseUrl}/${recipeId}`);
-  // }
+
+
+  //for Dashboard
   getCountries(){
     // console.log(`getCountry(${countryId})`);
     return this.http.get<any[]>(`${this.baseUrl}/countries/getall`);
   }
+
+  deleteCountry(id: string): Observable<any> {
+    return this.http.delete(`${this.baseUrl}/delete/${id}`);
+  }
 }
+
 

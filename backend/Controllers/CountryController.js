@@ -90,7 +90,7 @@ class CountryController {
     }
   }
    
-
+   // get all countries for Dashboard
     async getCountries (req, res) {
       Country.find()
         .then(countries => {
