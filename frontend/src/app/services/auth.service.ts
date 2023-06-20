@@ -49,7 +49,18 @@ export class AuthService {
 
   }
 
-  
+  googleSignIn(tokenId: string): Observable<ApiResponse> {
+    return this.http.post<ApiResponse>(`${this.apiUrl}/google-signin`, { tokenId }).pipe(
+      tap(response => {
+        this.accessToken = response.accessToken || null;
+        localStorage.setItem('accessToken', response.accessToken);
+        localStorage.setItem('user', JSON.stringify(response['user']));
+      })
+    );
+  }
+
+
+
   resetPassword(email: string): Observable<ApiResponse> {
     return this.http.post<ApiResponse>(`${this.apiUrl}/reset-password`, { email });
   }
