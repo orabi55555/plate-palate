@@ -1,11 +1,33 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CountryService } from 'src/app/services/country.service';
+import {
+  trigger,
+  state,
+  style,
+  transition,
+  animate,
+} from '@angular/animations';
 
 @Component({
   selector: 'app-clicked-country-recipe',
   templateUrl: './clicked-country-recipe.component.html',
   styleUrls: ['./clicked-country-recipe.component.css'],
+  animations: [
+    trigger('recipeAnimation', [
+      state('in', style({ opacity: 1, transform: 'translateY(0)' })),
+      transition(':enter', [
+        style({ opacity: 0, transform: 'translateY(-100px)' }),
+        animate('0.3s ease-out'),
+      ]),
+      transition(':leave', [
+        animate(
+          '0.3s ease-out',
+          style({ opacity: 0, transform: 'translateY(100px)' })
+        ),
+      ]),
+    ]),
+  ],
 })
 export class ClickedCountryRecipeComponent implements OnInit {
   countryId!: string;
