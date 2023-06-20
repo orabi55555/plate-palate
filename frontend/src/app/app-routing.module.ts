@@ -40,7 +40,7 @@ const routes: Routes = [
   { path: 'checkout', component: CheckoutComponent },
   { path: 'orders', component: OrdersComponent },
   // { path: 'recipe/:id', component: ClickedCountryRecipeComponent },
-  { path: 'recipe/:id', component: ClickedCountryRecipeComponent },
+  { path: 'country/:countryId', component: ClickedCountryRecipeComponent },
   { path: 'payment', component: PaymentPageComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'dashboard_food', component: DashboardFoodComponent },

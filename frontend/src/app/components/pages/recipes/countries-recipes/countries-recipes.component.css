@@ -11,7 +11,8 @@
   position: relative;
   width: 1px;
   height: 100%;
-  left: 7%;
+  left: auto; /* Remove this line to align the line to the left */
+  right: 7%; /* Add this line to align the line to the right */
 }
 
 .welcome-logo {
@@ -55,16 +56,19 @@ hr {
   width: 50%;
   background-color: rgba(69, 98, 104, 0.65);
   height: 100%;
+  display: flex; /* Add this line to enable flexbox */
+  flex-direction: column; /* Add this line to stack elements vertically */
+  align-items: flex-start; /* Add this line to align elements to the left */
 }
 
 .various-word h1 {
-  font-family: "Times New Roman", serif;
   font-size: 10em;
   line-height: 0.9;
   font-weight: 1000;
   color: #fff;
   margin-top: 20%;
-  margin-left: 25%;
+  margin-left: auto; /* Remove this line to align the word to the left */
+  margin-right: 25%; /* Add this line to align the word to the right */
 }
 
 .various-word span {

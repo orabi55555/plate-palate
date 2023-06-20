@@ -5,9 +5,10 @@ import { CountryService } from 'src/app/services/country.service';
 @Component({
   selector: 'app-clicked-country-recipe',
   templateUrl: './clicked-country-recipe.component.html',
-  styleUrls: ['./clicked-country-recipe.component.css']
+  styleUrls: ['./clicked-country-recipe.component.css'],
 })
 export class ClickedCountryRecipeComponent implements OnInit {
+  countryId!: string;
   country: any;
   recipes: any[] = [];
 
@@ -16,31 +17,22 @@ export class ClickedCountryRecipeComponent implements OnInit {
     private countryService: CountryService
   ) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.countryId = this.route.snapshot.params['countryId'];
+    console.log('Country ID:', this.countryId);
 
-    const countryId = this.route.snapshot.paramMap.get('countryId');
-    if (countryId) {
-      this.getCountryWithRecipes(countryId);
-    }
+    this.countryService.getCountryWithRecipes(this.countryId).subscribe({
+      next: (data) => {
+        console.log(data);
 
-  }
-
-  getCountryWithRecipes(countryId: string) {
-    console.log('Country ID:', countryId); // Add this line to check the countryId value
-
-    this.countryService.getCountryWithRecipes(countryId).subscribe(
-      response => {
-        console.log('API Response:', response); // Add this line to log the response
-
-        this.country = response.country;
-        this.recipes = response.recipes || [];
+        this.country = data.country;
+        console.log('Country:', this.country);
+        this.recipes = data.recipes || [];
+        console.log('Recipes:', this.recipes);
       },
-      error => {
-        console.log('Error:', error);
-      }
-    );
+      error: (err) => {
+        console.error(err);
+      },
+    });
   }
-
-
-
 }
