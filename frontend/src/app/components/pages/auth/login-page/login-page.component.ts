@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,NgZone, OnInit } from '@angular/core';
 import {
   FormControl,
   FormGroup,
@@ -7,7 +7,6 @@ import {
 } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
-declare const gapi: any;
 
 
 
@@ -20,18 +19,9 @@ export class LoginPageComponent implements OnInit {
   //Form Validables
   registerForm: any = FormGroup;
   submitted = false;
-  googleAuth: any;
+  // googleAuth: any;
 
-  constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router) {
-
-
-
-      // gapi.load('auth2', () => {
-      //   this.googleAuth = gapi.auth2.init({
-      //     client_id: 'YOUR_GOOGLE_CLIENT_ID',
-      //     scope: 'email profile openid',
-      //   });
-      // });
+  constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router, private ngZone: NgZone) {
 
 
   }
@@ -57,6 +47,24 @@ export class LoginPageComponent implements OnInit {
 
   }
 
+
+  // signInWithGoogle(): Promise<any> {
+  //   return new Promise<any>((resolve, reject) => {
+  //     this.ngZone.run(() => {
+  //       const provider = new firebase.auth.GoogleAuthProvider();
+  //       this.afAuth.signInWithPopup(provider)
+  //         .then((result) => {
+  //           // Handle successful sign-in
+  //           resolve(result);
+  //         })
+  //         .catch((error) => {
+  //           // Handle sign-in error
+  //           reject(error);
+  //         });
+  //     });
+  //   });
+  // }
+
   onSubmit() {
     this.submitted = true;
     // stop here if form is invalid
@@ -78,26 +86,6 @@ export class LoginPageComponent implements OnInit {
       // this.router.navigateByUrl('/home');
 }
 
-// onGoogleSignIn() {
-//   this.googleAuth
-//     .signIn()
-//     .then((googleUser: any) => {
-//       const idToken = googleUser.getAuthResponse().id_token;
-//       this.authService.googleSignIn(idToken).subscribe({
-//         next: (response) => {
-//           console.log(response);
-//           this.router.navigateByUrl('/home');
-//           // Google Sign-In successful, do something with the response
-//         },
-//         error: (error) => {
-//           // Google Sign-In failed, handle the error
-//         },
-//       });
-//     })
-//     .catch((error: any) => {
-//       console.log(error);
-//     });
-// }
 }
 
 

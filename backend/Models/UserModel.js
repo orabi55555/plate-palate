@@ -41,7 +41,7 @@ const userSchema = new Schema({
     type: String,
     required: false,
     enum: ['user', 'admin'],
-    default: 'user'
+    // default: 'user'
   },
   mobile: {
     type: String,
