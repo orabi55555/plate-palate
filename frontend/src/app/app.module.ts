@@ -36,6 +36,7 @@ import { NavbarComponent } from './components/pages/navbar/navbar.component';
 import { CreaterecipeComponent } from './components/createrecipe/createrecipe.component';
 import { UpdateRecipeComponent } from './components/update-recipe/update-recipe.component';
 import { DashboardRecipeComponent } from './components/pages/dashboard-recipe/dashboard-recipe.component';
+import { CountryService } from './services/country.service';
 
 
 @NgModule({
@@ -84,7 +85,7 @@ import { DashboardRecipeComponent } from './components/pages/dashboard-recipe/da
    FormsModule
 
   ],
-  providers: [],
+  providers: [CountryService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
