@@ -25,9 +25,8 @@ PLATE PALATE</i></h2>
         <!-- <li class="nav-item">
           <a class="nav-link" routerLink="/creatfood">creatfood</a>
         </li> -->
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/login"> Login</a>
-        </li>
+
+        
           <li class="nav-item"  >
             <a class="nav-link" routerLink="profile">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
@@ -44,33 +43,42 @@ PLATE PALATE</i></h2>
                   </svg><span>3</span>
             </a>
           </li>
-          <li class="nav-item" >
-            <a class="nav-link" routerLink="#" >
-              Logout
-            </a>
+         
+          <li class="nav-item" *ngIf="!isLogged">
+            <a
+            [routerLinkActiveOptions]="{exact:true}"
+            routerLinkActive="active"
+            routerLink="/login"
+             class="nav-link">Login</a>
           </li>
-          <ng-template #elseBlock>
-            <li class="nav-item" >
-                <a
+     
+          <li class="nav-item"  *ngIf="isLogged" >
+          <a (click)="logout() "[routerLinkActiveOptions]="{exact:true}" routerLinkActive="active" class="nav-link"  style="cursor: pointer;">logout</a>
+
+
+          </li>
+
+         
+           
+
+            <li class="nav-item" *ngIf="!isLogged">
+            <button class="btn btn-secondary" style="background-color: lightgray;">
+              <a
                 [routerLinkActiveOptions]="{exact:true}"
                 routerLinkActive="active"
-                routerLink="/login"
-                 class="nav-link">Login</a>
-              </li>
-          </ng-template>
+                routerLink="/signup"
+              >
+              Sign Up
+            </a></button>
+            </li>
+        
+
+            
+
 
       </ul>
 
-    <ng-template #SignUpElseBlock>
-      <button class="btn btn-secondary" style="background-color: lightgray;">
-        <a
-          [routerLinkActiveOptions]="{exact:true}"
-          routerLinkActive="active"
-          routerLink="/register"
-        >
-        Sign Up
-      </a></button>
-   </ng-template>
+   
  </div>
 </div>
 </nav>
