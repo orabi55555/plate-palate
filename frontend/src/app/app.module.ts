@@ -24,7 +24,7 @@ import { PaymentPageComponent } from './components/pages/payment-page/payment-pa
 import { PaypalButtonComponent } from './components/partials/paypal-button/paypal-button.component';
 import { CheckoutComponent } from './components/pages/checkout/checkout.component';
 import { OrdersComponent } from './components/pages/orders/orders.component';
-// import { OrderTrackPageComponent } from './components/pages/order-track-page/order-track-page.component';
+import { CartPageComponent } from './components/pages/cart-page/cart-page.component';
 import { FoodrecipeComponent } from './components/pages/foodrecipe/foodrecipe.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CreatfoodComponent } from './components/creatfood/creatfood.component';
@@ -33,7 +33,8 @@ import { DashboardComponent } from './components/pages/dashboard/dashboard.compo
 import { SidebarComponent } from './components/pages/sidebar/sidebar.component';
 import { DashboardFoodComponent } from './components/pages/dashboard-food/dashboard-food.component';
 import { NavbarComponent } from './components/pages/navbar/navbar.component';
-
+import { StripeModule } from 'stripe-angular';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -67,7 +68,7 @@ import { NavbarComponent } from './components/pages/navbar/navbar.component';
     SidebarComponent,
     DashboardFoodComponent,
     NavbarComponent,
-    CartPageComponent,
+    CartPageComponent
 
   ],
 
@@ -76,11 +77,11 @@ import { NavbarComponent } from './components/pages/navbar/navbar.component';
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-   FormsModule,
-   StripeModule.forRoot(environment.stripePublishableKey)
+    FormsModule,
+     StripeModule.forRoot(environment.stripePublishableKey)
 
   ],
-  providers: [CountryService],
+ // =providers: [CountryService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,31 +1,50 @@
-<h1>Cart Page</h1>
+<h2>Cart</h2>
 
-<div>
-  <h1>My Cart</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Food</th>
+      <th>Quantity</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of cart?.items">
+      <td>{{ item.foodId }}</td>
+      <td>{{ item.quantity }}</td>
+      <td>
+        <button (click)="incrementCartItemQuantity(item.foodId._id)">+</button>
+        <button (click)="decrementCartItemQuantity(item.foodId._id)">-</button>
+        <button (click)="removeItemFromCart(item.foodId._id)">Remove</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-<ul>
-    <li>
-  <!-- <li *ngFor="let item of cart.items"> -->
-    <!-- {{item.foodId}} - {{item.quantity}} -->
-    <!-- <button (click)="removeFromCart(item.foodId)">Remove</button> -->
-    <!-- <input type="number" [value]="item.quantity" (input)="changeCartItemQuantity(item.foodId, $event.target.value)"> -->
-  </li>
-</ul>
+<h3>Add Item</h3>
 
-<!-- <form (submit)="addToCart(foodId.value, quantity.value)"> -->
-  <form>
+<form (submit)="addItemToCart(foodId.value, quantity.value)">
   <label>
     Food ID:
     <input type="text" #foodId required>
   </label>
-  <!-- <label>
+  <label>
     Quantity:
-    <inputtype="number" #quantity required>
-  </label> -->
-  <button type="submit">Add to Cart</button>
+    <input type="number" #quantity required>
+  </label>
+  <button type="submit">Add Item</button>
 </form>
-  <div class="checkout">
-    <a routerLink="/checkout">Proceed to Checkout</a>
-  </div>
-</div>
 
+<h3>Update Quantity</h3>
+
+<form (submit)="updateCartItemQuantity(foodIdToUpdate.value, newQuantity.value)">
+  <label>
+    Food ID:
+    <input type="text" #foodIdToUpdate required>
+  </label>
+  <label>
+    New Quantity:
+    <input type="number" #newQuantity required>
+  </label>
+  <button type="submit">Update Quantity</button>
+</form>
