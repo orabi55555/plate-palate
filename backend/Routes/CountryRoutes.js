@@ -19,4 +19,11 @@ router.post('/create', countryController.addCountry);
 
 //search
 router.get('/country/name/:name', countryController.getCountryByName);
+
+//update
+router.put('/update/:id', countryController.updateCountryById);
+
+//get by id
+router.get('/:id', countryController.getCountryById);
 module.exports = router;
+

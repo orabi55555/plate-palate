@@ -23,6 +23,12 @@ export class CountryService {
   }
 
 
+  //get by id for dashboard
+  getCountryById(id: string): Observable<any> {
+    console.log(`getCountryById(${id})`);
+    return this.http.get(`${this.baseUrl}/${id}`);
+  }
+
 
   //for Dashboard
   getCountries(){
@@ -41,6 +47,11 @@ export class CountryService {
 
   searchCountryByName(name: string): Observable<Country[]> {
     return this.http.get<Country[]>(`${this.baseUrl}/country/name/${name}`);
+  }
+
+  //update
+  updateCountryById(id: string, country: Country): Observable<Country> {
+    return this.http.put<Country>(`${this.baseUrl}/update/${id}`, country);
   }
 
 }

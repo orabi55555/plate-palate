@@ -152,6 +152,41 @@ class CountryController {
       return res.status(500).json({ message: err.message });
     });
 };
+
+//update
+async updateCountryById (req, res)  {
+  try {
+    const { name, country_image } = req.body;
+    const country = await Country.findByIdAndUpdate(
+      req.params.id,
+      { name, country_image },
+      { new: true }
+    );
+    if (!country) {
+      return res.status(404).json({ error: 'Country item not found' });
+    }
+    res.json(country);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+};
+
+
+//get country by it for dashboard
+async getCountryById(req, res) {
+
+  Country.findById(req.params.id)
+  .then(Country => {
+    if (!Country) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+    res.json( Country);
+  })
+  .catch(err => {
+    return res.status(500).json({ message: err.message });
+  });
+}
   
 }
 

@@ -38,7 +38,7 @@
                       </td>
                       <td  style="text-align: center;">{{ country.name }} </td>
                   <td class="d-flex justify-content-center align-items-center mt-3">
-                    <button class="btn btn-info me-3"  style="background-color: rgb(69, 125, 215)">
+                    <button class="btn btn-info me-3" routerLink="/dashboard-country/update-country/{{ country._id }}" style="background-color: rgb(69, 125, 215)">
                       Update
                     </button>
                     <button class="btn btn-danger" (click)="deleteCountry(country._id)" >
