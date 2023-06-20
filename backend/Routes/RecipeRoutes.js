@@ -13,8 +13,10 @@ router.post('/create', recipeController.addRecipe);
 
 // Route to delete a recipe
 router.delete('/:recipeId', recipeController.deleteRecipe);
+// Route to get a recipe
 // router.get('/recipes', recipeController.getAllRecipe);
 router.get('/', recipeController.getAllRecipe);
+// Route to update a recipe
 router.put('/update/:id', recipeController.updateRecipeById);
 
 
