@@ -156,10 +156,10 @@ async getRecipe(req, res) {
   //update
   async updateRecipeById(req, res) {
   try {
-    const { title, preparationTime, image, cookingTime} = req.body;
+    const { title, preparationTime, recipe_image, cookingTime} = req.body;
     const recipe = await Recipe.findByIdAndUpdate(
       req.params.id,
-      { title, preparationTime, image, cookingTime },
+      { title, preparationTime, recipe_image, cookingTime },
       { new: true }
     );
     if (!recipe) {

@@ -3,7 +3,7 @@ export class Recipe{
   title!:string[];
   preparationTime!:string[];
   cookingTime!: string[];
-  recipeImage!: string[];
+  recipe_image!: string[];
   ingredients!: string[];
   instructions!: string[];
 

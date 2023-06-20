@@ -6,7 +6,7 @@ const countryController = require('../Controllers/CountryController');
 router.get('/:countryId/getallrecipes', countryController.getCountryWithRecipes);
 
 // Route to display all countries
-router.get('/countries/getall', countryController.getAllCountries);
+router.get('/countries/getall', countryController.getCountries);
 
 router.get('/:countryId/recipes', countryController.getAllRecipes);
 

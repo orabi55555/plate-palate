@@ -89,6 +89,17 @@ class CountryController {
       res.status(500).json({ error: error.message });
     }
   }
+   
+
+    async getCountries (req, res) {
+      Country.find()
+        .then(countries => {
+          res.json(countries);
+        })
+        .catch(err => {
+          return res.status(500).json({ message: err.message });
+        });
+    };
 
     async addCountry(req, res) {
       const { name, country_image } = req.body;

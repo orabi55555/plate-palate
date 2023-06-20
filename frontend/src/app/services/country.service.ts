@@ -19,5 +19,14 @@ export class CountryService {
     const url = `${this.baseUrl}/countries/getall`;
     return this.http.get<any>(url);
   }
+
+  // getRecipe(recipeId: string): Observable<any> {
+  //   console.log(`getRecipe(${recipeId})`);
+  //   return this.http.get(`${this.baseUrl}/${recipeId}`);
+  // }
+  getCountries(){
+    // console.log(`getCountry(${countryId})`);
+    return this.http.get<any[]>(`${this.baseUrl}/countries/getall`);
+  }
 }
 
