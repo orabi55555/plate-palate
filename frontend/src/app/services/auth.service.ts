@@ -45,7 +45,7 @@ export class AuthService {
     localStorage.removeItem('accessToken');
     localStorage.removeItem('user');
     this.accessToken = null;
-    window.location.href = '/';
+    window.location.href = '/login';
 
   }
 
