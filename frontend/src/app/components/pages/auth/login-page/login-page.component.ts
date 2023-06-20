@@ -26,12 +26,12 @@ export class LoginPageComponent implements OnInit {
 
 
 
-      gapi.load('auth2', () => {
-        this.googleAuth = gapi.auth2.init({
-          client_id: 'YOUR_GOOGLE_CLIENT_ID',
-          scope: 'email profile openid',
-        });
-      });
+      // gapi.load('auth2', () => {
+      //   this.googleAuth = gapi.auth2.init({
+      //     client_id: 'YOUR_GOOGLE_CLIENT_ID',
+      //     scope: 'email profile openid',
+      //   });
+      // });
 
 
   }
@@ -78,26 +78,26 @@ export class LoginPageComponent implements OnInit {
       // this.router.navigateByUrl('/home');
 }
 
-onGoogleSignIn() {
-  this.googleAuth
-    .signIn()
-    .then((googleUser: any) => {
-      const idToken = googleUser.getAuthResponse().id_token;
-      this.authService.googleSignIn(idToken).subscribe({
-        next: (response) => {
-          console.log(response);
-          this.router.navigateByUrl('/home');
-          // Google Sign-In successful, do something with the response
-        },
-        error: (error) => {
-          // Google Sign-In failed, handle the error
-        },
-      });
-    })
-    .catch((error: any) => {
-      console.log(error);
-    });
-}
+// onGoogleSignIn() {
+//   this.googleAuth
+//     .signIn()
+//     .then((googleUser: any) => {
+//       const idToken = googleUser.getAuthResponse().id_token;
+//       this.authService.googleSignIn(idToken).subscribe({
+//         next: (response) => {
+//           console.log(response);
+//           this.router.navigateByUrl('/home');
+//           // Google Sign-In successful, do something with the response
+//         },
+//         error: (error) => {
+//           // Google Sign-In failed, handle the error
+//         },
+//       });
+//     })
+//     .catch((error: any) => {
+//       console.log(error);
+//     });
+// }
 }
 
 
