@@ -181,8 +181,23 @@ async getRecipe(req, res) {
     res.status(500).send('Server Error');
   }
 };
-  };
+  
 
+
+  //Search
+  async getRecioeByTitle (req, res) {
+  const title = req.params.title;
+
+  Recipe.find({ title: title })
+    .then(recipe => {
+      res.json(recipe);
+    })
+    .catch(err => {
+      return res.status(500).json({ message: err.message });
+    });
+};
+
+};
 // }
 
 module.exports = new RecipeController();

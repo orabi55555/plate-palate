@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class DashboardRecipeComponent implements OnInit {
   recipes: any[] | undefined;
+  title: any;
 
   constructor(private recipeService: RecipeService,private router: Router) { }
   ngOnInit(): void {
@@ -16,17 +17,19 @@ export class DashboardRecipeComponent implements OnInit {
       this.recipes = data;
        console.log(this.recipes);
     });
-    
+
 
   }
-  
-  // searchByCategory() {
-  //   this.recipeService.searchFoodsByCategory(this.category)
-  //     .subscribe(recipes => {
-  //       this.recipes = recipes;
-  //       console.log(recipes)
-  //     });
-  // }
+
+  searchByTitle() {
+    this.recipeService.searchRecipeByTitle(this.title)
+      .subscribe(recipes => {
+        this.recipes = recipes;
+        console.log(recipes)
+      });
+      console.log(this.title);
+  }
+
   deleteRecipe(id: string): void {
     console.log(id);
     this.recipeService.deleteRecipe(id).subscribe(() => {
@@ -36,6 +39,6 @@ export class DashboardRecipeComponent implements OnInit {
         this.router.navigateByUrl('/dashboard-recipe');
       });
   }
-  
+
 }
 

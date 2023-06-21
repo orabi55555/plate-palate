@@ -31,4 +31,7 @@ router.get('/countries', recipeController.getAllCountries);
 //   });
   
 
+//search
+router.get('/title/:title', recipeController.getRecioeByTitle);
+
 module.exports = router;

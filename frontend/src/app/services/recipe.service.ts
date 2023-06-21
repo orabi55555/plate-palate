@@ -48,4 +48,8 @@ updateRecipeById(id: string, recipe: Recipe): Observable<Recipe> {
 getAllCountries(){
   return this.http.get<any[]>(`${this.baseUrl}/countries`);
 }
+
+searchRecipeByTitle(title: string): Observable<Recipe[]> {
+  return this.http.get<Recipe[]>(`${this.baseUrl}/title/${title}`);
+}
 }
