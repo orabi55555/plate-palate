@@ -16,7 +16,7 @@ export class NavbarComponent implements OnInit {
   constructor(private authService: AuthService, private router: Router,private userService: UserService , private route : ActivatedRoute) {}
 
   isLogged: boolean | undefined;
-
+  user_name:any;
 
 
 
@@ -29,7 +29,19 @@ export class NavbarComponent implements OnInit {
         this.isLogged = !!localStorage.getItem('accessToken');
       }
     });
-
+    let user = localStorage.getItem("user");
+    console.log(user);
+       if (user) {
+         // parse the user object into a JavaScript object
+         const userData = JSON.parse(user);
+   
+   
+         this.user_name = userData.user_name;
+       
+   
+   
+       }
+   
 
 }
 
