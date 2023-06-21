@@ -155,8 +155,7 @@
     styleUrls: ['./cart-page.component.css']
   })
   export class CartPageComponent implements OnInit {
-   // cart: Array<any>;
-     // cart: any[];
+
      cart: any;     
     userId?: string;
 
