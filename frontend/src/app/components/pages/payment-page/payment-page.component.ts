@@ -1,63 +1,91 @@
-import { Component ,OnInit } from '@angular/core';
-//import { StripeService } from 'stripe-angular';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
-declare var paypal:any;
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
+import { CartService } from '../../../services/cart.service';
+declare var Stripe: any;
 @Component({
   selector: 'app-payment-page',
   templateUrl: './payment-page.component.html',
   styleUrls: ['./payment-page.component.css']
 })
 export class PaymentPageComponent implements OnInit{
-  // paymentForm: FormGroup;
-
-  // order:Order = new this.order();
- // constructor(private stripeService: StripeService) {}
-  ngOnInit():void{
-    // this.paymentForm = new FormGroup({
-    //   amount: new FormControl('', [Validators.required, Validators.pattern(/^\d+(\.\d{1,2})?$/)]),
-    //   currency: new FormControl('USD', Validators.required),
-    //   cardNumber: new FormControl('', Validators.required),
-    //   expMonth: new FormControl('', Validators.required),
-    //   expYear: new FormControl('', Validators.required),
-    //   cvc: new FormControl('', Validators.required),
-    // });
+  // checkoutForm: FormGroup;
+  // stripe: any;
+  // error: any;
+  // orderId: string;
+  // quatitay: number;
+  constructor(
+    private formBuilder: FormBuilder,
+    private cartService: CartService,
+    private router: Router
+  ) { }
+    ngOnInit(){{
+      // this.checkoutForm = this.formBuilder.group({
+      //   name: ['', Validators.required],
+      //   email: ['', [Validators.required, Validators.email]],
+      //   address: ['', Validators.required],
+      //   city: ['', Validators.required],
+      //   state: ['', Validators.required],
+      //   zip: ['', Validators.required],
+      //   cardNumber: ['', Validators.required],
+      //   expMonth: ['', Validators.required],
+      //   expYear: ['', Validators.required],
+      //   cvv: ['', Validators.required]
+      // });
+      // this.stripe = Stripe(environment.stripePublicKey);
+      // this.cartService.getCart().subscribe(cart => {
+      //   this.orderId = cart._id;
+      //   this.amount = cart.totalPrice * 100;
+      // });
+    }
   }
-  onSubmit(): void {
-    // if (this.paymentForm.valid) {
-    //   const { amount, currency, cardNumber, expMonth, expYear, cvc } = this.paymentForm.value;
-    //   this.stripeService
-    //     .createToken({
-    //       card: {
-    //         number: cardNumber,
-    //         exp_month: expMonth,
-    //         exp_year: expYear,
-    //         cvc: cvc,
-    //       },
-    //     })
-    //     .subscribe((result) => {
-    //       if (result.token) {
-    //         this.stripeService
-    //           .createCharge({
-    //             amount: amount * 100,
-    //             currency: currency,
-    //             token: result.token,
-    //           })
-    //           .subscribe(
-    //             () => {
-    //               // Payment succeeded
-    //             },
-    //             (error) => {
-    //               console.error(error);
-    //               // Payment failed
-    //             }
-    //           );
-    //       } else {
-    //         console.error(result.error);
-    //         // Payment failed
-    //       }
-    //     });
-    // }
-  }
+  // onSubmit(): void {
+  //   const name = this.checkoutForm.get('name').value;
+  //   const email = this.checkoutForm.get('email').value;
+  //   const address = this.checkoutForm.get('address').value;
+  //   const city = this.checkoutForm.get('city').value;
+  //   const state = this.checkoutForm.get('state').value;
+  //   const zip = this.checkoutForm.get('zip').value;
+  //   const cardNumber = this.checkoutForm.get('cardNumber').value;
+  //   const expMonth = this.checkoutForm.get('expMonth').value;
+  //   const expYear = this.checkoutForm.get('expYear').value;
+  //   const cvv = this.checkoutForm.get('cvv').value;
+  //   this.stripe.createToken(
+  //     {
+  //       name: name,
+  //       address_line1: address,
+  //       address_city: city,
+  //       address_state: state,
+  //       address_zip: zip,
+  //       number: cardNumber,
+  //       exp_month: expMonth,
+  //       exp_year: expYear,
+  //       cvc: cvv
+  //     }
+  //   ).then((result) => {
+  //     if (result.error) {
+  //       this.error = result.error.message;
+  //     } else {
+  //       const token = result.token;
+  //       const paymentDetails = {
+  //         amount: this.amount,
+  //         token: token,
+  //         orderId: this.orderId
+  //       };
+  //       this.cartService.processPayment(paymentDetails).subscribe(
+  //         res => {
+  //           console.log(res);
+  //           this.router.navigate(['/orders']);
+  //         },
+  //         error => {
+  //           console.error(error);
+  //           this.error = error.message;
+  //         }
+  //       );
+  //     }
+  //   });
+  // }
 }
   
 

@@ -87,7 +87,25 @@ exports.deleteOrderById = async (req, res) => {
 
 
 
+const stripe = require('stripe')('YOUR_STRIPE_SECRET_KEY');
 
+exports.processPayment = async (req, res) => {
+  try {
+    const { amount, token, orderId } = req.body;
+    const charge = await stripe.charges.create({
+      amount: amount,
+      currency: 'EG',
+      source: token.id,
+      description: 'MEAN Stack order payment',
+    });
+    // Update order status to 'paid'
+    const order = await Order.findByIdAndUpdate(orderId, { status: 'paid' }, { new: true });
+    res.json({ message: 'Payment processed successfully', order: order });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+};
 
 
 
