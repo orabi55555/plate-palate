@@ -55,6 +55,8 @@ router.get('/users/getall', userController.getUsers);
 //   .get( UserController.getUserById)
 
 router.get('/:id', userController.getUserById);
+//search
+router.get('/user/name/:name', userController.getUserByName);
 
 
 module.exports = router;

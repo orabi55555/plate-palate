@@ -66,6 +66,21 @@ userController.updateUserById = async (req, res, next) => {
   }
 };
 
+//Search
+userController.getUserByName = async (req, res, next) => {
+  const name = req.params.name;
+   console.log(name);
+
+  User.find({ user_name: name })
+    .then(users => {
+      res.json(users);
+    })
+    .catch(err => {
+      return res.status(500).json({ message: err.message });
+    });
+};
+
+
 userController.deleteUserById = async (req, res, next) => {
   try {
     const { id } = req.params;
