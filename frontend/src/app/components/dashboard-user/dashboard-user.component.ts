@@ -23,13 +23,13 @@ export class DashboardUserComponent implements OnInit{
 
   }
 
-  // searchByName() {
-  //   this.countryService.searchCountryByName(this.name)
-  //     .subscribe(countries => {
-  //       this.countries = countries;
-  //       console.log(countries)
-  //     });
-  // }
+  searchUserByName() {
+    this.userService.searchUserByName(this.name)
+      .subscribe(users => {
+        this.users = users;
+        console.log(users)
+      });
+  }
 
 
 
