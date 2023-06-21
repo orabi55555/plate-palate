@@ -23,7 +23,7 @@ export class RecipeService {
     return this.http.get(`${this.baseUrl}/${recipeId}`);
   }
 
-  addRecipe(recipe: any) {
+  addRecipe(recipe: any) : Observable<any> {
     return this.http.post<any>(`${this.baseUrl}/create`, recipe);
   }
 

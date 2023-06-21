@@ -9,7 +9,7 @@ router.get('/:recipeId', recipeController.getRecipe);
 // router.get('/:countryId/recipes', recipeController.getAllRecipes);
 
 // Route to add a new recipe
-router.post('/create', recipeController.addRecipe);
+router.post('/create', recipeController.createRecipe);
 
 // Route to delete a recipe
 router.delete('/:recipeId', recipeController.deleteRecipe);

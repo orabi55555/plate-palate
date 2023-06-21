@@ -31,7 +31,7 @@ export class CountryService {
 
 
   //get all countries for Dashboard
-  getCountries(){
+  getCountries(): Observable<any> {
     // console.log(`getCountry(${countryId})`);
     return this.http.get<any[]>(`${this.baseUrl}/countries/getall`);
   }

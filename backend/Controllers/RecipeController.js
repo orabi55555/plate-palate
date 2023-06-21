@@ -64,34 +64,50 @@ async getRecipe(req, res) {
   
 
   // Controller function to add a new recipe
-  async addRecipe(req, res) {
-    const { title, recipe_image, preparationTime, cookingTime, ingredients, instructions, countryId } = req.body;
+  // async addRecipe(req, res) {
+  //   const { title, recipe_image, preparationTime, cookingTime, ingredients, instructions, countryId } = req.body;
 
+  //   try {
+  //     const newRecipe = new Recipe({
+  //       title,
+  //       recipe_image,
+  //       preparationTime,
+  //       cookingTime,
+  //       ingredients,
+  //       instructions,
+  //       country,
+  //     });
+
+  //     console.log(newRecipe);
+  //     // Save the recipe to the database
+  //     const createdRecipe = await newRecipe.save();
+      
+
+  //     res.status(201).json({
+  //       message: 'Recipe created successfully',
+  //       recipe: createdRecipe,
+  //     });
+  //   } catch (error) {
+  //     res.status(400).json({ error: error.message });
+  //   }
+  // }
+ createRecipe = async (req, res) => {
     try {
+      const { title, recipe_image, preparationTime, cookingTime, country } = req.body;
       const newRecipe = new Recipe({
         title,
         recipe_image,
         preparationTime,
         cookingTime,
-        ingredients,
-        instructions,
-        country: countryId,
+        country,
       });
-
-      console.log(newRecipe);
-      // Save the recipe to the database
-      const createdRecipe = await newRecipe.save();
-      
-
-      res.status(201).json({
-        message: 'Recipe created successfully',
-        recipe: createdRecipe,
-      });
-    } catch (error) {
-      res.status(400).json({ error: error.message });
+      const savedRecipe = await newRecipe.save();
+      res.json(savedRecipe);
+    } catch (err) {
+      console.error(err);
+      return res.status(500).send('Server Error');
     }
-  }
-
+  };
   // Controller function to delete a recipe
   async deleteRecipe(req, res) {
     const { recipeId } = req.params;
