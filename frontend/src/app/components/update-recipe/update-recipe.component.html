@@ -25,14 +25,15 @@
                 </div>
                 <div class="form-group">
                   <label for="preparationTime">Preparation Time</label>
-                  <textarea id="number" class="form-control" name="preparationTime" [ngModel]="recipe.preparationTime"></textarea>                </div>
+                  <input type="text" id="preparationTime" class="form-control" name="preparationTime" [ngModel]="recipe.preparationTime">
+                </div>
                 <div class="form-group">
                   <label for="cookingTime">Cooking Time</label>
-                  <input type="number" id="cookingTime" class="form-control" name="cookingTime">
+                  <input type="text" id="cookingTime" class="form-control" name="cookingTime" [(ngModel)]="recipe.cookingTime">
                 </div>
                 <div class="form-group">
                   <label for="ingredients">Ingredients</label>
-                  <input type="text" id="price" class="form-control" name="ingredients" [(ngModel)]="recipe.ingredients">
+                  <input type="text" id="ingredients" class="form-control" name="ingredients" [(ngModel)]="recipe.ingredients">
                 </div>
                 <button type="submit" class="btn btn-primary">Update Recipe</button>
               </form>

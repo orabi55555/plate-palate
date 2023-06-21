@@ -56,7 +56,7 @@ searchRecipeByTitle(title: string): Observable<Recipe[]> {
 //get by id for dashboard
 getRecipeById(id: string): Observable<any> {
   console.log(`getRecipeById(${id})`);
-  return this.http.get(`${this.baseUrl}/${id}`);
+  return this.http.get(`${this.baseUrl}/get/${id}`);
 }
 
 }
