@@ -18,6 +18,7 @@ router.delete('/:recipeId', recipeController.deleteRecipe);
 router.get('/', recipeController.getAllRecipe);
 // Route to update a recipe
 router.put('/update/:id', recipeController.updateRecipeById);
+// get all countries for dashboard
 router.get('/countries', recipeController.getAllCountries);
 // router.get('/countries', (req, res) => {
 //     Country.find({}, (err, countries) => {

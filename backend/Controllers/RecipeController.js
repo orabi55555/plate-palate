@@ -1,5 +1,5 @@
 const Recipe = require("../Models/RecipeModel");
-const Country = require("../Models/CountryModel");
+const Country = require('../Models/CountryModel');
 
 class RecipeController {
 
@@ -150,10 +150,10 @@ async getRecipe(req, res) {
     }
   }
 //for Dashboard
-  async getAllCountries (req, res) {
+  async getAllCountries(req, res) {
     try {
-      const countries = await Country.find({});
-      res.status(200).json({ countries });
+      const countries = await Country.find();
+      res.status(200).json( countries );
     } catch (error) {
       console.error(error);
       res.status(500).json({ message: 'An error occurred while fetching the countries.' });
