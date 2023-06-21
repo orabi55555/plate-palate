@@ -40,6 +40,7 @@ import { CountryService } from './services/country.service';
 import { DashboardCountryComponent } from './components/pages/dashboard-country/dashboard-country.component';
 import { UpdateCountryComponent } from './components/update-country/update-country.component';
 import { CreateCountryComponent } from './components/create-country/create-country.component';
+import { DashboardUserComponent } from './components/dashboard-user/dashboard-user.component';
 
 
 @NgModule({
@@ -80,6 +81,7 @@ import { CreateCountryComponent } from './components/create-country/create-count
     DashboardCountryComponent,
     UpdateCountryComponent,
     CreateCountryComponent,
+    DashboardUserComponent,
 
   ],
 

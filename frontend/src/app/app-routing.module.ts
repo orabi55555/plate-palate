@@ -26,6 +26,7 @@ import { CreaterecipeComponent } from './components/createrecipe/createrecipe.co
 import { DashboardCountryComponent } from './components/pages/dashboard-country/dashboard-country.component';
 import { CreateCountryComponent } from './components/create-country/create-country.component';
 import { UpdateCountryComponent } from './components/update-country/update-country.component';
+import { DashboardUserComponent } from './components/dashboard-user/dashboard-user.component';
 
 
 const routes: Routes = [
@@ -57,6 +58,7 @@ const routes: Routes = [
   {path:'dashboard_food',component:DashboardFoodComponent},
   {path: 'dashboard-recipe', component:DashboardRecipeComponent},
   { path: 'dashboard-country', component:DashboardCountryComponent},
+  { path: 'dashboard-user', component:DashboardUserComponent},
   // { path: 'track', component: OrderTrackPageComponent },
   { path: 'foodrecipe/:id', component: FoodrecipeComponent },
   { path: '**', component: NotFoundComponent },
