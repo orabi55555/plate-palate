@@ -14,10 +14,18 @@ interface ApiResponse {
   message: string;
   accessToken: string;
   user: {
+    id: string; //t3del
     user_name: string;
     email: string;
     role: string;
   };
+}
+
+interface User {
+  id: string;
+  user_name: string;
+  email: string;
+  role: string;
 }
 
 @Injectable({

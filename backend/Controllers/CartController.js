@@ -1,21 +1,64 @@
 const Cart = require("../Models/CartModel");
 
 
-exports.getCart = async (req, res) => {
-    try {
-      const { userId } = req.params;
-      const cart = await Cart.findOne({ userId }).populate('items.foodId');
-      res.status(200).json(cart);
+// exports.getCart = async (req, res) => {
+//     try {
+//       const { userId } = req.params;
+//       const cart = await Cart.findOne({ userId:userId }).populate('items.foodId');
+//       res.status(200).json(cart);
       
-    } catch (error) {
-      console.error(error);
-      res.status(500).json({ message: 'Internal server error' });
+//     } catch (error) {
+//       console.error(error);
+//       res.status(500).json({ message: 'Internal server error' });
+//     }
+//   };
+
+
+
+
+
+exports.getCart = async (req, res) => {
+  try {
+    const { userId } = req.params;
+
+    // Check if userId is defined
+    if (!userId) {
+      return res.status(400).json({ message: 'userId is missing' });
     }
-  };
-  
+
+    // Check if userId is a valid ObjectId
+    const mongoose = require('mongoose');
+    if (!mongoose.Types.ObjectId.isValid(userId)) {
+      return res.status(400).json({ message: 'Invalid userId' });
+    }
+
+    const cart = await Cart.findOne({ userId }).populate('items.foodId');
+    if (!cart) {
+      return res.status(404).json({ message: 'Cart not found' });
+    }
+
+    res.status(200).json(cart);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+};
+
+
+
   exports.addItemToCart = async (req, res) => {
+
     try {
+
       const { userId, foodId, quantity } = req.body;
+
+      // Check if userId is a valid ObjectId
+    const mongoose = require('mongoose');
+    if (!mongoose.Types.ObjectId.isValid(userId)) {
+      return res.status(400).json({ message: 'Invalid userId' });
+    }
+
+
       let cart = await Cart.findOne({ userId });
       if (!cart) {
         cart = new Cart({ userId, items: [] });
