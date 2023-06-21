@@ -40,10 +40,9 @@ const routes: Routes = [
   { path: 'payment-page', component: PaymentPageComponent },
   { path: 'checkout', component: CheckoutComponent },
   { path: 'orders', component: OrdersComponent },
-  { path: 'recipe/:id', component: ClickedCountryRecipeComponent },
+  { path: 'country/:countryId', component: ClickedCountryRecipeComponent },
   { path: 'payment', component: PaymentPageComponent },
   // { path: 'users', component: ProfileComponent },
-
   {path:'dashboard',component:DashboardComponent, canActivate: [AdminAuthGuard]},
   {path:'dashboard_food',component:DashboardFoodComponent, canActivate: [AdminAuthGuard]},
   // { path: 'track', component: OrderTrackPageComponent },
