@@ -8,12 +8,12 @@
       alt="{{ recipe.title }}"
     />
     <p>Preparation Time: {{ recipe.preparationTime }}</p>
-    <a [routerLink]="['/foodrecipe', recipe.id]" class="recipe-link"
+    <a [routerLink]="['/foodrecipe', recipe._id]" class="recipe-link"
       >Check Recipe</a
     >
   </div>
 </div>
 
-<div class="no-recipes" *ngIf="!recipes || recipes.length === 0">
+<!-- <div class="no-recipes" *ngIf="!recipes || recipes.length === 0">
   No recipes found for this country.
-</div>
+</div> -->
