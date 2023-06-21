@@ -173,7 +173,7 @@ async updateCountryById (req, res)  {
 };
 
 
-//get country by it for dashboard
+//get country by name it for dashboard
 async getCountryById(req, res) {
 
   Country.findById(req.params.id)

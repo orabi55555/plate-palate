@@ -197,6 +197,21 @@ async getRecipe(req, res) {
     });
 };
 
+
+//get recipe by name it for dashboard
+async getRecipeById(req, res) {
+
+  Recipe.findById(req.params.id)
+  .then(Recipe => {
+    if (!Recipe) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+    res.json( Recipe);
+  })
+  .catch(err => {
+    return res.status(500).json({ message: err.message });
+  });
+}
 };
 // }
 

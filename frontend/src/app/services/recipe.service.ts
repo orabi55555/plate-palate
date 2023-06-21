@@ -52,4 +52,11 @@ getAllCountries(){
 searchRecipeByTitle(title: string): Observable<Recipe[]> {
   return this.http.get<Recipe[]>(`${this.baseUrl}/title/${title}`);
 }
+
+//get by id for dashboard
+getRecipeById(id: string): Observable<any> {
+  console.log(`getRecipeById(${id})`);
+  return this.http.get(`${this.baseUrl}/${id}`);
+}
+
 }

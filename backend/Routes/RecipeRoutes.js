@@ -33,5 +33,7 @@ router.get('/countries', recipeController.getAllCountries);
 
 //search
 router.get('/title/:title', recipeController.getRecioeByTitle);
+//get by id
+router.get('/get/:id', recipeController.getRecipeById);
 
 module.exports = router;
