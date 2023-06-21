@@ -13,6 +13,17 @@ userController.getAllUsers = async (req, res, next) => {
   }
 };
 
+// get all users for dashboard
+userController.getUsers = async (req, res) => {
+  User.find({})
+    .then(users => {
+      res.json(users);
+    })
+    .catch(err => {
+      return res.status(500).json({ message: err.message });
+    });
+};
+
 
 userController.getUserById = async (req, res, next) => {
   try {

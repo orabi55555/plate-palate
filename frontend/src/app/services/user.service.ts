@@ -20,4 +20,9 @@ export class UserService {
     return this.http.get(`${this.baseUrl}/api/user/${id}`);
   }
 
+  //get all users for Dashboard
+  getUsers(){
+    return this.http.get<any[]>(`${this.baseUrl}/api/v1/users/users/getall`);
+  }
+
 }
