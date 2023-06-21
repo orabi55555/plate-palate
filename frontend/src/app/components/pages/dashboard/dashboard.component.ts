@@ -11,7 +11,7 @@ import { Food } from '../../../shared/models/Food';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent implements OnInit {
   // foods: any[] = [];
@@ -28,26 +28,25 @@ export class DashboardComponent implements OnInit {
       this.totalMeals = data.totalMeals;
     });
 
+    // ngOnInit(): void {
+    //   this.api.getAllFoods().subscribe((response: FoodResponse) => {
+    //     this.foods = response.data;
+    //     this.total_meals = response.total_meals;
+    //   });
+    // }
 
-  // ngOnInit(): void {
-  //   this.api.getAllFoods().subscribe((response: FoodResponse) => {
-  //     this.foods = response.data;
-  //     this.total_meals = response.total_meals;
-  //   });
-  // }
+    //   ngOnInit(): void {
+    //     this.api.getAllFoods().subscribe((foods: any[]) => {
+    //       this.foods = foods;
+    //       this.total_meals = foods.length;
+    //     });
+    //   }
 
-//   ngOnInit(): void {
-//     this.api.getAllFoods().subscribe((foods: any[]) => {
-//       this.foods = foods;
-//       this.total_meals = foods.length;
-//     });
-//   }
-
-// ngOnInit(): void {
-//   this.api.getAllFoods().subscribe(({ foods, totalMeals }) => {
-//     this.foods = foods;
-//     this.totalMeals = totalMeals;
-//   });
-// }
-}
+    // ngOnInit(): void {
+    //   this.api.getAllFoods().subscribe(({ foods, totalMeals }) => {
+    //     this.foods = foods;
+    //     this.totalMeals = totalMeals;
+    //   });
+    // }
+  }
 }

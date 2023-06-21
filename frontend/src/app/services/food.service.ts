@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
- import { sample_foods } from 'src/data';
-  // import  sample_tags  from 'src/data';
+import { sample_foods } from 'src/data';
+// import  sample_tags  from 'src/data';
 import { Food } from '../shared/models/Food';
 // import { FoodResponse } from '../shared/models/FoodResponse';
 
@@ -13,31 +13,25 @@ import { Food } from '../shared/models/Food';
 // }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class FoodService {
-
-
-
   private baseUrl = 'http://localhost:7000';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getFoodById(id: string): Observable<any> {
     console.log(`getFoodById(${id})`);
     return this.http.get(`${this.baseUrl}/api/food/${id}`);
   }
 
-
   // getAllFoods() {
   //   return this.http.get<FoodResponse>(`${this.baseUrl}/api/food/foods`);
   // }
 
   getAllFoods() {
-
-       return this.http.get<any[]>(`${this.baseUrl}/api/food/foods`);
-
-   }
+    return this.http.get<any[]>(`${this.baseUrl}/api/food/foods`);
+  }
 
   // getAllFoods() {
   //   return this.http.get<any[]>(`${this.baseUrl}/api/food/foods`).pipe(
@@ -47,8 +41,6 @@ export class FoodService {
   //   );
   // }
 
-
-
   // getAllFoods(): Observable<Food[]> {
   //   return this.http.get<FoodResponse>(`${this.baseUrl}/api/food/foods`).pipe(
   //     map((response: FoodResponse) => {
@@ -56,8 +48,6 @@ export class FoodService {
   //     })
   //   );
   // }
-
-
 
   // getAllFoods(): Observable<{ foods: Food[], totalMeals: number }> {
   //   return this.http.get<FoodResponse>(`${this.baseUrl}/api/food/foods`).pipe(
@@ -69,7 +59,6 @@ export class FoodService {
   //   );
   // }
 
-
   // getAllFoods(): Observable<{ foods: Food[], totalMeals: number }> {
   //   return this.http.get<FoodResponse>(`${this.baseUrl}/api/food/foods`).pipe(
   //     map((response: FoodResponse) => {
@@ -79,9 +68,6 @@ export class FoodService {
   //     })
   //   );
   // }
-
-
-
 
   deleteFoodById(id: string): Observable<any> {
     return this.http.delete(`${this.baseUrl}/api/food/delete/${id}`);
@@ -94,25 +80,20 @@ export class FoodService {
       summary: food.summary,
       image: food.image,
       category: food.category,
-      price: food.price
+      price: food.price,
     });
     console.log(body);
     return this.http.post(`${this.baseUrl}/api/food/create`, body, { headers });
   }
 
   searchFoodsByCategory(category: string): Observable<Food[]> {
-    return this.http.get<Food[]>(`${this.baseUrl}/api/food/foods/category/${category}`);
+    return this.http.get<Food[]>(
+      `${this.baseUrl}/api/food/foods/category/${category}`
+    );
   }
 
   //update
   updateFoodById(id: string, food: Food): Observable<Food> {
     return this.http.put<Food>(`${this.baseUrl}/api/food/update/${id}`, food);
   }
-
 }
-
-
-
-
-
-
