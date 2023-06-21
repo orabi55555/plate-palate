@@ -75,8 +75,13 @@ export class LoginPageComponent implements OnInit {
     if (this.submitted) {
       this.authService.login(this.registerForm.value).subscribe({
         next: response => {console.log (response);
-                 this.router.navigateByUrl('/home');
+                 //this.router.navigateByUrl('/home');
 
+                 if (this.authService.getUserRole() === 'user') {
+                  this.router.navigate(['/home']);
+                } else {
+                  this.router.navigate(['/dashboard']);
+                }
           // Login successful, do something with the response
         },
         error: error => {
