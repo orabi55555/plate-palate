@@ -30,21 +30,24 @@ export class CountryService {
   }
 
 
-  //for Dashboard
+  //get all countries for Dashboard
   getCountries(){
     // console.log(`getCountry(${countryId})`);
     return this.http.get<any[]>(`${this.baseUrl}/countries/getall`);
   }
 
+  //delete
   deleteCountry(id: string): Observable<any> {
     return this.http.delete(`${this.baseUrl}/delete/${id}`);
   }
 
 
+  //create
   addCountry(country: any) {
     return this.http.post<any>(`${this.baseUrl}/create`, country);
   }
 
+  //search
   searchCountryByName(name: string): Observable<Country[]> {
     return this.http.get<Country[]>(`${this.baseUrl}/country/name/${name}`);
   }

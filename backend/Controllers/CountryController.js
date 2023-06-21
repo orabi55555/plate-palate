@@ -58,6 +58,7 @@ class CountryController {
     }
   }
 
+  //get all Recipes
   async getAllRecipes(req, res) {
     const { countryId } = req.params;
   
@@ -101,6 +102,8 @@ class CountryController {
         });
     };
 
+
+    // Add new Country
     async addCountry(req, res) {
       const { name, country_image } = req.body;
     
