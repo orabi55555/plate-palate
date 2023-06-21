@@ -6,7 +6,7 @@ const countryController = require('../Controllers/CountryController');
 router.get('/:countryId/getallrecipes', countryController.getCountryWithRecipes);
 
 // Route to display all countries
-router.get('/countries/getall', countryController.getAllCountries);
+router.get('/countries/getall', countryController.getCountries);
 
 router.get('/:countryId/recipes', countryController.getAllRecipes);
 
@@ -14,6 +14,16 @@ router.get('/:countryId/recipes', countryController.getAllRecipes);
 router.post('/create', countryController.addCountry);
 
 // Route to delete a country
-router.delete('/:countryId', countryController.deleteCountry);
+router.delete('/delete/:countryId', countryController.deleteCountry);
+router.post('/create', countryController.addCountry);
 
+//search
+router.get('/country/name/:name', countryController.getCountryByName);
+
+//update
+router.put('/update/:id', countryController.updateCountryById);
+
+//get by id
+router.get('/:id', countryController.getCountryById);
 module.exports = router;
+
