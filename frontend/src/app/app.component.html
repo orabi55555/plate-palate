@@ -1,4 +1,11 @@
-<app-header></app-header>
-<router-outlet></router-outlet>
-<app-footer></app-footer> 
 
+  <ng-container *ngIf="authService.isAuthenticated() && authService.getUserRole() === 'user'">
+    <app-header></app-header>
+  
+  </ng-container>
+  
+  <router-outlet></router-outlet>
+  
+  <ng-container *ngIf="authService.isAuthenticated() && authService.getUserRole() === 'user' && getCurrentRoute() !== '/dashboard' && getCurrentRoute() !== '/dashboard_food/creatfood' && getCurrentRoute() !== '/dashboard_food/update-food/:id' && getCurrentRoute() !== '/dashboard_food'">
+    <app-footer></app-footer>
+  </ng-container>

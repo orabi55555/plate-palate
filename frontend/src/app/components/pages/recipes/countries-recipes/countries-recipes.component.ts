@@ -5,7 +5,7 @@ import { CountryService } from 'src/app/services/country.service';
   selector: 'app-countries-recipes',
   templateUrl: './countries-recipes.component.html',
   styleUrls: ['./countries-recipes.component.css'],
-   providers: [CountryService]
+  providers: [CountryService],
 })
 export class CountriesRecipesComponent implements OnInit {
   countries: any[] = [];
@@ -17,15 +17,15 @@ export class CountriesRecipesComponent implements OnInit {
   }
 
   getAllCountries() {
-    this.countryService.getAllCountries()
+    this.countryService
+      .getAllCountries()
 
       .subscribe(
-
-        response => {
+        (response) => {
           this.countries = response.countries;
           console.log(this.countries);
         },
-        error => {
+        (error) => {
           console.error('Error:', error);
         }
       );
