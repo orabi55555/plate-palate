@@ -17,14 +17,15 @@
             class="col-12 col-sm-8 col-md-6 col-lg-4 mb-3"
             *ngFor="let country of countries"
           >
-            <a
-              [routerLink]="['/country', country._id]"
-              class="d-block rounded-circle shadow-sm country-icon"
-            >
-              <img
-                [src]="country.country_image"
-                [alt]="country.name + ' Flag'"
-              />
+            <a [routerLink]="['/country', country._id]" class="country-card">
+              <div class="card-content">
+                <img
+                  src="https://images.unsplash.com/photo-1678371839264-8fdb3c514ed8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80"
+                  [alt]="country.name + ' Flag'"
+                />
+                <h3 class="country-name">{{ country.name }}</h3>
+                <p class="country-description">best food in the world</p>
+              </div>
             </a>
           </div>
         </div>

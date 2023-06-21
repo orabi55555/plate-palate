@@ -4,17 +4,17 @@ import { RecipeService } from 'src/app/services/recipe.service';
 @Component({
   selector: 'app-foodrecipe',
   templateUrl: './foodrecipe.component.html',
-  styleUrls: ['./foodrecipe.component.css']
+  styleUrls: ['./foodrecipe.component.css'],
 })
 export class FoodrecipeComponent implements OnInit {
   recipe: any = {};
   newRecipe: any = {};
   recipeId: any;
 
-  constructor(private recipeService: RecipeService) { }
+  constructor(private recipeService: RecipeService) {}
 
   ngOnInit(): void {
-    this.recipeId = '648de48f54e5acf2bf0d0cfe'; // Replace 'your-recipe-id' with an actual recipe ID
+    this.recipeId = 'recipeId'; // Replace 'your-recipe-id' with an actual recipe ID
     this.recipeService.getRecipe(this.recipeId).subscribe(
       (data: any) => {
         this.recipe = data;
