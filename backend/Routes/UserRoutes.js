@@ -36,6 +36,9 @@ router.get('/getallusers', userController.getAllUsers);
 router.get('/:id', userController.getUserById);
 router.put('/:id', userController.updateUserById);
 router.delete('/:id', userController.deleteUserById);
+// Route to display all users for dashboard
+router.get('/users/getall', userController.getUsers);
+
 
 
 
@@ -49,6 +52,8 @@ router.delete('/:id', userController.deleteUserById);
 //   .get( UserController.getUserById)
 
 router.get('/:id', userController.getUserById);
+//search
+router.get('/user/name/:name', userController.getUserByName);
 
 
 module.exports = router;
