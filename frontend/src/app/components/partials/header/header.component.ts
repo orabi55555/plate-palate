@@ -10,7 +10,7 @@ import { Router, NavigationEnd } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 user: any;
-
+user_name:any;
   isLogged: boolean | undefined;
  
 
@@ -30,7 +30,19 @@ user: any;
         this.isLogged = !!localStorage.getItem('accessToken');
       }
     });
-    
+    let user = localStorage.getItem("user");
+    console.log(user);
+       if (user) {
+         // parse the user object into a JavaScript object
+         const userData = JSON.parse(user);
+   
+   
+         this.user_name = userData.user_name;
+       
+   
+   
+       }
+   
    
 }
 
