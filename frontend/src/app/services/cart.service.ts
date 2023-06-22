@@ -108,19 +108,7 @@ export class CartService {
 
   constructor(private http: HttpClient) { }
 
-  // getCart(userId: string): Observable<any> {
-  //   return this.http.get<any>(`${this.apiUrl}/${userId}`);
-  // }
 
-  // getCart(userId: string): Observable<any> {
-  //   return this.http.get<any>(`${this.apiUrl}/${userId}`).pipe(
-  //     map((response) => {
-  //       // This will log the response object to the console
-  //       console.log(response);
-  //       return response;
-  //     })
-  //   );
-  // }
 
   getCartItems(userId: string): Observable<any> {
     const url = `${this.apiUrl}/${userId}`;
@@ -129,7 +117,8 @@ export class CartService {
 
   addItemToCart(userId: string, foodId: string, quantity: number): Observable<any> {
     const body = { userId, foodId, quantity };
-    return this.http.post<any>(this.apiUrl, body);
+
+    return this.http.post<any>(`${this.apiUrl}/add-item`, body);
   }
 
   updateCartItemQuantity(userId: string, foodId: string, quantity: number): Observable<any> {
@@ -138,14 +127,14 @@ export class CartService {
   }
 
   removeItemFromCart(userId: string, foodId: string): Observable<any> {
-    return this.http.delete<any>(`${this.apiUrl}/${userId}/${foodId}`);
+    return this.http.delete<any>(`${this.apiUrl}/remove-item/${userId}/${foodId}`);
   }
 
   incrementCartItemQuantity(userId: string, foodId: string): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/${userId}/${foodId}/increment`, {});
+    return this.http.post<any>(`${this.apiUrl}/increment-item/${userId}/${foodId}`, {});
   }
 
   decrementCartItemQuantity(userId: string, foodId: string): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/${userId}/${foodId}/decrement`, {});
+    return this.http.post<any>(`${this.apiUrl}/decrement-item/${userId}/${foodId}/`, {});
   }
 }

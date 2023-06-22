@@ -36,7 +36,7 @@ import { DashboardComponent } from './components/pages/dashboard/dashboard.compo
 import { SidebarComponent } from './components/pages/sidebar/sidebar.component';
 import { DashboardFoodComponent } from './components/pages/dashboard-food/dashboard-food.component';
 import { NavbarComponent } from './components/pages/navbar/navbar.component';
-import { StripeModule } from 'stripe-angular';
+// import { StripeModule } from 'stripe-angular';
 import { environment } from '../environments/environment';
 import { CountryService } from './services/country.service';
 import { UpdateUserProfileComponent } from './components/pages/update-user-profile/update-user-profile.component';
@@ -83,7 +83,7 @@ import { UpdateUserProfileComponent } from './components/pages/update-user-profi
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
-     StripeModule.forRoot(environment.stripePublishableKey)
+    //  StripeModule.forRoot(environment.stripePublishableKey)
 
   ],
  // =providers: [CountryService],

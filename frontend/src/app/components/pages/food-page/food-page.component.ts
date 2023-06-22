@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 //import { Food } from 'src/app/'; //not completed
 import { ActivatedRoute } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
+import { CartService } from 'src/app/services/cart.service';
 import { FoodService } from 'src/app/services/food.service';
 
 
@@ -12,7 +14,7 @@ import { FoodService } from 'src/app/services/food.service';
 export class FoodPageComponent implements OnInit {
   //food! : Food;
 
-
+  userId: string | undefined;
 //   constructor(activatedRoute:ActivatedRoute, foodService:FoodService) {
 //     activatedRoute.params.subscribe((params) => {
 //       if(params.id)
@@ -21,14 +23,27 @@ export class FoodPageComponent implements OnInit {
 // })
 
 ID:any;
-food:any;
-constructor(myRoute:ActivatedRoute,public myService: FoodService ){
+food:any={};
+constructor(myRoute:ActivatedRoute,public myService: FoodService ,private cartService: CartService, private authService: AuthService,){
   this.ID = myRoute.snapshot.params["id"];
 }
 
 
 
 ngOnInit(): void {
+
+  
+    const token = localStorage.getItem('accessToken');
+    if (token !== null) {
+      const decodedToken = JSON.parse(atob(token.split('.')[1]));
+      console.log('Decoded token:', decodedToken);
+      console.log('User ID:', decodedToken.userId);
+      this.userId = decodedToken.userId;
+      //this.getCartItems();
+    } else {
+      console.error('No token found!');
+    }
+  
   this.myService.getFoodById(this.ID).subscribe(
     {
       next:(data)=>{
@@ -38,4 +53,6 @@ ngOnInit(): void {
     }
   );
 }
+
+
 }

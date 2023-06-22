@@ -95,7 +95,7 @@ export class AuthService {
     const userString = localStorage.getItem('user');
     if (userString) {
       const user = JSON.parse(userString);
-      console.log (user);
+      // console.log (user);
       return user.role;
     }
     return undefined;

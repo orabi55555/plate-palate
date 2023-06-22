@@ -39,28 +39,16 @@ import { AuthService } from 'src/app/services/auth.service';
       }
     }
 
-    // getCartItems(): void {
-    //   if (this.userId) {
-    //     this.cartService.getCartItems(this.userId).subscribe(
-    //       (response: any) => {
-    //         console.log('Cart items response:', response);
-    //         this.cartItems = response.data.items;
-    //       },
-    //       (error: any) => {
-    //         console.error('Cart items error:', error);
-    //       }
-    //     );
-    //   } else {
-    //     console.error('No user ID found!');
-    //   }
-    // }
+    
     getCartItems(): void {
       if (this.userId) {
         this.cartService.getCartItems(this.userId).subscribe(
           (response: any) => {
-            console.log('Cart items response:', response);
-            this.cart = response.data;
-            this.cartItems = response.data.items;
+           console.log('Cart items response:', response);
+            this.cart = response;
+           // this.cartItems = response.data.items;
+           // console.log("cart is "+this.cart);
+            
           },
           (error: any) => {
             console.error('Cart items error:', error);
@@ -76,20 +64,24 @@ import { AuthService } from 'src/app/services/auth.service';
     }
 
 
-    addItemToCart(foodId: string, quantity: string): void {
-      if (!this.userId) {
-        return console.error('userId is missing');
-      }
+    // addItemToCart(foodId: string, quantity: string): void {
+    //   if (!this.userId) {
+    //     return console.error('userId is missing');
+    //   }
 
-      this.cartService.addItemToCart(this.userId, foodId, parseInt(quantity)).subscribe(
-        (cart) => {
-          this.cart = cart;
-        },
-        (error) => {
-          console.error(error);
-        }
-      );
-    }
+    //   this.cartService.addItemToCart(this.userId, foodId, parseInt(quantity)).subscribe(
+    //     (cart) => {
+    //       console.log("old cart "+this.cart);
+          
+    //       this.cart.push(cart);
+    //       console.log("new cart "+this.cart);
+          
+    //     },
+    //     (error) => {
+    //       console.error(error);
+    //     }
+    //   );
+    // }
     updateCartItemQuantity(foodId: string, quantity: string): void {
       this.cartService.updateCartItemQuantity(this.userId!, foodId, parseInt(quantity)).subscribe(
         (cart) => {
