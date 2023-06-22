@@ -53,6 +53,23 @@ ngOnInit(): void {
     }
   );
 }
+addItemToCart(foodId: string, quantity: string): void {
+  if (!this.userId) {
+    return console.error('userId is missing');
+  }
 
-
+  this.cartService.addItemToCart(this.userId, foodId, parseInt(quantity)).subscribe(
+    (cart) => {
+      // console.log("old cart "+this.cart);
+      
+      // this.cart.push(cart);
+      // console.log("new cart "+this.cart);
+      console.log("item added "+cart);
+      
+    },
+    (error) => {
+      console.error(error);
+    }
+  );
+}
 }

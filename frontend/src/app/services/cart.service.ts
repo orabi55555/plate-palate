@@ -127,14 +127,14 @@ export class CartService {
   }
 
   removeItemFromCart(userId: string, foodId: string): Observable<any> {
-    return this.http.delete<any>(`${this.apiUrl}/remove-item/${userId}/${foodId}`);
+    return this.http.delete<any>(`${this.apiUrl}/${userId}/${foodId}`);
   }
 
   incrementCartItemQuantity(userId: string, foodId: string): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/increment-item/${userId}/${foodId}`, {});
+    return this.http.post<any>(`${this.apiUrl}/${userId}/${foodId}/increment`, {});
   }
 
   decrementCartItemQuantity(userId: string, foodId: string): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/decrement-item/${userId}/${foodId}/`, {});
+    return this.http.post<any>(`${this.apiUrl}/${userId}/${foodId}/decrement`, {});
   }
 }
