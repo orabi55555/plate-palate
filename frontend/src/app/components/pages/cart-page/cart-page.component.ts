@@ -96,7 +96,8 @@ import { AuthService } from 'src/app/services/auth.service';
     removeItemFromCart(foodId: string): void {
       this.cartService.removeItemFromCart(this.userId!, foodId).subscribe(
         (cart) => {
-          this.cart = cart;
+          console.log("old cart "+this.cart);
+          //this.cart = cart;
         },
         (error) => {
           console.error(error);
@@ -107,7 +108,8 @@ import { AuthService } from 'src/app/services/auth.service';
     incrementCartItemQuantity(foodId: string): void {
       this.cartService.incrementCartItemQuantity(this.userId!, foodId).subscribe(
         (cart) => {
-          this.cart = cart;
+          console.log("new cart "+this.cart);
+         // this.cart = cart;
         },
         (error) => {
           console.error(error);

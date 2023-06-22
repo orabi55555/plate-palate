@@ -131,10 +131,11 @@ export class CartService {
   }
 
   incrementCartItemQuantity(userId: string, foodId: string): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/${userId}/${foodId}/increment`, {});
+    return this.http.put<any>(`${this.apiUrl}/increment-item/${userId}/${foodId}`, {});
   }
 
   decrementCartItemQuantity(userId: string, foodId: string): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/${userId}/${foodId}/decrement`, {});
+    return this.http.post<any>(`${this.apiUrl}/decrement-item/${userId}/${foodId}`, {});
   }
+  
 }
