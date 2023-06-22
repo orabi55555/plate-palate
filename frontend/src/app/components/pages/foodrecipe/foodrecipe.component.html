@@ -1,27 +1,41 @@
-<div class="container my-5">
+<div class="container">
   <div class="row">
-    <div class="col-lg-6">
-      <h1 class="display-4 mb-4">{{ recipe.title }}</h1>
-      <div class="d-flex flex-row align-items-center mb-3">
-        <i class="bi bi-clock-fill me-2"></i>
-        <p class="mb-0">Preparation Time: {{ recipe.preparationTime }}</p>
+    <div class="col-md-6">
+      <div class="recipe-details" *ngIf="recipe">
+        <h2>Recipe Details</h2>
+        <div class="recipe-info">
+          <p><i class="fas fa-utensils"></i> Recipe Name:</p>
+          <h3>{{ recipe.title }}</h3>
+        </div>
+        <div class="recipe-info">
+          <p><i class="far fa-clock"></i> Preparation Time:</p>
+          <h3>{{ recipe.preparationTime }}</h3>
+        </div>
+        <div class="recipe-info">
+          <p><i class="far fa-clock"></i> Cooking Time:</p>
+          <h3>{{ recipe.cookingTime }}</h3>
+        </div>
+        <div class="recipe-info">
+          <p><i class="fas fa-carrot"></i> Ingredients:</p>
+
+          <p>{{ recipe.ingredients }}</p>
+        </div>
+        <div class="recipe-info">
+          <p><i class="fas fa-book-open"></i> Instructions:</p>
+          <p>{{ recipe.instructions }}</p>
+        </div>
       </div>
-      <div class="d-flex flex-row align-items-center mb-3">
-        <i class="bi bi-clock-fill me-2"></i>
-        <p class="mb-0">Cooking Time: {{ recipe.cookingTime }}</p>
+      <div class="error" *ngIf="error">
+        <p>Error: {{ error }}</p>
       </div>
-      <h3 class="mb-3">Ingredients:</h3>
-      <ul>
-        <li *ngFor="let ingredient of recipe.ingredients.split('\n')">{{ ingredient }}</li>
-      </ul>
-      <h3 class="mb-3">Instructions:</h3>
-      <ol>
-        <li *ngFor="let instruction of recipe.instructions.split('\n')">{{ instruction }}</li>
-      </ol>
     </div>
-    <div class="col-lg-6">
-      <div class="ratio ratio-4x3">
-        <img src="{{ recipe.recipe_image }}" class="img-fluid rounded shadow-lg" alt="{{ recipe.title }}">
+    <div class="col-md-6">
+      <div class="recipe-image" *ngIf="recipe.recipe_image">
+        <img
+          src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80"
+          alt="Recipe Image"
+          class="img-fluid"
+        />
       </div>
     </div>
   </div>

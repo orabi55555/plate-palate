@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,NgZone, OnInit } from '@angular/core';
 import {
   FormControl,
   FormGroup,
@@ -7,6 +7,7 @@ import {
 } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
+
 
 
 @Component({
@@ -18,7 +19,12 @@ export class LoginPageComponent implements OnInit {
   //Form Validables
   registerForm: any = FormGroup;
   submitted = false;
-  constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router) {}
+  // googleAuth: any;
+
+  constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router, private ngZone: NgZone) {
+
+
+  }
   //Add user form actions
   get f() {
     return this.registerForm.controls;
@@ -41,6 +47,24 @@ export class LoginPageComponent implements OnInit {
 
   }
 
+
+  // signInWithGoogle(): Promise<any> {
+  //   return new Promise<any>((resolve, reject) => {
+  //     this.ngZone.run(() => {
+  //       const provider = new firebase.auth.GoogleAuthProvider();
+  //       this.afAuth.signInWithPopup(provider)
+  //         .then((result) => {
+  //           // Handle successful sign-in
+  //           resolve(result);
+  //         })
+  //         .catch((error) => {
+  //           // Handle sign-in error
+  //           reject(error);
+  //         });
+  //     });
+  //   });
+  // }
+
   onSubmit() {
     this.submitted = true;
     // stop here if form is invalid
@@ -51,8 +75,13 @@ export class LoginPageComponent implements OnInit {
     if (this.submitted) {
       this.authService.login(this.registerForm.value).subscribe({
         next: response => {console.log (response);
-                 this.router.navigateByUrl('/home');
+                 //this.router.navigateByUrl('/home');
 
+                 if (this.authService.getUserRole() === 'user') {
+                  this.router.navigate(['/home']);
+                } else {
+                  this.router.navigate(['/dashboard']);
+                }
           // Login successful, do something with the response
         },
         error: error => {
@@ -60,4 +89,9 @@ export class LoginPageComponent implements OnInit {
         }
       });}
       // this.router.navigateByUrl('/home');
-}}
+}
+
+}
+
+
+

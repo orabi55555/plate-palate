@@ -4,7 +4,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
 
-
 @Component({
   selector: 'app-signup-page',
   templateUrl: './signup-page.component.html',
@@ -14,7 +13,11 @@ export class SignupPageComponent implements OnInit {
   signupForm!: FormGroup;
   submitted = false;
 
-  constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private authService: AuthService,
+    private router: Router
+  ) {}
 
   get f() {
     return this.signupForm.controls;
@@ -27,20 +30,46 @@ export class SignupPageComponent implements OnInit {
     }
     if (this.submitted) {
       this.authService.register(this.signupForm.value).subscribe({
-        next: response => {console.log (response);
+        next: (response) => {
+          console.log(response);
           this.router.navigateByUrl('/home');
         },
-
-      })
-      console.log (this.signupForm.value);    }
+      });
+      console.log(this.signupForm.value);
+    }
   }
 
   ngOnInit() {
     this.signupForm = this.formBuilder.group({
-      user_name: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(20), Validators.pattern('^[a-zA-Z0-9]+$')]],
+      user_name: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(3),
+          Validators.maxLength(20),
+          Validators.pattern('^[a-zA-Z0-9]+$'),
+        ],
+      ],
       email: ['', [Validators.required, Validators.email]],
+      address: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(5),
+          Validators.maxLength(30),
+          Validators.pattern('^[a-zA-Z0-9]+$'),
+        ],
+      ],
+      gender: ['', [Validators.required]],
+      mobile: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(11),
+          Validators.pattern('^[0-9]+$'),
+        ],
+      ],
       password: [
-
         '',
         [
           Validators.required,
@@ -48,16 +77,13 @@ export class SignupPageComponent implements OnInit {
           Validators.maxLength(60),
         ],
       ],
-      confirmPassword: [
-        '',
-        [Validators.required, this.matchPasswords.bind(this)],
-      ],
+      // confirmPassword: [
+      //   '',
+      //   [Validators.required, this.matchPasswords.bind(this)],
+      // ],
       // gender : ['', [Validators.required]],
       // role : ['', [Validators.required]],
       // mobile: ['', [Validators.required]],
-
-
-
     });
   }
 

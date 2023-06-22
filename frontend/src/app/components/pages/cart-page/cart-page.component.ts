@@ -1,196 +1,87 @@
-// import { Component, OnInit } from '@angular/core';
-// import { HttpClient } from '@angular/common/http';
+import { Component, OnInit,OnDestroy } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { CartService } from '../../../services/cart.service';
+import { Subscription } from 'rxjs';
+import { AuthService } from 'src/app/services/auth.service';
 
-// @Component({
-//   selector: 'app-cart-page',
-//   templateUrl: './cart-page.component.html',
-//   styleUrls: ['./cart-page.component.css']
-// })
-// export class CartPageComponent implements OnInit{
-//   cart: any;
-//   private apiUrl = '/api/cart';
-//   constructor(private http: HttpClient) { }
- 
-//   ngOnInit(): void {
-//     const userId = '648a11994f02237fc13bee13'; 
-//     this.http.get(userId).subscribe((cart) => {
-//       this.cart = cart;
-//     });
-//   }
 
-//   updateCartItemQuantity(foodId: string, quantity: number): void {
-//     const userId = '123'; // Replace with the actual user ID
-//     this.http.put(`/api/cart/item`, { userId, foodId, quantity }).subscribe((cart) => {
-//       this.cart = cart;
-//     });
-//   }
-
-//   removeItemFromCart(foodId: string): void {
-//     const userId = '123'; // Replace with the actual user ID
-//     this.http.delete(`/api/cart/item/${userId}/${foodId}`).subscribe((cart) => {
-//       this.cart = cart;
-//     });
-//   }
-
-//   incrementCartItemQuantity(foodId: string): void {
-//     const userId = '123'; // Replace with the actual user ID
-//     this.http.put(`/api/cart/item/increment/${userId}/${foodId}`, {}).subscribe((cart) => {
-//       this.cart = cart;
-//     });
-//   }
-
-//   decrementCartItemQuantity(foodId: string): void {
-//     const userId = '123'; // Replace with the actual user ID
-//     this.http.put(`/api/cart/item/decrement/${userId}/${foodId}`, {}).subscribe((cart) => {
-//       this.cart = cart;
-//     });
-//   }
-// // }
-// import { Component, OnInit } from '@angular/core';
-// import { CartService } from '../../../services/cart.service';
-
-// @Component({
-//   selector: 'app-cart-page',
-//   templateUrl: './cart-page.component.html',
-//   styleUrls: ['./cart-page.component.css']
-// })
-// export class CartPageComponent implements OnInit {
-
-  // cart: any;
-
-  // constructor(private cartService: CartService) { }
-
-  // ngOnInit(): void {
-  //   const userId = '648a11994f02237fc13bee13'; // replace with your actual userId
-  //   this.cartService.getCart(userId).subscribe((cart) => {
-  //     this.cart = cart;
-  //   });
-  // }
-
-  // addItem(foodId: string, quantityStr: string): void {
-  //   const quantity = Number(quantityStr);
-  //   const userId = '648a11994f02237fc13bee13'; // replace with your actual userId
-  //   this.cartService.addItemToCart(userId, foodId, quantity).subscribe((cart) => {
-  //     this.cart = cart;
-  //   });
-  // }
- 
-  //   cart: any;
-  
-  //   constructor(private cartService: CartService) { }
-  
-  //   ngOnInit(): void {
-  //     this.cartService.getCart('user123').subscribe(
-  //       (cart) => {
-  //         this.cart = cart;
-  //       },
-  //       (error) => {
-  //         console.error(error);
-  //       }
-  //     );
-  //   }
-  
-  //   addItemToCart(foodId: string, quantity: number): void {
-  //     this.cartService.addItemToCart('user123', foodId, quantity).subscribe(
-  //       (cart) => {
-  //         this.cart = cart;
-  //       },
-  //       (error) => {
-  //         console.error(error);
-  //       }
-  //     );
-  //   }
-  
-  //   updateCartItemQuantity(foodId: string, quantity: number): void {
-  //     this.cartService.updateCartItemQuantity('user123', foodId, quantity).subscribe(
-  //       (cart) => {
-  //         this.cart = cart;
-  //       },
-  //       (error) => {
-  //         console.error(error);
-  //       }
-  //     );
-  //   }
-  
-  //   removeItemFromCart(foodId: string): void {
-  //     this.cartService.removeItemFromCart('user123', foodId).subscribe(
-  //       (cart) => {
-  //         this.cart = cart;
-  //       },
-  //       (error) => {
-  //         console.error(error);
-  //       }
-  //     );
-  //   }
-  
-  //   incrementCartItemQuantity(foodId: string): void {
-  //     this.cartService.incrementCartItemQuantity('user123', foodId).subscribe(
-  //       (cart) => {
-  //         this.cart = cart;
-  //       },
-  //       (error) => {
-  //         console.error(error);
-  //       }
-  //     );
-  //   }
-  
-  //   decrementCartItemQuantity(foodId: string): void {
-  //     this.cartService.decrementCartItemQuantity('user123', foodId).subscribe(
-  //       (cart) => {
-  //         this.cart = cart;
-  //       },
-  //       (error) => {
-  //         console.error(error);
-  //       }
-  //     );
-  //   }
-  // }
-
-  import { Component, OnInit } from '@angular/core';
-  import { CartService } from '../../../services/cart.service';
 
   @Component({
     selector: 'app-cart-page',
     templateUrl: './cart-page.component.html',
     styleUrls: ['./cart-page.component.css']
   })
-  export class CartPageComponent implements OnInit {
+  export class CartPageComponent implements OnInit,  OnDestroy {
+    private accessToken: string | null = null;
 
-     cart: any;     
-    userId?: string;
+     cart: any;
+     userId: string | undefined;
+     cartSubscription: Subscription = new Subscription();
+    cartItems: any[] = [];
 
-    constructor(private cartService: CartService) { }
-  
+
+
+    constructor(private cartService: CartService, private authService: AuthService, private http: HttpClient  ) { }
+    logFoodId(foodId: any) {
+      console.log(foodId);
+    }
+
     ngOnInit(): void {
-      const userIdFromStorage = localStorage.getItem('userId');
-      this.userId = userIdFromStorage !== null ? userIdFromStorage : undefined;
-  
-      if (this.userId) {
-        console.log(this.cartService.getCart(this.userId));
+      const token = localStorage.getItem('accessToken');
+      if (token !== null) {
+        const decodedToken = JSON.parse(atob(token.split('.')[1]));
+        console.log('Decoded token:', decodedToken);
+        console.log('User ID:', decodedToken.userId);
+        this.userId = decodedToken.userId;
+        this.getCartItems();
+      } else {
+        console.error('No token found!');
+      }
+    }
 
-        this.cartService.getCart(this.userId).subscribe(
-          (cart) => {
-            this.cart = cart;
-            console.log(cart);
+    
+    getCartItems(): void {
+      if (this.userId) {
+        this.cartService.getCartItems(this.userId).subscribe(
+          (response: any) => {
+           console.log('Cart items response:', response);
+            this.cart = response;
+           // this.cartItems = response.data.items;
+           // console.log("cart is "+this.cart);
+            
           },
-          (error) => {
-            console.error(error);
+          (error: any) => {
+            console.error('Cart items error:', error);
           }
         );
+      } else {
+        console.error('No user ID found!');
       }
-      
     }
-  
-    addItemToCart(foodId: string, quantity: string): void {
-      this.cartService.addItemToCart(this.userId!, foodId, parseInt(quantity)).subscribe(
-        (cart) => {
-          this.cart = cart;
-        },
-        (error) => {
-          console.error(error);
-        }
-      );
+
+    ngOnDestroy(): void {
+      this.cartSubscription.unsubscribe();
     }
+
+
+    // addItemToCart(foodId: string, quantity: string): void {
+    //   if (!this.userId) {
+    //     return console.error('userId is missing');
+    //   }
+
+    //   this.cartService.addItemToCart(this.userId, foodId, parseInt(quantity)).subscribe(
+    //     (cart) => {
+    //       console.log("old cart "+this.cart);
+          
+    //       this.cart.push(cart);
+    //       console.log("new cart "+this.cart);
+          
+    //     },
+    //     (error) => {
+    //       console.error(error);
+    //     }
+    //   );
+    // }
     updateCartItemQuantity(foodId: string, quantity: string): void {
       this.cartService.updateCartItemQuantity(this.userId!, foodId, parseInt(quantity)).subscribe(
         (cart) => {
@@ -201,29 +92,31 @@
         }
       );
     }
-  
+
     removeItemFromCart(foodId: string): void {
       this.cartService.removeItemFromCart(this.userId!, foodId).subscribe(
         (cart) => {
-          this.cart = cart;
+          console.log("old cart "+this.cart);
+          //this.cart = cart;
         },
         (error) => {
           console.error(error);
         }
       );
     }
-  
+
     incrementCartItemQuantity(foodId: string): void {
       this.cartService.incrementCartItemQuantity(this.userId!, foodId).subscribe(
         (cart) => {
-          this.cart = cart;
+          console.log("new cart "+this.cart);
+         // this.cart = cart;
         },
         (error) => {
           console.error(error);
         }
       );
     }
-  
+
     decrementCartItemQuantity(foodId: string): void {
       this.cartService.decrementCartItemQuantity(this.userId!, foodId).subscribe(
         (cart) => {

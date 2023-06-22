@@ -10,7 +10,7 @@
 //     constructor(private http: HttpClient) { }
 //     getCart() {
 //         return this.http.get<any[]>(`${this.baseUrl}/api/cart/:userId`);
-    
+
 //       }
 // //   private cart: Cart = this.getCartFromLocalStorage();
 // //   private cartSubject: BehaviorSubject<Cart> = new BehaviorSubject(this.cart);
@@ -97,6 +97,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+
 
 @Injectable({
   providedIn: 'root'
@@ -106,13 +108,17 @@ export class CartService {
 
   constructor(private http: HttpClient) { }
 
-  getCart(userId: string): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/${userId}`);
+
+
+  getCartItems(userId: string): Observable<any> {
+    const url = `${this.apiUrl}/${userId}`;
+    return this.http.get(url);
   }
 
   addItemToCart(userId: string, foodId: string, quantity: number): Observable<any> {
     const body = { userId, foodId, quantity };
-    return this.http.post<any>(this.apiUrl, body);
+
+    return this.http.post<any>(`${this.apiUrl}/add-item`, body);
   }
 
   updateCartItemQuantity(userId: string, foodId: string, quantity: number): Observable<any> {
@@ -121,14 +127,15 @@ export class CartService {
   }
 
   removeItemFromCart(userId: string, foodId: string): Observable<any> {
-    return this.http.delete<any>(`${this.apiUrl}/${userId}/${foodId}`);
+    return this.http.delete<any>(`${this.apiUrl}/remove-item/${userId}/${foodId}`);
   }
 
   incrementCartItemQuantity(userId: string, foodId: string): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/${userId}/${foodId}/increment`, {});
+    return this.http.put<any>(`${this.apiUrl}/increment-item/${userId}/${foodId}`, {});
   }
 
   decrementCartItemQuantity(userId: string, foodId: string): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/${userId}/${foodId}/decrement`, {});
+    return this.http.put<any>(`${this.apiUrl}/decrement-item/${userId}/${foodId}`, {});
   }
+  
 }

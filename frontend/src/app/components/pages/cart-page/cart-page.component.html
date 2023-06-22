@@ -1,42 +1,16 @@
-<!-- <h2>Cart</h2>
- 
-<table>
+<div *ngIf="cart">
+  <div *ngFor="let item of cart?.items" class="card rounded-3 mb-4">
+    <div class="card-body p-4">
+      {{ logFoodId(item.foodId) }}
 
-  <tbody>
-    <tr *ngFor="let item of cart?.items">
-      <td>{{ item }}</td>
-      <td>{{ item.quantity }}</td>
-      <td>
-        <button (click)="incrementCartItemQuantity(item.foodId._id)">+</button>
-        <button (click)="decrementCartItemQuantity(item.foodId._id)">-</button>
-        <button (click)="removeItemFromCart(item.foodId._id)">Remove</button>
-      </td>
-    </tr>
-  </tbody>
-</table> 
-
-<h3>Add Item</h3>
-
-<form (submit)="addItemToCart(foodId.value, quantity.value)">
-  <label>
-    Food ID:
-    <input type="text" #foodId required>
-  </label>
-  <label>
-    Quantity:
-    <input type="number" #quantity required>
-  </label>
-  <button type="submit">Add Item</button>
-</form>
- -->
-
- <section class="h-100" style="background-color: #eee;">
-  <div class="container h-100 py-5">
-    <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col-10">
-
-        <div class="d-flex justify-content-between align-items-center mb-4">
-          <h3 class="fw-normal mb-0 text-black">Your Shopping Cart</h3>
+      <div class="row d-flex justify-content-between align-items-center">
+        <div class="col-md-2 col-lg-2 col-xl-2">
+          <img src="../../../../assets/food-2.jpg" style="width: 100px; height: 100px">
+        </div>
+        <div class="col-md-1 col-lg-2 col-xl-2">
+          {{ item.foodId?.title }}
+        </div>
+        <div class="col-md-3 col-lg-3 col-xl-3">
          
         </div>
 
@@ -75,17 +49,12 @@
             </div>
           </div>
         </div>
-
-       
-
-        <div class="card">
-          <div class="card-body">
-            <button  routerLink="/payment-page" type="button" 
-            class="btn btn-danger btn-block btn-lg">Proceed to Pay</button>
-          </div>
+        <div class="col-md-1 col-lg-1 col-xl-1 text-end">
+          <button class="btn btn-link text-danger" (click)="removeItemFromCart(item.foodId._id)">
+            <i class="fas fa-trash fa-lg"></i>
+          </button>
         </div>
-
       </div>
     </div>
   </div>
-</section>
+</div>

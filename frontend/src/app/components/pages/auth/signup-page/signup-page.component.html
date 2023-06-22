@@ -18,7 +18,9 @@
                     id="floatingUsername"
                     placeholder="Username"
                     [formControlName]="'user_name'"
-                    [ngClass]="{ 'is-invalid': submitted && f['user_name'].errors }"
+                    [ngClass]="{
+                      'is-invalid': submitted && f['user_name'].errors
+                    }"
                   />
                   <div
                     *ngIf="submitted && f['user_name'].errors"
@@ -63,6 +65,128 @@
                   </div>
                   <label for="floatingInput">Email address</label>
                 </div>
+
+                <div class="form-floating mb-3">
+                  <input
+                    type="address"
+                    class="form-control"
+                    id="floatingInput"
+                    placeholder="address"
+                    [formControlName]="'address'"
+                    [ngClass]="{
+                      'is-invalid': submitted && f['address'].errors
+                    }"
+                  />
+                  <div
+                    *ngIf="submitted && f['address'].errors"
+                    class="invalid-feedback"
+                  >
+                    <div *ngIf="f['address'].errors['required']">
+                      Address is required
+                    </div>
+                    <div *ngIf="f['address'].errors['minlength']">
+                      Address must be at least 5 characters
+                    </div>
+                    <div *ngIf="f['address'].errors['maxlength']">
+                      Address cannot exceed 30 characters
+                    </div>
+                    <div *ngIf="f['address'].errors['pattern']">
+                      Address can only contain alphanumeric characters
+                    </div>
+                  </div>
+                  <label for="floatingInput">Your Address</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                  <select
+                    id="gender"
+                    name="gender"
+                    class="form-control"
+                    [formControlName]="'gender'"
+                    [ngClass]="{
+                      'is-invalid': submitted && f['gender'].errors
+                    }"
+                  >
+                    <option value="" disabled selected>Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                  </select>
+                  <div
+                    *ngIf="submitted && f['gender'].errors"
+                    class="invalid-feedback"
+                  >
+                    <div *ngIf="f['gender'].errors['required']">
+                      Gender is required
+                    </div>
+                  </div>
+                  <label for="floatingInput">Your Gender</label>
+                </div>
+
+                <!-- <div class="form-floating mb-3">
+                  <div>
+                    <input
+                      type="radio"
+                      id="male"
+                      name="gender"
+                      value="male"
+                      [formControlName]="'gender'"
+                      [ngClass]="{
+                        'is-invalid': submitted && f['gender'].errors
+                      }"
+                    />
+                    <label for="male">Male</label>
+                  </div>
+                  <div>
+                    <input
+                      type="radio"
+                      id="female"
+                      name="gender"
+                      value="female"
+                      [formControlName]="'gender'"
+                      [ngClass]="{
+                        'is-invalid': submitted && f['gender'].errors
+                      }"
+                    />
+                    <label for="female">Female</label>
+                  </div>
+                  <div
+                    *ngIf="submitted && f['gender'].errors"
+                    class="invalid-feedback"
+                  >
+                    <div *ngIf="f['gender'].errors['required']">
+                      Gender is required
+                    </div>
+                  </div>
+                </div> -->
+
+                <div class="form-floating mb-3">
+                  <input
+                    type="mobile"
+                    class="form-control"
+                    id="floatingInput"
+                    placeholder="mobile"
+                    [formControlName]="'mobile'"
+                    [ngClass]="{
+                      'is-invalid': submitted && f['mobile'].errors
+                    }"
+                  />
+                  <div
+                    *ngIf="submitted && f['mobile'].errors"
+                    class="invalid-feedback"
+                  >
+                    <div *ngIf="f['mobile'].errors['required']">
+                      Mobile is required
+                    </div>
+                    <div *ngIf="f['mobile'].errors['minlength']">
+                      Mobile must be at least 11 characters
+                    </div>
+                    <div *ngIf="f['mobile'].errors['pattern']">
+                      Mobile can only contain Numbers
+                    </div>
+                  </div>
+                  <label for="floatingInput">Your Mobile</label>
+                </div>
+
                 <div class="form-floating mb-3">
                   <input
                     type="password"
@@ -90,7 +214,7 @@
                   </div>
                   <label for="floatingPassword">Password</label>
                 </div>
-                <div class="form-floating mb-3">
+                <!-- <div class="form-floating mb-3">
                   <input
                     type="password"
                     class="form-control"
@@ -113,7 +237,7 @@
                     </div>
                   </div>
                   <label for="floatingConfirmPassword">Confirm Password</label>
-                </div>
+                </div> -->
 
                 <div class="d-grid">
                   <button

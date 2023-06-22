@@ -3,9 +3,12 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 // import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppRoutingModule } from './app-routing.module';
-import { FormControlName, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {
+  FormControlName,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { AppComponent } from './app.component';
-import { UpdateUserProfileComponent } from './components/update-user-profile/update-user-profile.component';
 import { SignupPageComponent } from './components/pages/auth/signup-page/signup-page.component';
 import { AboutUsComponent } from './components/pages/about-us/about-us.component';
 import { FooterComponent } from './components/partials/footer/footer.component';
@@ -27,14 +30,16 @@ import { OrdersComponent } from './components/pages/orders/orders.component';
 import { CartPageComponent } from './components/pages/cart-page/cart-page.component';
 import { FoodrecipeComponent } from './components/pages/foodrecipe/foodrecipe.component';
 import { HttpClientModule } from '@angular/common/http';
-import { CreatfoodComponent } from './components/creatfood/creatfood.component';
-import { UpdateFoodComponent } from './components/update-food/update-food.component';
+import { CreatfoodComponent } from './components/pages/creatfood/creatfood.component';
+import { UpdateFoodComponent } from './components/pages/update-food/update-food.component';
 import { DashboardComponent } from './components/pages/dashboard/dashboard.component';
 import { SidebarComponent } from './components/pages/sidebar/sidebar.component';
 import { DashboardFoodComponent } from './components/pages/dashboard-food/dashboard-food.component';
 import { NavbarComponent } from './components/pages/navbar/navbar.component';
-import { StripeModule } from 'stripe-angular';
+// import { StripeModule } from 'stripe-angular';
 import { environment } from '../environments/environment';
+import { CountryService } from './services/country.service';
+import { UpdateUserProfileComponent } from './components/pages/update-user-profile/update-user-profile.component';
 
 @NgModule({
   declarations: [
@@ -77,7 +82,7 @@ import { environment } from '../environments/environment';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
-     StripeModule.forRoot(environment.stripePublishableKey)
+    //  StripeModule.forRoot(environment.stripePublishableKey)
 
   ],
  // =providers: [CountryService],

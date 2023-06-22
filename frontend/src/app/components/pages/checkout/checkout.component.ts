@@ -1,4 +1,4 @@
-import { Component ,ElementRef  , ViewChild} from '@angular/core';
+import { Component ,ElementRef  , Input, ViewChild} from '@angular/core';
 import { FormBuilder, FormGroup , Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import * as bootstrap from 'bootstrap';
@@ -14,7 +14,7 @@ import { CartService } from "src/app/services/cart.service";
   styleUrls: ['./checkout.component.css']
 })
 export class CheckoutComponent{
-
+ 
   validationCheckoutForm!: FormGroup;
   @ViewChild('successModal') successModal!: ElementRef;
   errorMessage: any;
@@ -28,6 +28,7 @@ export class CheckoutComponent{
   card:any;
  creditNumber :any;
  creditMonth:any;
+  message:any;
 
   constructor(private fb: FormBuilder,
     private router: Router,
@@ -76,6 +77,11 @@ export class CheckoutComponent{
         ]
       ]
     })
+  }
+  leave():void
+  {
+    this.message = <HTMLElement>document.getElementById('thank');
+        this.message.innerHTML = "thank you";
   }
   ngOnInit() {
     this.total = this.checkoutService.total;
@@ -154,10 +160,13 @@ export class CheckoutComponent{
       this.card={creditNumber,creditMonth,creditYear,creditCVC};
       console.log(this.card);
       this.cards.push(this.card);
+      console.log(this.cards);
       
       this.checkoutService.sendDataToStripe(creditNumber, creditMonth, creditYear, creditCVC).subscribe(
         (data: any) => {
           this.spinner.show();
+      
+          // this.message=document.getElementById('thank')?.innerText("success");
         
           // //this.order();
         },
@@ -167,14 +176,8 @@ export class CheckoutComponent{
         }
       );
 
-    }
+    }else{console.log("error");}
   }
-
-
-
-
-
-
 
   showModal(){
     const modal = new bootstrap.Modal(this.successModal.nativeElement);
