@@ -37,6 +37,7 @@ label {
 
 input[type="text"],
 input[type="number"],
+select,
 textarea {
   width: 100%;
   height: 45px;
@@ -54,6 +55,7 @@ textarea {
 
 input[type="text"]:hover,
 input[type="number"]:hover,
+select,
 textarea:hover{
   background-color: white;
   color: black;
