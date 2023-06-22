@@ -127,7 +127,7 @@ export class CartService {
   }
 
   removeItemFromCart(userId: string, foodId: string): Observable<any> {
-    return this.http.delete<any>(`${this.apiUrl}/${userId}/${foodId}`);
+    return this.http.delete<any>(`${this.apiUrl}/remove-item/${userId}/${foodId}`);
   }
 
   incrementCartItemQuantity(userId: string, foodId: string): Observable<any> {
