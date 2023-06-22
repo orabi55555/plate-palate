@@ -135,7 +135,7 @@ export class CartService {
   }
 
   decrementCartItemQuantity(userId: string, foodId: string): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/decrement-item/${userId}/${foodId}`, {});
+    return this.http.put<any>(`${this.apiUrl}/decrement-item/${userId}/${foodId}`, {});
   }
   
 }
