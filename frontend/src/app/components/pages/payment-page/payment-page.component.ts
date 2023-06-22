@@ -1,20 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,ElementRef  , ViewChild} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import * as bootstrap from 'bootstrap';
+
+import { NgxSpinnerService } from 'ngx-spinner';
 import { environment } from 'src/environments/environment';
-import { CartService } from '../../../services/cart.service';
-declare var Stripe: any;
+import { OrderService } from "src/app/services/order.service";
+import { CartService } from "src/app/services/cart.service";
 @Component({
   selector: 'app-payment-page',
   templateUrl: './payment-page.component.html',
   styleUrls: ['./payment-page.component.css']
 })
-export class PaymentPageComponent implements OnInit{
-  // checkoutForm: FormGroup;
-  // stripe: any;
-  // error: any;
-  // orderId: string;
-  // quatitay: number;
+export class PaymentPageComponent {
+   validationCheckoutForm!: FormGroup;
+  @ViewChild('successModal') successModal!: ElementRef;
+  errorMessage: any;
+  formattedInputValue!: string;
+  formattedMonth: string = '';
+  sectionVisible = false;
+  total: number = 0;
+  Items: any = [];
+  flag : any;
   constructor(
     private formBuilder: FormBuilder,
     private cartService: CartService,

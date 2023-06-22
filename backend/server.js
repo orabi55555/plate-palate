@@ -41,7 +41,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(cors());
 //#endregion
-
+const stripeRoutes = require('./Routes/StripeRoutes');
+app.use('/charge', stripeRoutes);
 //#region Root
 app.get("/", (req, res) => {
   console.log("PlatePalate backend!");
