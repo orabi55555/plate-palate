@@ -6,7 +6,7 @@ const Order = require("../Models/OrderModel");
 // Create a new order
 exports.createOrder = async (req, res) => {
   try {
-    const { userID, totalPrice, status, quantity, address, meals } = req.body;
+    const { userID, totalPrice, status, quantity, address, meals ,paymentIntentId } = req.body;
     const order = await Order.create({
       userID,
       totalPrice,
@@ -14,6 +14,7 @@ exports.createOrder = async (req, res) => {
       quantity,
       address,
       meals,
+      paymentIntentId ,
     });
     res.status(201).json(order);
   } catch (error) {

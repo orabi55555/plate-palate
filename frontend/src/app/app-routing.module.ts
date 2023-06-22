@@ -20,6 +20,8 @@ import { CreatfoodComponent } from './components/pages/creatfood/creatfood.compo
 import { UpdateFoodComponent } from './components/pages/update-food/update-food.component';
 import { DashboardComponent } from './components/pages/dashboard/dashboard.component';
 import { DashboardFoodComponent } from './components/pages/dashboard-food/dashboard-food.component';
+import { CartPageComponent } from './components/pages/cart-page/cart-page.component';
+
 import{UserAuthGuard,AdminAuthGuard} from './services/authguard.service';
 
 
@@ -42,6 +44,9 @@ const routes: Routes = [
   { path: 'orders', component: OrdersComponent },
   { path: 'country/:countryId', component: ClickedCountryRecipeComponent },
   { path: 'payment', component: PaymentPageComponent },
+  {path:'dashboard',component:DashboardComponent},
+  {path:'dashboard_food',component:DashboardFoodComponent},
+  { path: 'cart-page', component: CartPageComponent },
   // { path: 'users', component: ProfileComponent },
   {path:'dashboard',component:DashboardComponent, canActivate: [AdminAuthGuard]},
   {path:'dashboard_food',component:DashboardFoodComponent, canActivate: [AdminAuthGuard]},

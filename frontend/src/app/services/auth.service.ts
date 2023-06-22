@@ -14,10 +14,18 @@ interface ApiResponse {
   message: string;
   accessToken: string;
   user: {
+    id: string; //t3del
     user_name: string;
     email: string;
     role: string;
   };
+}
+
+interface User {
+  id: string;
+  user_name: string;
+  email: string;
+  role: string;
 }
 
 @Injectable({
@@ -87,7 +95,7 @@ export class AuthService {
     const userString = localStorage.getItem('user');
     if (userString) {
       const user = JSON.parse(userString);
-      console.log (user);
+      // console.log (user);
       return user.role;
     }
     return undefined;
