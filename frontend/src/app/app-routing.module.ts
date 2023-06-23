@@ -41,7 +41,7 @@ const routes: Routes = [
   { path: 'about-us', component: AboutUsComponent,canActivate: [UserAuthGuard] },
   { path:'food/:id', component:FoodPageComponent ,canActivate: [UserAuthGuard]},
   { path: 'profile', component: ProfileComponent, canActivate: [UserAuthGuard] },
-  {path:'updateprofile',component:UpdateUserProfileComponent},
+  // {path:'updateprofile',component:UpdateUserProfileComponent},
   { path: 'login', component: LoginPageComponent },
   { path: 'signup', component: SignupPageComponent },
   { path:'dashboard-recipe/createrecipe', component:CreaterecipeComponent },
@@ -69,7 +69,7 @@ const routes: Routes = [
   { path: 'foodrecipe/:id', component: FoodrecipeComponent },
   { path: 'update-user-profile', component: UpdateUserProfileComponent },
   { path: '**', component: NotFoundComponent },
-  
+
 ];
 
 @NgModule({
