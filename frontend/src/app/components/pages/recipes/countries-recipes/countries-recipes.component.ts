@@ -22,7 +22,7 @@ export class CountriesRecipesComponent implements OnInit {
 
       .subscribe(
         (response) => {
-          this.countries = response.countries;
+          this.countries = response;
           console.log(this.countries);
         },
         (error) => {
