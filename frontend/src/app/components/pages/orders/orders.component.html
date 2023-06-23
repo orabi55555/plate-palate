@@ -27,7 +27,9 @@
             <div class="card">
 
                     <div class="invoice p-5" >
-                         <span class="font-weight-bold d-block mt-4">Hello, Chris</span>
+                         <span class="font-weight-bold d-block mt-4">Hello,
+                             <span class="f-2 " style="color: red; margin-right: 20px,">{{user_name}}</span>
+                         </span>
                     <span>Here is some of your orders has been with us</span>
                          <div></div>
                         <div class="payment border-top mt-3 mb-3 border-bottom table-responsive"*ngFor="let order of orders">
@@ -53,16 +55,6 @@
                                                 
                                             </div>
                                         </td>
-
-                                        <!-- <td>
-                                            <div class="py-2">
-
-                                                <span class="d-block text-muted">Payment</span>
-                                            <span><img src="https://img.icons8.com/color/48/000000/mastercard.png" width="20" /></span>
-                                                
-                                            </div>
-                                        </td> -->
-
                                         <td>
                                             <div class="py-2">
 

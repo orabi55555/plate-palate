@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { config } from '../config';
 
 
 
@@ -9,8 +8,8 @@ import { config } from '../config';
 })
 
 export class CheckoutService {
-  
-  private Base_URL = `${config.backendUrl}/charge/`
+  private apiUrl = 'http://localhost:7000/api/checkout/charge';
+
   constructor(private readonly myClient: HttpClient) { }
 
 
@@ -25,7 +24,7 @@ export class CheckoutService {
   }
 
   sendDataToStripe(cardN:any, cardM:any , cardY :any, cardCVC :any) {
-    return this.myClient.post(this.Base_URL, { cardN, cardM, cardY, cardCVC });
+    return this.myClient.post(this.apiUrl, { cardN, cardM, cardY, cardCVC });
 
   }
 

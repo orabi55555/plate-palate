@@ -12,7 +12,7 @@ import { ProfileComponent } from './components/pages/profile/profile.component';
 import { AboutUsComponent } from './components/pages/about-us/about-us.component';
 import { ClickedCountryRecipeComponent } from './components/pages/clicked-country-recipe/clicked-country-recipe.component';
 import { PaymentPageComponent } from './components/pages/payment-page/payment-page.component';
-import { CheckoutComponent } from './components/pages/checkout/checkout.component';
+// import { CheckoutComponent } from './components/pages/checkout/checkout.component';
 import { OrdersComponent } from './components/pages/orders/orders.component';
 // import { OrderTrackPageComponent } from './components/pages/order-track-page/order-track-page.component';
 import { FoodrecipeComponent } from './components/pages/foodrecipe/foodrecipe.component';
@@ -40,7 +40,7 @@ const routes: Routes = [
   { path: 'recipes', component: RecipesComponent },
   { path: 'dashboard_food/update-food/:id', component: UpdateFoodComponent, canActivate: [AdminAuthGuard] },
   { path: 'payment-page', component: PaymentPageComponent },
-  { path: 'checkout', component: CheckoutComponent },
+  // { path: 'checkout', component: CheckoutComponent },
   { path: 'orders', component: OrdersComponent },
   { path: 'country/:countryId', component: ClickedCountryRecipeComponent },
   { path: 'payment', component: PaymentPageComponent },

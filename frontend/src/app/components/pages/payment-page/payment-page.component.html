@@ -1,166 +1,110 @@
+
 <section class="page-header">
-    <div class="overly"></div>   
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-6">
-          <div class="content text-center">
-            <h1 class="mb-3">Payment</h1>
-  
-          <nav aria-label="breadcrumb">
-            <ol class="breadcrumb bg-transparent justify-content-center">
-              <li class="breadcrumb-item"><a class="text-danger" routerLink="/">Home</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Payment</li>
-            </ol>
-          </nav>
-          </div>
+  <div class="overly"></div>   
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <div class="content text-center">
+          <h1 class="mb-3">Payment</h1>
+
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb bg-transparent justify-content-center">
+            <li class="breadcrumb-item"><a class="text-danger" routerLink="/">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Payment</li>
+          </ol>
+        </nav>
         </div>
       </div>
     </div>
-  </section>
-              <div class="container">
-                <div class="row">
-                  <div class="col-12 mt-4">
-                    <div class="card p-3">
-                      <div class="d-flex align-items-center">
-                        <p class="mb-0 fw-bold h4 me-3">Payment Methods</p>
-                        <img class="img-box p-1 ml-auto" src="https://www.freepnglogos.com/uploads/visa-logo-download-png-21.png" alt="">
-                        <!-- <div class="checkout-card-container">
-                          <div class="checkout-card card-back">
-                            <span class="cvc-output">{{validationCheckoutForm.get('creditCVC')?.value? validationCheckoutForm.get('creditCVC')?.value :000}}</span>
-                          </div>
-                          <div class="checkout-card card-front">
-                            <section class="output-section">
-                              <h1 class="number-output">{{ formattedInputValue ? formattedInputValue : "0000 0000 0000 0000"}}</h1>
-                              <div>
-                                <p class="name-output">{{ validationCheckoutForm.get('name')?.value ? validationCheckoutForm.get('name')?.value : '***** ****' }}</p>
-                                <p><span class="month-output">{{formattedMonth ? formattedMonth :"00"}}</span>/<span class="year-output">{{validationCheckoutForm.get('creditYear')?.value? validationCheckoutForm.get('creditYear')?.value :"00"}}</span></p>
-                              </div>
-                            </section>
-                          </div>
-                        </div> -->
-                      </div>
-                    </div>
-                  </div>
-              
-                
-  
-                          <div class="col-12">
-                             <div class="card p-3">
-                             <div class="card-body border p-0">
-                          <p>
-                              <a class="btn btn-primary p-2 w-100 h-100 d-flex align-items-center justify-content-between"
-                                  data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="true"
-                                  aria-controls="collapseExample">
-                                  <span class="fw-bold">Credit Card</span>
-                                  <span class="">
-                               
-                                      <!-- <span class="fab fa-cc-amex"></span>
-                                      <span class="fab fa-cc-mastercard"></span>
-                                      <span class="fab fa-cc-discover"></span> -->
-                                  </span>
-                              </a>
-                          </p>
-                          <div class="collapse show p-3 pt-0" id="collapseExample">
-                              <div class="row">
-                                  <div class="col-lg-5 mb-lg-0 mb-3">
-                                      <p class="h4 m-4">Summary</p>
-                                      <br>
-                                      <p style="color: black;" class="mb-0 m-t">  Your Informations have been Securited – as any expert should tell you <br> isn’t just about keeping your data secret: it’s also about ensuring it is available when you need it, and that it can be believed. In the industry jargon you ensure information’s.</p>
-                                 </div>
-                                  <div class="col-lg-7">
-                                  <form role="form" action="#" method="post" class="form form-group " id="payment-form" data-aos="fade-up" data-aos-delay="400" role="form">
-                                           <div class="row">
-                                              <div class="col-12">
-                                                  <div class="form_div">
-                                                      <input type="text" class="mt-4 form-control"name="creditcardno"  placeholder=" ">
-                                                      <label for="" class="form_label">Card Number</label>
-                                                  </div>
-                                              </div>
-  
-                                              <div class="col-6">
-                                                  <div class="form_div">
-                                                      <input type="text" class="form-control" name="expirymonth" placeholder=" ">
-                                                      <label for="" class="form_label">MM / yy</label>
-                                                  </div>
-                                              </div>
-  
-                                              <div class="col-6">
-                                                  <div class="form_div">
-                                                      <input type="password" class="form-control"name="CVV"  placeholder=" ">
-                                                      <label for="" class="form_label">cvv code</label>
-                                                  </div>
-                                              </div>
-                                              <div class="col-12">
-                                                  <div class="form_div">
-                                                    <label for="" class="form_label">name on the card</label>
-  
-                                                      <input type="text" class="form-control" name="nameoncard" placeholder=" ">
-                                                  </div>
-                                              </div>
-                                              <div class="col-12">
-                                              <a routerLink="/orders"class="p-2 btn btn-main btn-danger">Make a payment!</a>
-  
-                                                  <!-- <div class="btn btn-primary w-100">Sumbit</div> -->
-                                              </div>
-                                          </div>
-                                      </form>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                      </div>
-                  </div>
-              </div>
-              </div>
+  </div>
+</section>
 
-              <!-- <form [formGroup]="paymentForm" (ngSubmit)="onSubmit()">
-                <div class="form-group">
-                  <label for="amount">Amount</label>
-                  <input type="text" class="form-control" id="amount" formControlName="amount" />
-                  <div *ngIf="paymentForm.get('amount').invalid && (paymentForm.get('amount').dirty || paymentForm.get('amount').touched)">
-                    <div *ngIf="paymentForm.get('amount').errors.required">Amount is required.</div>
-                    <div *ngIf="paymentForm.get('amount').errors.pattern">Amount must be a number with up to 2 decimal places.</div>
-                  </div>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <form [formGroup]="paymentForm" (ngSubmit)="onSubmit()">
+
+            <div class="form-group">
+              <label>Name on card</label>
+              <input type="text" formControlName="name" class="form-control" placeholder="Enter name">
+              <div *ngIf="paymentForm.get('name')?.invalid && (paymentForm.get('name')?.dirty || paymentForm.get('name')?.touched)" class="invalid-feedback d-block">
+                <div *ngIf="paymentForm.get('name')?.errors">Name is required</div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Card number</label>
+              <input type="text" formControlName="cardNumber" class="form-control" placeholder="Enter card number">
+              <div *ngIf="paymentForm.get('cardNumber')?.invalid && (paymentForm.get('cardNumber')?.dirty || paymentForm.get('cardNumber')?.touched)" class="invalid-feedback d-block">
+                <div *ngIf="paymentForm.get('cardNumber')?.errors">Card number is required</div>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label>Expiration month</label>
+                <input type="text" formControlName="expMonth" class="form-control" placeholder="MM">
+                <div *ngIf="paymentForm.get('expMonth')?.invalid && (paymentForm.get('expMonth')?.dirty || paymentForm.get('expMonth')?.touched)" class="invalid-feedback d-block">
+                  <div *ngIf="paymentForm.get('expMonth')?.errors">Expiration month is required</div>
                 </div>
-                <div class="form-group">
-                  <label for="currency">Currency</label>
-                  <select class="form-control" id="currency" formControlName="currency">
-                    <option value="USD">USD</option>
-                    <option value="EUR">EUR</option>
-                    <option value="GBP">GBP</option>
-                  </select>
+              </div>
+              <div class="form-group col-md-6">
+                <label>Expiration year</label>
+                <input type="text" formControlName="expYear" class="form-control" placeholder="YYYY">
+                <div *ngIf="paymentForm.get('expYear')?.invalid && (paymentForm.get('expYear')?.dirty || paymentForm.get('expYear')?.touched)" class="invalid-feedback d-block">
+                  <div *ngIf="paymentForm.get('expYear')?.errors">Expiration year is required</div>
                 </div>
-                <div class="form-group">
-                  <label for="cardNumber">Card Number</label>
-                  <input type="text" class="form-control" id="cardNumber" formControlName="cardNumber" />
-                  <div *ngIf="paymentForm.get('cardNumber').invalid && (paymentForm.get('cardNumber').dirty || paymentForm.get('cardNumber').touched)">
-                    Card number is required.
-                  </div>
-                </div>
-                <div class="form-row">
-                  <div class="form-group col-md-6">
-                    <label for="expMonth">Expiration Month</label>
-                    <input type="text" class="form-control" id="expMonth" formControlName="expMonth" />
-                    <div *ngIf="paymentForm.get('expMonth').invalid && (paymentForm.get('expMonth').dirty || paymentForm.get('expMonth').touched)">
-                      Expiration month is required.
-                    </div>
-                  </div>
-                  <div class="form-group col-md-6">
-                    <label for="expYear">Expiration Year</label>
-                    <input type="text" class="form-control" id="expYear" formControlName="expYear" />
-                    <div *ngIf="paymentForm.get('expYear').invalid && (paymentForm.get('expYear').dirty || paymentForm.get('expYear').touched)">
-                      Expiration year is required.
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="cvc">CVC</label>
-                  <input type="text" class="form-control" id="cvc" formControlName="cvc" />
-                  <div *ngIf="paymentForm.get('cvc').invalid && (paymentForm.get('cvc').dirty || paymentForm.get('cvc').touched)">
-                    CVC is required.
-                  </div>
-                </div>
-                <button type="submit" class="btn btn-primary">Pay</button>
-              </form> -->
-              
-              
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>CVV</label>
+              <input type="text" formControlName="cvv" class="form-control" placeholder="Enter CVV">
+              <div *ngIf="paymentForm.get('cvv')?.invalid && (paymentForm.get('cvv')?.dirty || paymentForm.get('cvv')?.touched)" class="invalid-feedback d-block">
+                <div *ngIf="paymentForm.get('cvv')?.errors">CVV is required</div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <button type="submit" class="btn btn-danger btn-block" [disabled]="isLoading || paymentForm.invalid">Pay</button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="modal fade" id="paymentSuccessModal" tabindex="-1" aria-labelledby="paymentSuccessModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="paymentSuccessModalLabel">Payment Successful</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Your payment has been processed successfully.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<!-- Add the modal to the template -->
+<ng-template #successModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">plate-palate says Thanks</h4>
+  </div>
+  <div class="modal-body">
+    <p>Your payment has been processed successfully.</p>
+  </div>
+  <div class="modal-footer">
+    <button routerLink="/orders" type="button" class="btn btn-danger" (click)="modal.close('Ok')">Ok</button>
+  </div>
+</ng-template>
+
