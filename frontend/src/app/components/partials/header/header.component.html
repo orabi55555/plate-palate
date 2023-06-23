@@ -15,7 +15,7 @@ PLATE PALATE</i></h2>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav ml-auto">
-
+<h5 style="color: red; margin-right: 20px">welcome {{user_name}}</h5>
         <li class="nav-item">
           <a class="nav-link" routerLink="/about-us">about us</a>
         </li>
@@ -25,9 +25,8 @@ PLATE PALATE</i></h2>
         <!-- <li class="nav-item">
           <a class="nav-link" routerLink="/creatfood">creatfood</a>
         </li> -->
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/login"> Login</a>
-        </li>
+
+        
           <li class="nav-item"  >
             <a class="nav-link" routerLink="profile">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
@@ -37,40 +36,49 @@ PLATE PALATE</i></h2>
 
           </li>
           <li class="nav-item" >
-            <a class="nav-link" routerLink="/checkout">
+            <a class="nav-link" routerLink="/cart-page">
 
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-basket-fill" viewBox="0 0 16 16">
                     <path d="M5.071 1.243a.5.5 0 0 1 .858.514L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v5a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 6h1.717L5.07 1.243zM3.5 10.5a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3z"/>
-                  </svg><span>3</span>
+                  </svg>
             </a>
           </li>
-          <li class="nav-item" >
-          <button (click)="logout()">logout</button>
+         
+          <li class="nav-item" *ngIf="!isLogged">
+            <a
+            [routerLinkActiveOptions]="{exact:true}"
+            routerLinkActive="active"
+            routerLink="/login"
+             class="nav-link">Login</a>
+          </li>
+     
+          <li class="nav-item"  *ngIf="isLogged" >
+          <a (click)="logout() "[routerLinkActiveOptions]="{exact:true}" routerLinkActive="active" class="nav-link"  style="cursor: pointer;">logout</a>
 
 
           </li>
-          <ng-template #elseBlock>
-            <li class="nav-item" >
-                <a
+
+         
+           
+
+            <li class="nav-item" *ngIf="!isLogged">
+            <button class="btn btn-secondary" style="background-color: lightgray;">
+              <a
                 [routerLinkActiveOptions]="{exact:true}"
                 routerLinkActive="active"
-                routerLink="/login"
-                 class="nav-link">Login</a>
-              </li>
-          </ng-template>
+                routerLink="/signup"
+              >
+              Sign Up
+            </a></button>
+            </li>
+        
+
+            
+
 
       </ul>
 
-    <ng-template #SignUpElseBlock>
-      <button class="btn btn-secondary" style="background-color: lightgray;">
-        <a
-          [routerLinkActiveOptions]="{exact:true}"
-          routerLinkActive="active"
-          routerLink="/register"
-        >
-        Sign Up
-      </a></button>
-   </ng-template>
+   
  </div>
 </div>
 </nav>

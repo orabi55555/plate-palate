@@ -5,12 +5,12 @@ import { Observable } from 'rxjs';
 import { Recipe } from '../shared/models/Recipe';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class RecipeService {
   private baseUrl = 'http://localhost:7000/api/Recipe'; // Update the API endpoint URL according to your backend configuration
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   // getRecipesByCountry(countryId: string) : Observable<any> {
   //   console.log(`getRecipesByCountry(${countryId})`);
@@ -20,7 +20,8 @@ export class RecipeService {
 
   getRecipe(recipeId: string): Observable<any> {
     console.log(`getRecipe(${recipeId})`);
-    return this.http.get(`${this.baseUrl}/${recipeId}`);
+    const url = `${this.baseUrl}/${recipeId}`;
+    return this.http.get<any>(url);
   }
 
   addRecipe(recipe: any) : Observable<any> {

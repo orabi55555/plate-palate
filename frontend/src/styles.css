@@ -1,31 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
-body{
+body {
   margin: 0px;
   padding: 0px;
   display: inline;
   background-color: #13181c;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
-
-*{
-  box-sizing: border-box;
-
+@font-face {
+  font-family: "BebasNeue-Regular";
+  src: url("/assets/fonts/BebasNeue-Regular.woff2") format("woff2"),
+    url("/assets/fonts/BebasNeue-Regular.woff") format("woff"),
+    url("/assets/fonts/BebasNeue-Regular.ttf") format("truetype");
 }
 
-html{
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+html {
   font-size: 16px;
 }
 
-html,button{
-  font-family: 'Quicksand', sans-serif;
+html,
+button {
+  font-family: "Quicksand", sans-serif;
 }
 
-body{
+body {
   margin: 0;
 }
 
-a{
+a {
   text-decoration: none;
 }
-

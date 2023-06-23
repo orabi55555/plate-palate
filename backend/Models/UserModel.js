@@ -46,8 +46,8 @@ const userSchema = new Schema({
   mobile: {
     type: String,
     required: false,
-    minlength: 10,
-    maxlength: 10
+    minlength: 11,
+    maxlength: 11
   },
   address: {
     type: String,
