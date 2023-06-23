@@ -19,7 +19,7 @@ export class CreaterecipeComponent implements OnInit {
   countries: { _id: string, name: string }[] = [];
   country: any;
 
- 
+
   constructor(private recipeService: RecipeService ,private router: Router,private countryService: CountryService) {}
 
   ngOnInit() {
@@ -39,22 +39,40 @@ export class CreaterecipeComponent implements OnInit {
       );
   }
 
-  onSubmit() {
-    console.log('this.recipeForm.value.country:', this.country);
-    const newFood = {
-      title: this.title,
-      recipe_image: this.recipe_image,
-      preparationTime: this.preparationTime,
-      cookingTime: this.cookingTime,
-      country: this.country._id
-    };
-  
-    this.recipeService.addRecipe(newFood).subscribe(
-      data => console.log(data),
-      error => console.log(error)
-    );
-    this.router.navigateByUrl('/dashboard-recipe');
-  }
+//   onSubmit() {
+//     console.log('this.recipeForm.value.country:', this.country);
+//     const newFood = {
+//       title: this.title,
+//       recipe_image: this.recipe_image,
+//       preparationTime: this.preparationTime,
+//       cookingTime: this.cookingTime,
+//       country: this.country._id
+//     };
+
+//     this.recipeService.addRecipe(newFood).subscribe(
+//       data => console.log(data),
+//       error => console.log(error)
+//     );
+//     this.router.navigateByUrl('/dashboard-recipe');
+//   }
+// }
+
+onSubmit() {
+  console.log('this.recipeForm.value.country:', this.country);
+  const recipe = {
+    title: this.title,
+    recipe_image: this.recipe_image,
+    preparationTime: this.preparationTime,
+    cookingTime: this.cookingTime,
+    country: this.country // Only pass the ID of the selected country
+  };
+  console.log(this.country);
+  this.recipeService.addRecipe(recipe).subscribe(
+    data => console.log(data),
+    error => console.log(error)
+  );
+  this.router.navigateByUrl('/dashboard-recipe');
+}
 }
 
   // getAllCountries() {
