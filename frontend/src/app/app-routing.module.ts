@@ -12,7 +12,7 @@ import { ProfileComponent } from './components/pages/profile/profile.component';
 import { AboutUsComponent } from './components/pages/about-us/about-us.component';
 import { ClickedCountryRecipeComponent } from './components/pages/clicked-country-recipe/clicked-country-recipe.component';
 import { PaymentPageComponent } from './components/pages/payment-page/payment-page.component';
-import { CheckoutComponent } from './components/pages/checkout/checkout.component';
+// import { CheckoutComponent } from './components/pages/checkout/checkout.component';
 import { OrdersComponent } from './components/pages/orders/orders.component';
 // import { OrderTrackPageComponent } from './components/pages/order-track-page/order-track-page.component';
 import { FoodrecipeComponent } from './components/pages/foodrecipe/foodrecipe.component';
@@ -28,7 +28,7 @@ import { DashboardCountryComponent } from './components/pages/dashboard-country/
 import { CreateCountryComponent } from './components/create-country/create-country.component';
 import { UpdateCountryComponent } from './components/update-country/update-country.component';
 import { DashboardUserComponent } from './components/dashboard-user/dashboard-user.component';
-
+// import{checko}
 import { CartPageComponent } from './components/pages/cart-page/cart-page.component';
 
 import{UserAuthGuard,AdminAuthGuard} from './services/authguard.service';
@@ -57,9 +57,11 @@ const routes: Routes = [
   { path: 'google', component: GoogleButtonComponent },
   { path: 'recipes', component: RecipesComponent },
   { path: 'dashboard_food/update-food/:id', component: UpdateFoodComponent, canActivate: [AdminAuthGuard] },
+  { path: 'payment-page', component: PaymentPageComponent },
+  // { path: 'checkout', component: CheckoutComponent },
 
 
-  { path: 'checkout', component: CheckoutComponent },
+  // { path: 'checkout', component: CheckoutComponent },
   { path: 'orders', component: OrdersComponent },
   { path: 'country/:countryId', component: ClickedCountryRecipeComponent },
   { path: 'payment', component: PaymentPageComponent },

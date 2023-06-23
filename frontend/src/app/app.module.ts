@@ -1,6 +1,7 @@
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+// import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppRoutingModule } from './app-routing.module';
 import {
   FormControlName,
@@ -24,8 +25,7 @@ import { HorizontalScrollComponent } from './components/pages/recipes/horizontal
 import { CountriesRecipesComponent } from './components/pages/recipes/countries-recipes/countries-recipes.component';
 import { ClickedCountryRecipeComponent } from './components/pages/clicked-country-recipe/clicked-country-recipe.component';
 import { PaymentPageComponent } from './components/pages/payment-page/payment-page.component';
-import { PaypalButtonComponent } from './components/partials/paypal-button/paypal-button.component';
-import { CheckoutComponent } from './components/pages/checkout/checkout.component';
+// import { CheckoutComponent } from './components/pages/checkout/checkout.component';
 import { OrdersComponent } from './components/pages/orders/orders.component';
 import { CartPageComponent } from './components/pages/cart-page/cart-page.component';
 import { FoodrecipeComponent } from './components/pages/foodrecipe/foodrecipe.component';
@@ -74,8 +74,7 @@ import { UpdateUserProfileComponent } from './components/pages/update-user-profi
     ContactUsComponent,
     ClickedCountryRecipeComponent,
     PaymentPageComponent,
-    PaypalButtonComponent,
-    CheckoutComponent,
+    // CheckoutComponent,
     OrdersComponent,
     // OrderTrackPageComponent,
     FoodrecipeComponent,

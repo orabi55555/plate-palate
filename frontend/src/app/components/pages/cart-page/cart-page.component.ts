@@ -56,11 +56,15 @@ import { AuthService } from 'src/app/services/auth.service';
       }
     }
 
-    ngOnDestroy(): void {
-      this.cartSubscription.unsubscribe();
+   
+
+    getTotalPrice(): number {
+      let totalPrice = 0;
+      for (const item of this.cart?.items || []) {
+        totalPrice += item.foodId?.price * item.quantity;
+      }
+      return totalPrice;
     }
-
-
    
     updateCartItemQuantity(foodId: string, quantity: string): void {
       this.cartService.updateCartItemQuantity(this.userId!, foodId, parseInt(quantity)).subscribe({

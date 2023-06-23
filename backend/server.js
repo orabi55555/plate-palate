@@ -17,6 +17,8 @@ const foodRouter=require("./Routes/FoodRoutes");
 const Recipe=require("./Routes/RecipeRoutes");
 const Country=require("./Routes/CountryRoutes");
 const cartRoutes=require("./Routes/CartRoutes");
+const stripeRoutes = require('./Routes/StripeRoutes');
+
 
 app.use(bodyParser.json());
 
@@ -41,6 +43,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(cors());
 //#endregion
+
+app.use('/charge', stripeRoutes);
 
 //#region Root
 app.get("/", (req, res) => {
@@ -74,6 +78,9 @@ app.use("/api/Country", Country);
 // app.use("/recipes", Recipe);
 
 //#endregion
+// const orderController = require('./Controller/OrderController');
+
+// app.post('/api/process-payment', OrderController.processPayment);
 
 
 

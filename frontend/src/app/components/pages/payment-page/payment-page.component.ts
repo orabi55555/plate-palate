@@ -1,64 +1,59 @@
-import { Component ,OnInit } from '@angular/core';
-//import { StripeService } from 'stripe-angular';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
-declare var paypal:any;
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { PaymentService } from '../../../services/payment.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
 @Component({
   selector: 'app-payment-page',
   templateUrl: './payment-page.component.html',
   styleUrls: ['./payment-page.component.css']
 })
-export class PaymentPageComponent implements OnInit{
-  // paymentForm: FormGroup;
+export class PaymentPageComponent implements OnInit {
+  paymentForm: FormGroup;
+  amount: number = 0;
+  orderId: string = '';
+  isLoading: boolean = false;
+  
+  @ViewChild('successModal', { static: false }) successModal!: ElementRef;
 
-  // order:Order = new this.order();
- // constructor(private stripeService: StripeService) {}
-  ngOnInit():void{
-    // this.paymentForm = new FormGroup({
-    //   amount: new FormControl('', [Validators.required, Validators.pattern(/^\d+(\.\d{1,2})?$/)]),
-    //   currency: new FormControl('USD', Validators.required),
-    //   cardNumber: new FormControl('', Validators.required),
-    //   expMonth: new FormControl('', Validators.required),
-    //   expYear: new FormControl('', Validators.required),
-    //   cvc: new FormControl('', Validators.required),
-    // });
+  constructor(
+    private fb: FormBuilder,
+    private paymentService: PaymentService,
+    private modalService: NgbModal
+  ) {
+    this.paymentForm = this.fb.group({
+      name: ['', [Validators.required]],
+      cardNumber: ['', [Validators.required]],
+      expMonth: ['', [Validators.required]],
+      expYear: ['', [Validators.required]],
+      cvv: ['', [Validators.required]]
+    });
   }
-  onSubmit(): void {
-    // if (this.paymentForm.valid) {
-    //   const { amount, currency, cardNumber, expMonth, expYear, cvc } = this.paymentForm.value;
-    //   this.stripeService
-    //     .createToken({
-    //       card: {
-    //         number: cardNumber,
-    //         exp_month: expMonth,
-    //         exp_year: expYear,
-    //         cvc: cvc,
-    //       },
-    //     })
-    //     .subscribe((result) => {
-    //       if (result.token) {
-    //         this.stripeService
-    //           .createCharge({
-    //             amount: amount * 100,
-    //             currency: currency,
-    //             token: result.token,
-    //           })
-    //           .subscribe(
-    //             () => {
-    //               // Payment succeeded
-    //             },
-    //             (error) => {
-    //               console.error(error);
-    //               // Payment failed
-    //             }
-    //           );
-    //       } else {
-    //         console.error(result.error);
-    //         // Payment failed
-    //       }
-    //     });
-    // }
+
+  ngOnInit(): void {
+    //this.amount = this.cartService.getTotalPrice();
+    //this.orderId = this.cartService.getOrderId();
+  }
+
+  async onSubmit() {
+    this.isLoading = true;
+    const { name, cardNumber, expMonth, expYear, cvv } = this.paymentForm.value;
+
+    const cardInfo = {
+      name,
+      cardN: cardNumber,
+      cardM: expMonth,
+      cardY: expYear,
+      cardCVC: cvv
+    };
+
+    try {
+      const response = await this.paymentService.processPayment(this.amount, cardInfo).toPromise();
+      console.log(response);
+      this.modalService.open(this.successModal); // use the open() method to display the modal
+    } catch (error) {
+      console.error(error);
+    }
+    this.isLoading = false;
   }
 }
-  
-
-
