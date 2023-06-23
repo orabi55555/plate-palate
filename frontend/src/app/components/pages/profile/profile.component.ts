@@ -25,6 +25,7 @@ user_image:any;
     if (user) {
       // parse the user object into a JavaScript object
       const userData = JSON.parse(user);
+      console.log(userData);
 
 
       this.user_name = userData.user_name;

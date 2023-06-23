@@ -9,16 +9,16 @@
 
   }
 
- 
+
   .top-section {
     padding: 60px 40px;
-    
+
   }
-  
+
 
   .pic {
-    width: 150px;
-    height:150px;
+    width: 250px;
+    height:250px;
     margin: auto;
     margin-bottom: 20px;
     border: 2px solid #fff;
@@ -27,7 +27,7 @@
 
     /* position: relative; */
   }
- 
+
   @keyframes wave{
     to {
       transform: scale(1.3);
@@ -64,7 +64,7 @@
     display: block;
   }
   .border {
-    width: 1px; 
+    width: 1px;
     height: 20px;
     background: #bbb;
     margin: 0 20px;
@@ -82,13 +82,13 @@
     border-radius: 8px;
     filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, .2));
   }
-  
+
   @media (max-width: 570px) {
     .button-container {
-   
+
       text-align: center; /* center the button horizontally */
     }
-    
+
     button {
       position: relative;
       padding: 15px 45px;
@@ -108,21 +108,21 @@
     background: linear-gradient(85deg, #a82828, #d34f3a, #ea6f6f, #d82f2f, #f52828);
     animation: wind 2s ease-in-out infinite;
   }
-  
+
   @keyframes wind {
     0% {
       background-position: 0% 50%;
     }
-  
+
     0% {
       background-position: 50% 100%;
     }
-  
+
     0% {
       background-position: 0% 50%;
     }
   }
-  
+
   .icon-1 {
     position: absolute;
     top: 0;
@@ -133,26 +133,26 @@
     transition: all .5s ease-in-out;
     filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, .3));
   }
-  
+
   button:hover .icon-1 {
     animation: slay-1 3s cubic-bezier(0.52, 0, 0.58, 1) infinite;
     transform: rotate(10deg);
   }
-  
+
   @keyframes slay-1 {
     0% {
       transform: rotate(10deg);
     }
-  
+
     50% {
       transform: rotate(-5deg);
     }
-  
+
     100% {
       transform: rotate(10deg);
     }
   }
-  
+
   .icon-2 {
     position: absolute;
     top: 0;
@@ -163,26 +163,26 @@
     transition: all 1s ease-in-out;
     filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, .5));
   }
-  
+
   button:hover .icon-2 {
     animation: slay-2 3s cubic-bezier(0.52, 0, 0.58, 1) 1s infinite;
     transform: rotate(0);
   }
-  
+
   @keyframes slay-2 {
     0% {
       transform: rotate(0deg);
     }
-  
+
     50% {
       transform: rotate(15deg);
     }
-  
+
     100% {
       transform: rotate(0);
     }
   }
-  
+
   .icon-3 {
     position: absolute;
     top: 0;
@@ -193,21 +193,21 @@
     transition: all 1s ease-in-out;
     filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, .5));
   }
-  
+
   button:hover .icon-3 {
     animation: slay-3 2s cubic-bezier(0.52, 0, 0.58, 1) 1s infinite;
     transform: rotate(0);
   }
-  
+
   @keyframes slay-3 {
     0% {
       transform: rotate(0deg);
     }
-  
+
     50% {
       transform: rotate(-5deg);
     }
-  
+
     100% {
       transform: rotate(0);
     }

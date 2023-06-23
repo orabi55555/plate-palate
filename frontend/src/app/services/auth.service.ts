@@ -39,7 +39,7 @@ export class AuthService {
     const token = localStorage.getItem('accessToken');
    }
 
-  register(user: { user_name: string; email: string; password: string; gender: string; mobile: string; address: string; role: string; otp: string }): Observable<ApiResponse> {
+  register(user: { user_name: string; email: string; password: string; gender: string; mobile: string; address: string; role: string; otp: string ; user_image: string }): Observable<ApiResponse> {
     return this.http.post<ApiResponse>(`${this.apiUrl}/register`, user);
   }
 

@@ -30,7 +30,7 @@ const userSchema = new Schema({
   },
   user_image: {
     type: String,
-    required: false
+    required: true,
   },
   gender: {
     type: String,

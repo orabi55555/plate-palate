@@ -17,7 +17,7 @@ const authController = {};
 
 authController.register = async (req, res, next) => {
   try {
-    const { user_name, email, password, gender, mobile, address, role, otp } = req.body;
+    const { user_name, email, password, gender, mobile, address, role, otp,user_image } = req.body;
 
     const existingUser = await User.findOne({ email });
     if (existingUser) {
@@ -34,7 +34,8 @@ authController.register = async (req, res, next) => {
       mobile,
       password: hashedPassword,
       gender,
-      otp
+      otp,
+      user_image
       
     });
 

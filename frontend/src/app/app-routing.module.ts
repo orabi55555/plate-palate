@@ -30,6 +30,7 @@ import { DashboardUserComponent } from './components/dashboard-user/dashboard-us
 // import{checko}
 import { CartPageComponent } from './components/pages/cart-page/cart-page.component';
 import{UserAuthGuard,AdminAuthGuard} from './services/authguard.service';
+import { UpdateUserProfileComponent } from './components/pages/update-user-profile/update-user-profile.component';
 
 
 
@@ -65,6 +66,7 @@ const routes: Routes = [
   {path:'dashboard_food',component:DashboardFoodComponent, canActivate: [AdminAuthGuard]},
   // { path: 'track', component: OrderTrackPageComponent },
   { path: 'foodrecipe/:id', component: FoodrecipeComponent },
+  { path: 'update-user-profile', component: UpdateUserProfileComponent },
   { path: '**', component: NotFoundComponent },
 ];
 
