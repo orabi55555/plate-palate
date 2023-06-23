@@ -20,6 +20,15 @@ import { CreatfoodComponent } from './components/pages/creatfood/creatfood.compo
 import { UpdateFoodComponent } from './components/pages/update-food/update-food.component';
 import { DashboardComponent } from './components/pages/dashboard/dashboard.component';
 import { DashboardFoodComponent } from './components/pages/dashboard-food/dashboard-food.component';
+
+import { DashboardRecipeComponent } from './components/pages/dashboard-recipe/dashboard-recipe.component';
+import { UpdateRecipeComponent } from './components/update-recipe/update-recipe.component';
+import { CreaterecipeComponent } from './components/createrecipe/createrecipe.component';
+import { DashboardCountryComponent } from './components/pages/dashboard-country/dashboard-country.component';
+import { CreateCountryComponent } from './components/create-country/create-country.component';
+import { UpdateCountryComponent } from './components/update-country/update-country.component';
+import { DashboardUserComponent } from './components/dashboard-user/dashboard-user.component';
+// import{checko}
 import { CartPageComponent } from './components/pages/cart-page/cart-page.component';
 
 import{UserAuthGuard,AdminAuthGuard} from './services/authguard.service';
@@ -35,17 +44,31 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent, canActivate: [UserAuthGuard] },
   { path: 'login', component: LoginPageComponent },
   { path: 'signup', component: SignupPageComponent },
+
+  { path:'dashboard-recipe/createrecipe', component:CreaterecipeComponent },
+  { path:'dashboard-country/create-country', component:CreateCountryComponent},
+  
+ 
+  
+  { path: 'dashboard-recipe/update-recipe/:id', component: UpdateRecipeComponent },
+  { path: 'dashboard-country/update-country/:id', component: UpdateCountryComponent},
+
   { path:'dashboard_food/creatfood',component:CreatfoodComponent, canActivate: [AdminAuthGuard] },
   { path: 'google', component: GoogleButtonComponent },
   { path: 'recipes', component: RecipesComponent },
   { path: 'dashboard_food/update-food/:id', component: UpdateFoodComponent, canActivate: [AdminAuthGuard] },
   { path: 'payment-page', component: PaymentPageComponent },
   // { path: 'checkout', component: CheckoutComponent },
+
+
+  // { path: 'checkout', component: CheckoutComponent },
   { path: 'orders', component: OrdersComponent },
   { path: 'country/:countryId', component: ClickedCountryRecipeComponent },
   { path: 'payment', component: PaymentPageComponent },
-  {path:'dashboard',component:DashboardComponent},
-  {path:'dashboard_food',component:DashboardFoodComponent},
+
+  {path: 'dashboard-recipe', component:DashboardRecipeComponent},
+  { path: 'dashboard-country', component:DashboardCountryComponent},
+  { path: 'dashboard-user', component:DashboardUserComponent},
   { path: 'cart-page', component: CartPageComponent },
   // { path: 'users', component: ProfileComponent },
   {path:'dashboard',component:DashboardComponent, canActivate: [AdminAuthGuard]},

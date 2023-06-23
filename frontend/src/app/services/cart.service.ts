@@ -110,7 +110,7 @@ export class CartService {
 
 
 
-  getCartItems(userId: string): Observable<any> {
+  getCartItems(userId: string):Observable<any> {
     const url = `${this.apiUrl}/${userId}`;
     return this.http.get(url);
   }

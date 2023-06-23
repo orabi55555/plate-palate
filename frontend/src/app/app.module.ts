@@ -36,10 +36,22 @@ import { DashboardComponent } from './components/pages/dashboard/dashboard.compo
 import { SidebarComponent } from './components/pages/sidebar/sidebar.component';
 import { DashboardFoodComponent } from './components/pages/dashboard-food/dashboard-food.component';
 import { NavbarComponent } from './components/pages/navbar/navbar.component';
+
+import { CreaterecipeComponent } from './components/createrecipe/createrecipe.component';
+import { UpdateRecipeComponent } from './components/update-recipe/update-recipe.component';
+import { DashboardRecipeComponent } from './components/pages/dashboard-recipe/dashboard-recipe.component';
+// import { CountryService } from './services/country.service';
+import { DashboardCountryComponent } from './components/pages/dashboard-country/dashboard-country.component';
+import { UpdateCountryComponent } from './components/update-country/update-country.component';
+import { CreateCountryComponent } from './components/create-country/create-country.component';
+import { DashboardUserComponent } from './components/dashboard-user/dashboard-user.component';
+
+
 // import { StripeModule } from 'stripe-angular';
 import { environment } from '../environments/environment';
 import { CountryService } from './services/country.service';
 import { UpdateUserProfileComponent } from './components/pages/update-user-profile/update-user-profile.component';
+
 
 @NgModule({
   declarations: [
@@ -72,7 +84,17 @@ import { UpdateUserProfileComponent } from './components/pages/update-user-profi
     SidebarComponent,
     DashboardFoodComponent,
     NavbarComponent,
+
+    CreaterecipeComponent,
+    UpdateRecipeComponent,
+    DashboardRecipeComponent,
+    DashboardCountryComponent,
+    UpdateCountryComponent,
+    CreateCountryComponent,
+    DashboardUserComponent,
+
     CartPageComponent
+
 
   ],
 

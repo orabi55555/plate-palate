@@ -58,8 +58,8 @@ addItemToCart(foodId: string, quantity: string): void {
     return console.error('userId is missing');
   }
 
-  this.cartService.addItemToCart(this.userId, foodId, parseInt(quantity)).subscribe(
-    (cart) => {
+  this.cartService.addItemToCart(this.userId, foodId, parseInt(quantity)).subscribe({
+ next:   (cart) => {
       // console.log("old cart "+this.cart);
       
       // this.cart.push(cart);
@@ -67,9 +67,10 @@ addItemToCart(foodId: string, quantity: string): void {
       console.log("item added "+cart);
       
     },
-    (error) => {
+  error:  (error) => {
       console.error(error);
     }
+  }
   );
 }
 }

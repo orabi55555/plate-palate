@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const recipeSchema = new mongoose.Schema({
     title: {
         type: String,
-        required: true
+        required: false
       },
       recipe_image: {
         type: String,
@@ -11,11 +11,11 @@ const recipeSchema = new mongoose.Schema({
       },
       preparationTime: {
         type: String,
-        required: true
+        required: false
       },
       cookingTime: {
         type: String,
-        required: true
+        required: false
       },
       // servings: {
       //   type: Number,
@@ -23,11 +23,11 @@ const recipeSchema = new mongoose.Schema({
       // },
       ingredients: {
         type: String,
-        required: true
+        required: false
       },
       instructions: {
         type: String,
-        required: true
+        required: false
       },
       country: {
         type: mongoose.Schema.Types.ObjectId,

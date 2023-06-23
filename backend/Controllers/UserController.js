@@ -13,6 +13,17 @@ userController.getAllUsers = async (req, res, next) => {
   }
 };
 
+// get all users for dashboard
+userController.getUsers = async (req, res) => {
+  User.find({})
+    .then(users => {
+      res.json(users);
+    })
+    .catch(err => {
+      return res.status(500).json({ message: err.message });
+    });
+};
+
 
 userController.getUserById = async (req, res, next) => {
   try {
@@ -54,6 +65,21 @@ userController.updateUserById = async (req, res, next) => {
     next(err);
   }
 };
+
+//Search
+userController.getUserByName = async (req, res, next) => {
+  const name = req.params.name;
+   console.log(name);
+
+  User.find({ user_name: name })
+    .then(users => {
+      res.json(users);
+    })
+    .catch(err => {
+      return res.status(500).json({ message: err.message });
+    });
+};
+
 
 userController.deleteUserById = async (req, res, next) => {
   try {

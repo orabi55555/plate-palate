@@ -1,5 +1,5 @@
 const Recipe = require("../Models/RecipeModel");
-const Country = require("../Models/CountryModel");
+const Country = require('../Models/CountryModel');
 
 class RecipeController {
 
@@ -64,34 +64,50 @@ async getRecipe(req, res) {
   
 
   // Controller function to add a new recipe
-  async addRecipe(req, res) {
-    const { title, recipe_image, preparationTime, cookingTime, ingredients, instructions, countryId } = req.body;
+  // async addRecipe(req, res) {
+  //   const { title, recipe_image, preparationTime, cookingTime, ingredients, instructions, countryId } = req.body;
 
+  //   try {
+  //     const newRecipe = new Recipe({
+  //       title,
+  //       recipe_image,
+  //       preparationTime,
+  //       cookingTime,
+  //       ingredients,
+  //       instructions,
+  //       country,
+  //     });
+
+  //     console.log(newRecipe);
+  //     // Save the recipe to the database
+  //     const createdRecipe = await newRecipe.save();
+      
+
+  //     res.status(201).json({
+  //       message: 'Recipe created successfully',
+  //       recipe: createdRecipe,
+  //     });
+  //   } catch (error) {
+  //     res.status(400).json({ error: error.message });
+  //   }
+  // }
+ createRecipe = async (req, res) => {
     try {
+      const { title, recipe_image, preparationTime, cookingTime, country } = req.body;
       const newRecipe = new Recipe({
         title,
         recipe_image,
         preparationTime,
         cookingTime,
-        ingredients,
-        instructions,
-        country: countryId,
+        country,
       });
-
-      console.log(newRecipe);
-      // Save the recipe to the database
-      const createdRecipe = await newRecipe.save();
-      
-
-      res.status(201).json({
-        message: 'Recipe created successfully',
-        recipe: createdRecipe,
-      });
-    } catch (error) {
-      res.status(400).json({ error: error.message });
+      const savedRecipe = await newRecipe.save();
+      res.json(savedRecipe);
+    } catch (err) {
+      console.error(err);
+      return res.status(500).send('Server Error');
     }
-  }
-
+  };
   // Controller function to delete a recipe
   async deleteRecipe(req, res) {
     const { recipeId } = req.params;
@@ -108,6 +124,111 @@ async getRecipe(req, res) {
       res.status(500).json({ error: error.message });
     }
   }
+  // async getAllRecipe(req, res) {
+  //   Recipe.find({})
+  //     .then(recipes => {
+  //       res.json(recipes);
+  //     })
+  //     .catch(err => {
+  //       return res.status(500).json({ message: err.message });
+  //     });
+
+  // async getAllRecipe(req, res) {
+  //   try {
+  //     const recipes = await Recipe.find({});
+  //     res.json(recipes);
+  //   } catch (err) {
+  //     res.status(500).json({ message: err.message });
+  //   }
+  // }
+
+  //get all recipes
+  async getAllRecipe(req, res) {
+    try {
+      // Find all recipes where country is not a valid ObjectId
+      const invalidRecipes = await Recipe.find({ country: { $not: { $type: 7 } } });
+      for (const recipe of invalidRecipes) {
+        const country = await Country.findOne({ name: recipe.country });
+        if (country) {
+          recipe.country = country._id;
+          await recipe.save();
+          console.log(`Updated recipe ${recipe.title} (${recipe._id})`);
+        } else {
+          console.log(`Could not find country ${recipe.country} for recipe ${recipe.title} (${recipe._id})`);
+        }
+      }
+  
+      // Get all recipes (including updated ones)
+      const recipes = await Recipe.find({});
+      res.json(recipes);
+    } catch (err) {
+      res.status(500).json({ message: err.message });
+    }
+  }
+//for Dashboard
+  async getAllCountries(req, res) {
+    try {
+      const countries = await Country.find();
+      res.status(200).json( countries );
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: 'An error occurred while fetching the countries.' });
+    }
+  };
+
+
+
+  //update recipe by id
+  //update
+  async updateRecipeById(req, res) {
+  try {
+    const { title, preparationTime, recipe_image, cookingTime, ingredients} = req.body;
+    const recipe = await Recipe.findByIdAndUpdate(
+      req.params.id,
+      { title, preparationTime, recipe_image, cookingTime, ingredients },
+      { new: true }
+    );
+    if (!recipe) {
+      return res.status(404).json({ error: 'Recipe item not found' });
+    }
+    res.json(recipe);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+};
+  
+
+
+  //Search
+  async getRecioeByTitle (req, res) {
+  const title = req.params.title;
+
+  Recipe.find({ title: title })
+    .then(recipe => {
+      res.json(recipe);
+    })
+    .catch(err => {
+      return res.status(500).json({ message: err.message });
+    });
+};
+
+
+//get recipe by name it for dashboard
+async getRecipeById(req, res) {
+
+  Recipe.findById(req.params.id)
+  .then(Recipe => {
+    if (!Recipe) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+    res.json( Recipe);
+  })
+  .catch(err => {
+    return res.status(500).json({ message: err.message });
+  });
 }
+};
+// }
 
 module.exports = new RecipeController();

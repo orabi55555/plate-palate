@@ -1,4 +1,4 @@
-import { Component, OnInit,OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CartService } from '../../../services/cart.service';
 import { Subscription } from 'rxjs';
@@ -11,7 +11,7 @@ import { AuthService } from 'src/app/services/auth.service';
     templateUrl: './cart-page.component.html',
     styleUrls: ['./cart-page.component.css']
   })
-  export class CartPageComponent implements OnInit,  OnDestroy {
+  export class CartPageComponent implements OnInit{
     private accessToken: string | null = null;
 
      cart: any;
@@ -42,89 +42,78 @@ import { AuthService } from 'src/app/services/auth.service';
     
     getCartItems(): void {
       if (this.userId) {
-        this.cartService.getCartItems(this.userId).subscribe(
-          (response: any) => {
-           console.log('Cart items response:', response);
+        this.cartService.getCartItems(this.userId).subscribe({
+          next: (response: any) => {
+            console.log('Cart items response:', response);
             this.cart = response;
-           // this.cartItems = response.data.items;
-           // console.log("cart is "+this.cart);
-            
           },
-          (error: any) => {
+          error: (error: any) => {
             console.error('Cart items error:', error);
           }
-        );
+        });
       } else {
         console.error('No user ID found!');
       }
     }
 
-    ngOnDestroy(): void {
-      this.cartSubscription.unsubscribe();
+   
+
+    getTotalPrice(): number {
+      let totalPrice = 0;
+      for (const item of this.cart?.items || []) {
+        totalPrice += item.foodId?.price * item.quantity;
+      }
+      return totalPrice;
     }
-
-
-    // addItemToCart(foodId: string, quantity: string): void {
-    //   if (!this.userId) {
-    //     return console.error('userId is missing');
-    //   }
-
-    //   this.cartService.addItemToCart(this.userId, foodId, parseInt(quantity)).subscribe(
-    //     (cart) => {
-    //       console.log("old cart "+this.cart);
-          
-    //       this.cart.push(cart);
-    //       console.log("new cart "+this.cart);
-          
-    //     },
-    //     (error) => {
-    //       console.error(error);
-    //     }
-    //   );
-    // }
+   
     updateCartItemQuantity(foodId: string, quantity: string): void {
-      this.cartService.updateCartItemQuantity(this.userId!, foodId, parseInt(quantity)).subscribe(
-        (cart) => {
+      this.cartService.updateCartItemQuantity(this.userId!, foodId, parseInt(quantity)).subscribe({
+        next:(cart) => {
           this.cart = cart;
         },
-        (error) => {
+        error:(error) => {
           console.error(error);
         }
+      }
       );
     }
 
     removeItemFromCart(foodId: string): void {
-      this.cartService.removeItemFromCart(this.userId!, foodId).subscribe(
-        (cart) => {
+      this.cartService.removeItemFromCart(this.userId!, foodId).subscribe({
+      next:(cart) => {
           console.log("old cart "+this.cart);
           //this.cart = cart;
         },
-        (error) => {
+       error: (error) => {
           console.error(error);
         }
+        
+      }
       );
     }
 
     incrementCartItemQuantity(foodId: string): void {
-      this.cartService.incrementCartItemQuantity(this.userId!, foodId).subscribe(
-        (cart) => {
+      this.cartService.incrementCartItemQuantity(this.userId!, foodId).subscribe({
+       next:(cart) => {
           console.log("new cart "+this.cart);
          // this.cart = cart;
         },
-        (error) => {
+      error: (error) => {
           console.error(error);
         }
+      }
       );
     }
 
     decrementCartItemQuantity(foodId: string): void {
-      this.cartService.decrementCartItemQuantity(this.userId!, foodId).subscribe(
-        (cart) => {
+      this.cartService.decrementCartItemQuantity(this.userId!, foodId).subscribe({
+       next: (cart) => {
           this.cart = cart;
         },
-        (error) => {
+       error: (error) => {
           console.error(error);
         }
+      }
       );
     }
   }
