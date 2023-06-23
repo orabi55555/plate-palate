@@ -23,6 +23,7 @@
               <table class="table table-striped bg-white rounded shadow-sm  table-hover ">
                   <thead style="background-color: black">
                       <tr style="text-align: center;">
+                        <th scope="col" [width]="10">image</th>
                           <th scope="col" [width]="10">Name</th>
                           <th scope="col" [width]="15">Email</th>
                           <th scope="col" [width]="30">Gender</th>
@@ -32,6 +33,9 @@
                   </thead>
                   <tbody>
                     <tr *ngFor="let user of users">
+                      <td  style="text-align: center;">
+                        <img  class="img-thumbnail" [src]="user.user_image">
+                      </td>
                       <td  style="text-align: center;">{{ user.user_name }} </td>
                       <td  style="text-align: center;">{{ user.email }} </td>
                       <td  style="text-align: center;">{{ user.gender }} </td>

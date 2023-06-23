@@ -13,6 +13,7 @@ email:any;
 gender:any;
 address:any;
 mobile:any;
+user_image:any;
   constructor(
     private route: ActivatedRoute,
     private userService: UserService
@@ -31,7 +32,7 @@ mobile:any;
       this.gender = userData.gender;
       this.address = userData.address;
       this.mobile = userData.mobile;
-
+    this.user_image=userData.user_image;
 
     }
 

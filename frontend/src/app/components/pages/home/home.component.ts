@@ -14,6 +14,7 @@ category: any;
   ngOnInit(): void {
     this.foodService.getAllFoods().subscribe(data => {
       this.foods = data;
+      console.log(this.foods);
     });
 
   }

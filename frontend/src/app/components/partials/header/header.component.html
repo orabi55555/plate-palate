@@ -1,5 +1,5 @@
 
-<nav class="navbar navbar-expand-md navbar-light bg-light" >
+<nav class="navbar navbar-expand-md  navbar-light bg-light" >
   <div class="container-fluid">
   <a class="navbar-brand mr-auto"
   [routerLinkActiveOptions]="{exact:true}"
@@ -15,15 +15,15 @@ PLATE PALATE</i></h2>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav ml-auto">
-<h5 style="color: red; margin-right: 20px">welcome {{user_name}}</h5>
+
         <li class="nav-item">
-          <a class="nav-link" routerLink="/about-us">about us</a>
+          <a class="nav-link" routerLink="/about-us">ABOUT US</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/contact-us">Contact Us</a>
+          <a class="nav-link" routerLink="/contact-us">CONTACT US </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/orders">my orders</a>
+          <a class="nav-link" routerLink="/orders">MY ORDERS</a>
         </li>
         <!-- <li class="nav-item">
           <a class="nav-link" routerLink="/creatfood">creatfood</a>
@@ -32,9 +32,11 @@ PLATE PALATE</i></h2>
         
           <li class="nav-item"  >
             <a class="nav-link" routerLink="profile">
+      
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
                     <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
                   </svg>
+                      {{user_name}}
             </a>
 
           </li>
@@ -56,7 +58,7 @@ PLATE PALATE</i></h2>
           </li>
      
           <li class="nav-item"  *ngIf="isLogged" >
-          <a (click)="logout() "[routerLinkActiveOptions]="{exact:true}" routerLinkActive="active" class="nav-link"  style="cursor: pointer;">logout</a>
+          <a (click)="logout() "[routerLinkActiveOptions]="{exact:true}" routerLinkActive="active" class="nav-link"  style="cursor: pointer;">LOGOUT</a>
 
 
           </li>
