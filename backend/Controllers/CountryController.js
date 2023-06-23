@@ -58,6 +58,7 @@ class CountryController {
     }
   }
 
+  //get all Recipes
   async getAllRecipes(req, res) {
     const { countryId } = req.params;
   
@@ -89,7 +90,20 @@ class CountryController {
       res.status(500).json({ error: error.message });
     }
   }
+   
+   // get all countries for Dashboard
+    async getCountries (req, res) {
+      Country.find()
+        .then(countries => {
+          res.json(countries);
+        })
+        .catch(err => {
+          return res.status(500).json({ message: err.message });
+        });
+    };
 
+
+    // Add new Country
     async addCountry(req, res) {
       const { name, country_image } = req.body;
     
@@ -127,6 +141,55 @@ class CountryController {
       res.status(500).send('Error deleting country');
     }
   }
+
+  //Search
+  async getCountryByName (req, res) {
+  const name = req.params.name;
+  console.log(name);
+
+  Country.find({ name: name })
+    .then(countries => {
+      res.json(countries);
+    })
+    .catch(err => {
+      return res.status(500).json({ message: err.message });
+    });
+};
+
+//update
+async updateCountryById (req, res)  {
+  try {
+    const { name, country_image } = req.body;
+    const country = await Country.findByIdAndUpdate(
+      req.params.id,
+      { name, country_image },
+      { new: true }
+    );
+    if (!country) {
+      return res.status(404).json({ error: 'Country item not found' });
+    }
+    res.json(country);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+};
+
+
+//get country by name it for dashboard
+async getCountryById(req, res) {
+
+  Country.findById(req.params.id)
+  .then(Country => {
+    if (!Country) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+    res.json( Country);
+  })
+  .catch(err => {
+    return res.status(500).json({ message: err.message });
+  });
+}
   
 }
 
