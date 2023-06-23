@@ -30,6 +30,7 @@ import { DashboardUserComponent } from './components/dashboard-user/dashboard-us
 // import{checko}
 import { CartPageComponent } from './components/pages/cart-page/cart-page.component';
 import{UserAuthGuard,AdminAuthGuard} from './services/authguard.service';
+import { UpdateUserProfileComponent } from './components/pages/update-user-profile/update-user-profile.component';
 
 
 
@@ -40,6 +41,7 @@ const routes: Routes = [
   { path: 'about-us', component: AboutUsComponent,canActivate: [UserAuthGuard] },
   { path:'food/:id', component:FoodPageComponent ,canActivate: [UserAuthGuard]},
   { path: 'profile', component: ProfileComponent, canActivate: [UserAuthGuard] },
+  {path:'updateprofile',component:UpdateUserProfileComponent},
   { path: 'login', component: LoginPageComponent },
   { path: 'signup', component: SignupPageComponent },
   { path:'dashboard-recipe/createrecipe', component:CreaterecipeComponent },
@@ -66,6 +68,7 @@ const routes: Routes = [
   // { path: 'track', component: OrderTrackPageComponent },
   { path: 'foodrecipe/:id', component: FoodrecipeComponent },
   { path: '**', component: NotFoundComponent },
+  
 ];
 
 @NgModule({
