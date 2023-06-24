@@ -32,7 +32,7 @@ export class SignupPageComponent implements OnInit {
       this.authService.register(this.signupForm.value).subscribe({
         next: (response) => {
           console.log(response);
-          this.router.navigateByUrl('/home');
+          this.router.navigateByUrl('/login');
         },
       });
       console.log(this.signupForm.value);
