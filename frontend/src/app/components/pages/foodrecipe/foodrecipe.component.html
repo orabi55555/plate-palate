@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="recipe-details" *ngIf="recipe">
+        <h2>Recipe Details</h2>
+        <div class="recipe-info">
+          <p><i class="fas fa-utensils"></i> Recipe Name:</p>
+          <h3>{{ recipe.title }}</h3>
+        </div>
+        <div class="recipe-info">
+          <p><i class="far fa-clock"></i> Preparation Time:</p>
+          <h3>{{ recipe.preparationTime }}</h3>
+        </div>
+        <div class="recipe-info">
+          <p><i class="far fa-clock"></i> Cooking Time:</p>
+          <h3>{{ recipe.cookingTime }}</h3>
+        </div>
+        <div class="recipe-info">
+          <p><i class="fas fa-carrot"></i> Ingredients:</p>
+
+          <p>{{ recipe.ingredients }}</p>
+        </div>
+        <div class="recipe-info">
+          <p><i class="fas fa-book-open"></i> Instructions:</p>
+          <p>{{ recipe.instructions }}</p>
+        </div>
+      </div>
+      <div class="error" *ngIf="error">
+        <p>Error: {{ error }}</p>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="recipe-image" *ngIf="recipe.recipe_image">
+        <img
+          src="{{ recipe.recipe_image }}"
+          alt="Recipe Image"
+          style="height: 500px; width:100%"
+        />
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="bg-white" id="sidebar-wrapper" >
+  <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom"><i
+          class="fas fa-utensils me-2"></i>PLATE PALATE</div>
+  <div class="list-group list-group-flush my-3">
+    <a href="/dashboard" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"  [ngClass]="{'active-link': isActive('/dashboard')}"><i
+      class="fas fa-home me-2"></i>&nbsp; Home</a>
+      <a href="/dashboard_food" class="list-group-item list-group-item-action bg-transparent second-text fw-bold" [ngClass]="{'active-link': isActive('/dashboard_food')}"><i
+              class="fas fa-utensils me-2"></i>&nbsp; Food</a>
+      <a href="/dashboard-recipe" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+              class="fas fa-utensil-spoon me-2"></i>&nbsp; Recipes</a>
+              <a href="/dashboard-country" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                class="fas fa-globe me-2"></i>&nbsp; Countries</a>
+      <a href="/dashboard-user" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+              class="fas fa-user me-2"></i>&nbsp; Users</a>
+      <!-- <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+              class="fas fa-shopping-cart me-2"></i>&nbsp; Orders</a>
+      <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+              class="fas fa-chart-line me-2"></i>&nbsp; Charts</a> -->
+      <a  class="list-group-item list-group-item-action bg-transparent text-danger fw-bold" (click)="logout()" style="cursor: pointer;"><i
+              class="fas fa-power-off me-2"></i>&nbsp; Logout</a>
+  </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  var el = document.getElementById("wrapper");
+  var toggleButton = document.getElementById("menu-toggle");
+
+  toggleButton.onclick = function () {
+      el.classList.toggle("toggled");
+  };
+</script>

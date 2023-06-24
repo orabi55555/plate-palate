@@ -1,0 +1,122 @@
+
+<section class="page-header">
+  <div class="overly"></div>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <div class="content text-center">
+          <h1 class="mb-3">Payment</h1>
+
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb bg-transparent justify-content-center">
+            <li class="breadcrumb-item"><a class="text-danger" routerLink="/">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Payment</li>
+          </ol>
+        </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<div  class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <form [formGroup]="paymentForm" (ngSubmit)="onSubmit()">
+
+            <div class="form-group">
+              <label>Name</label>
+              <input type="text" formControlName="name" class="form-control" placeholder="Enter name">
+              <div *ngIf="paymentForm.get('name')?.invalid && (paymentForm.get('name')?.dirty || paymentForm.get('name')?.touched)" class="invalid-feedback d-block">
+                <div *ngIf="paymentForm.get('name')?.errors">Name is required</div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Email </label>
+              <input type="text" formControlName="name" class="form-control" placeholder="Enter email">
+
+            </div>
+            <div class="form-group">
+              <label>Address</label>
+              <input type="text" formControlName="name" class="form-control" placeholder="Enter address">
+
+            </div>
+            <div class="form-group">
+              <label>Card number</label>
+              <input type="text" formControlName="cardNumber" class="form-control" placeholder="Enter card number">
+              <div *ngIf="paymentForm.get('cardNumber')?.invalid && (paymentForm.get('cardNumber')?.dirty || paymentForm.get('cardNumber')?.touched)" class="invalid-feedback d-block">
+                <div *ngIf="paymentForm.get('cardNumber')?.errors">Card number is required</div>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label>Expiration month</label>
+                <input type="text" formControlName="expMonth" class="form-control" placeholder="MM">
+                <div *ngIf="paymentForm.get('expMonth')?.invalid && (paymentForm.get('expMonth')?.dirty || paymentForm.get('expMonth')?.touched)" class="invalid-feedback d-block">
+                  <div *ngIf="paymentForm.get('expMonth')?.errors">Expiration month is required</div>
+                </div>
+              </div>
+              <div class="form-group col-md-6">
+                <label>Expiration year</label>
+                <input type="text" formControlName="expYear" class="form-control" placeholder="YYYY">
+                <div *ngIf="paymentForm.get('expYear')?.invalid && (paymentForm.get('expYear')?.dirty || paymentForm.get('expYear')?.touched)" class="invalid-feedback d-block">
+                  <div *ngIf="paymentForm.get('expYear')?.errors">Expiration year is required</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>CVV</label>
+              <input type="text" formControlName="cvv" class="form-control" placeholder="Enter CVV">
+              <div *ngIf="paymentForm.get('cvv')?.invalid && (paymentForm.get('cvv')?.dirty || paymentForm.get('cvv')?.touched)" class="invalid-feedback d-block">
+                <div *ngIf="paymentForm.get('cvv')?.errors">CVV is required</div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <button type="submit" class="btn btn-danger btn-block" [disabled]="isLoading || paymentForm.invalid">Pay</button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="modal fade" id="paymentSuccessModal" tabindex="-1" aria-labelledby="paymentSuccessModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="paymentSuccessModalLabel">Payment Successful</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Your payment has been processed successfully.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<!-- Add the modal to the template -->
+<ng-template #successModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">plate-palate says Thanks</h4>
+  </div>
+  <div class="modal-body">
+    <p>Your payment has been processed successfully.</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-danger" (click)="modal.close('Ok')">Ok</button>
+  </div>
+</ng-template>
+

@@ -1,0 +1,107 @@
+@font-face {
+  font-family: "CoolFont";
+  src: url("/assets/fonts/BebasNeue-Regular.ttf");
+}
+
+.country-name {
+  text-align: center;
+  font-weight: bold;
+  font-style: italic;
+  color: #fff;
+  margin-top: 20px;
+  background-image: url("/assets/img/blackk.png");
+  background-size: cover;
+  background-position: center;
+  padding: 50px;
+}
+
+.recipe-title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 36px;
+  color: #333;
+  /* margin-top: 40px; */
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+}
+
+h1,
+.recipe h2,
+.recipe p {
+  font-family: "CoolFont", sans-serif;
+}
+
+h1,
+.recipe h2 {
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+  color: #333;
+}
+
+.recipe p {
+  color: #666;
+}
+
+.recipes-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 40px;
+  background: linear-gradient(to bottom, #f8f8f8, #ffffff);
+}
+
+.recipe {
+  width: 350px;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-out;
+}
+
+.recipe:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.recipe h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.recipe img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.recipe p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.recipe-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ff6347;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease-out;
+}
+
+.recipe-link:hover {
+  background-color: #ff4c00;
+}

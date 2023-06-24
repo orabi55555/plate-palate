@@ -1,0 +1,265 @@
+<div class="container-fluid ps-md-0">
+  <div class="row g-0">
+    <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
+    <div class="col-md-8 col-lg-6">
+      <div class="signup d-flex align-items-center py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-9 col-lg-8 mx-auto">
+              <h3 class="signup-heading mb-4">Welcome to Plate Palate!</h3>
+              <h3 class="signup-heading mb-4">Sign Up to Plate Palate</h3>
+
+              <!-- Sign Up Form -->
+              <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+                <div class="form-floating mb-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="floatingUsername"
+                    placeholder="Username"
+                    [formControlName]="'user_name'"
+                    [ngClass]="{
+                      'is-invalid': submitted && f['user_name'].errors
+                    }"
+                  />
+                  <div
+                    *ngIf="submitted && f['user_name'].errors"
+                    class="invalid-feedback"
+                  >
+                    <div *ngIf="f['user_name'].errors['required']">
+                      Username is required
+                    </div>
+                    <div *ngIf="f['user_name'].errors['minlength']">
+                      Username must be at least 3 characters
+                    </div>
+                    <div *ngIf="f['user_name'].errors['maxlength']">
+                      Username cannot exceed 20 characters
+                    </div>
+                    <div *ngIf="f['user_name'].errors['pattern']">
+                      Username can only contain alphanumeric characters
+                    </div>
+                  </div>
+                  <label for="floatingUsername">Username</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                  <!-- <app-google-button></app-google-button> -->
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="floatingInput"
+                    placeholder="name@example.com"
+                    [formControlName]="'email'"
+                    [ngClass]="{ 'is-invalid': submitted && f['email'].errors }"
+                  />
+                  <div
+                    *ngIf="submitted && f['email'].errors"
+                    class="invalid-feedback"
+                  >
+                    <div *ngIf="f['email'].errors['required']">
+                      Email is required
+                    </div>
+                    <div *ngIf="f['email'].errors['email']">
+                      Email must be a valid email address
+                    </div>
+                  </div>
+                  <label for="floatingInput">Email address</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                  <input
+                    type="address"
+                    class="form-control"
+                    id="floatingInput"
+                    placeholder="address"
+                    [formControlName]="'address'"
+                    [ngClass]="{
+                      'is-invalid': submitted && f['address'].errors
+                    }"
+                  />
+                  <div
+                    *ngIf="submitted && f['address'].errors"
+                    class="invalid-feedback"
+                  >
+                    <div *ngIf="f['address'].errors['required']">
+                      Address is required
+                    </div>
+                    <div *ngIf="f['address'].errors['minlength']">
+                      Address must be at least 5 characters
+                    </div>
+                    <div *ngIf="f['address'].errors['maxlength']">
+                      Address cannot exceed 30 characters
+                    </div>
+                    <div *ngIf="f['address'].errors['pattern']">
+                      Address can only contain alphanumeric characters
+                    </div>
+                  </div>
+                  <label for="floatingInput">Your Address</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                  <select
+                    id="gender"
+                    name="gender"
+                    class="form-control"
+                    [formControlName]="'gender'"
+                    [ngClass]="{
+                      'is-invalid': submitted && f['gender'].errors
+                    }"
+                  >
+                    <option value="" disabled selected>Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                  </select>
+                  <div
+                    *ngIf="submitted && f['gender'].errors"
+                    class="invalid-feedback"
+                  >
+                    <div *ngIf="f['gender'].errors['required']">
+                      Gender is required
+                    </div>
+                  </div>
+                  <label for="floatingInput">Your Gender</label>
+                </div>
+
+                <!-- <div class="form-floating mb-3">
+                  <div>
+                    <input
+                      type="radio"
+                      id="male"
+                      name="gender"
+                      value="male"
+                      [formControlName]="'gender'"
+                      [ngClass]="{
+                        'is-invalid': submitted && f['gender'].errors
+                      }"
+                    />
+                    <label for="male">Male</label>
+                  </div>
+                  <div>
+                    <input
+                      type="radio"
+                      id="female"
+                      name="gender"
+                      value="female"
+                      [formControlName]="'gender'"
+                      [ngClass]="{
+                        'is-invalid': submitted && f['gender'].errors
+                      }"
+                    />
+                    <label for="female">Female</label>
+                  </div>
+                  <div
+                    *ngIf="submitted && f['gender'].errors"
+                    class="invalid-feedback"
+                  >
+                    <div *ngIf="f['gender'].errors['required']">
+                      Gender is required
+                    </div>
+                  </div>
+                </div> -->
+
+                <div class="form-floating mb-3">
+                  <input
+                    type="mobile"
+                    class="form-control"
+                    id="floatingInput"
+                    placeholder="mobile"
+                    [formControlName]="'mobile'"
+                    [ngClass]="{
+                      'is-invalid': submitted && f['mobile'].errors
+                    }"
+                  />
+                  <div
+                    *ngIf="submitted && f['mobile'].errors"
+                    class="invalid-feedback"
+                  >
+                    <div *ngIf="f['mobile'].errors['required']">
+                      Mobile is required
+                    </div>
+                    <div *ngIf="f['mobile'].errors['minlength']">
+                      Mobile must be at least 11 characters
+                    </div>
+                    <div *ngIf="f['mobile'].errors['pattern']">
+                      Mobile can only contain Numbers
+                    </div>
+                  </div>
+                  <label for="floatingInput">Your Mobile</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="floatingPassword"
+                    placeholder="Password"
+                    [formControlName]="'password'"
+                    [ngClass]="{
+                      'is-invalid': submitted && f['password'].errors
+                    }"
+                  />
+                  <div
+                    *ngIf="submitted && f['password'].errors"
+                    class="invalid-feedback"
+                  >
+                    <div *ngIf="f['password'].errors['required']">
+                      Password is required
+                    </div>
+                    <div *ngIf="f['password'].errors['minlength']">
+                      Password must be at least 8 characters
+                    </div>
+                    <div *ngIf="f['password'].errors['maxlength']">
+                      Password cannot exceed 60 characters
+                    </div>
+                  </div>
+                  <label for="floatingPassword">Password</label>
+                </div>
+                <!-- <div class="form-floating mb-3">
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="floatingConfirmPassword"
+                    placeholder="Confirm Password"
+                    [formControlName]="'confirmPassword'"
+                    [ngClass]="{
+                      'is-invalid': submitted && f['confirmPassword'].errors
+                    }"
+                  />
+                  <div
+                    *ngIf="submitted && f['confirmPassword'].errors"
+                    class="invalid-feedback"
+                  >
+                    <div *ngIf="f['confirmPassword'].errors['required']">
+                      Confirm Password is required
+                    </div>
+                    <div *ngIf="f['confirmPassword'].errors['mustMatch']">
+                      Passwords must match
+                    </div>
+                  </div>
+                  <label for="floatingConfirmPassword">Confirm Password</label>
+                </div> -->
+
+                <div class="d-grid">
+                  <button
+                    class="btn btn-lg btn-primary btn-signup text-uppercase fw-bold mb-2"
+                    type="submit"
+
+                  >
+                    Sign Up
+                </button>
+
+                  <div class="mt-2">
+                    <span>Already have an account? </span>
+                    <a class="text-decoration-none" routerLink="/login"
+                      >Log in</a
+                    >
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

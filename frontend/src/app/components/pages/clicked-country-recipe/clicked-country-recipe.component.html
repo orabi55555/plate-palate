@@ -1,0 +1,19 @@
+<h1 class="country-name">{{ country?.name }}</h1>
+
+<div class="recipes-container" *ngIf="recipes && recipes.length > 0">
+  <div class="recipe" *ngFor="let recipe of recipes">
+    <h2 class="recipe-title">{{ recipe.title }}</h2>
+    <img
+      src="{{ recipe.recipe_image }}"
+     
+    />
+    <p>Preparation Time: {{ recipe.preparationTime }}</p>
+    <a [routerLink]="['/foodrecipe', recipe._id]" class="recipe-link"
+      >Check Recipe</a
+    >
+  </div>
+</div>
+
+<!-- <div class="no-recipes" *ngIf="!recipes || recipes.length === 0">
+  No recipes found for this country.
+</div> -->

@@ -1,0 +1,92 @@
+
+<nav class="navbar navbar-expand-md  navbar-light bg-light" >
+  <div class="container-fluid">
+  <a class="navbar-brand mr-auto"
+  [routerLinkActiveOptions]="{exact:true}"
+  routerLinkActive="active"
+  routerLink="/"
+  >
+<h2 class=" m-0">  <i class="fa fa-utensils me-3">
+
+PLATE PALATE</i></h2>
+  </a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ml-auto">
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/about-us">ABOUT US</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/contact-us">CONTACT US </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/orders">MY ORDERS</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" routerLink="/creatfood">creatfood</a>
+        </li> -->
+
+        
+          <li class="nav-item"  >
+            <a class="nav-link" routerLink="profile">
+      
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+                  </svg>
+                      {{user_name}}
+            </a>
+
+          </li>
+          <li class="nav-item" >
+            <a class="nav-link" routerLink="/cart-page">
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-basket-fill" viewBox="0 0 16 16">
+                    <path d="M5.071 1.243a.5.5 0 0 1 .858.514L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v5a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 6h1.717L5.07 1.243zM3.5 10.5a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3z"/>
+                  </svg>
+            </a>
+          </li>
+         
+          <li class="nav-item" *ngIf="!isLogged">
+            <a
+            [routerLinkActiveOptions]="{exact:true}"
+            routerLinkActive="active"
+            routerLink="/login"
+             class="nav-link">Login</a>
+          </li>
+     
+          <li class="nav-item"  *ngIf="isLogged" >
+          <a (click)="logout() "[routerLinkActiveOptions]="{exact:true}" routerLinkActive="active" class="nav-link"  style="cursor: pointer;">LOGOUT</a>
+
+
+          </li>
+
+         
+           
+
+            <li class="nav-item" *ngIf="!isLogged">
+            <button class="btn btn-secondary" style="background-color: lightgray;">
+              <a
+                [routerLinkActiveOptions]="{exact:true}"
+                routerLinkActive="active"
+                routerLink="/signup"
+              >
+              Sign Up
+            </a></button>
+            </li>
+        
+
+            
+
+
+      </ul>
+
+   
+ </div>
+</div>
+</nav>
+
+
+
