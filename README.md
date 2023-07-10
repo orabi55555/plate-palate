@@ -22,7 +22,7 @@
   The website offers searching for meals based on it`s category.
 
 - **Detailed Food Information**<br>
-  The website provides the required information about the food like: name, category, description, cookingTime and price.
+  The website provides the required information about the food like: name, category, description, cookingTime, image and price.
   
 - **Detailed Recipe Information**<br>
   The website provides the detailed information about the recipe, including: name, ingredients, cookingTime, instructions and image.
