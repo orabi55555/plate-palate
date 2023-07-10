@@ -99,8 +99,7 @@
 
 ## **TECHNOLOGIES**
 
-- Angular Framework v15.0
-- Express JS
+- Angular Framework v15.
 - Node JS
 - MongoDB
 - HTML/CSS
