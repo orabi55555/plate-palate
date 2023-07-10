@@ -79,10 +79,10 @@
   </pre>
 
 - **FRONT-END INSTALLATION**
- <h4>Use the command cd followed by the directory path frontend</h4>
- <pre>
+  <h4>Use the command cd followed by the directory path frontend</h4>
+  <pre>
    cd FrontEnd
- </pre>
+  </pre>
 
   <h4>Install the necessary dependencies by running the following command</h4>
   <pre>
