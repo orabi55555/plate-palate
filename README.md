@@ -68,7 +68,7 @@
     cd BackEnd
   </pre>
 
- <h4>Install the necessary dependencies by running the following command</h4>
+  <h4>Install the necessary dependencies by running the following command</h4>
   <pre>
     npm install
   </pre>
