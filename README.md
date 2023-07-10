@@ -13,12 +13,12 @@
   </pre>
 
 - **BACK-END INSTALLATION**
-  <h4>Use the command cd followed by the directory path backend</h4>
+  Use the command cd followed by the directory path backend
   <pre>
     cd BackEnd
   </pre>
 
-  <h4>Install the necessary dependencies by running the following command</h4>
+  Install the necessary dependencies by running the following command
   <pre>
     npm install
   </pre>
@@ -29,13 +29,22 @@
   </pre>
 
 - **FRONT-END INSTALLATION**
-<pre>
-  - cd FrontEnd
-  - npm install
-  - ng serve -o
-</pre>
+ Use the command cd followed by the directory path frontend
+  <pre>
+    cd FrontEnd
+  </pre>
 
-Open your web browser and navigate to `http://localhost:7000` to access the Threads & Beads website.
+  Install the necessary dependencies by running the following command
+  <pre>
+    npm install
+  </pre>
+
+  Run Front-End Server
+  <pre>
+    ng serve -o
+  </pre>
+
+<h4>Open your web browser and navigate to `http://localhost:7000` to access the Threads & Beads website.</h4>
 
 
 ## **TECHNOLOGIES**
