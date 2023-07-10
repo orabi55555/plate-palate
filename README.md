@@ -12,10 +12,15 @@
     git clone https://github.com/orabi55555/plate-palate.git
   </pre>
 
--# **BACK-END INSTALLATION**
-  <p>first use the command cd followed by the directory path backend</p>
+- **BACK-END INSTALLATION**
+  <h4>Use the command cd followed by the directory path backend</h4>
   <pre>
-     cd BackEnd
+    cd BackEnd
+  </pre>
+
+  <h4>Install the necessary dependencies by running the following command</h4>
+  <pre>
+    npm install
   </pre>
 
   Run Back-End Server
