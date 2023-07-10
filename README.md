@@ -12,8 +12,8 @@
     git clone https://github.com/orabi55555/plate-palate.git
   </pre>
 
-- **BACK-END INSTALLATION**
-  first use the command cd followed by the directory path backend
+-# **BACK-END INSTALLATION**
+  <p>first use the command cd followed by the directory path backend</p>
   <pre>
      cd BackEnd
   </pre>
