@@ -28,8 +28,8 @@
   The website provides the detailed information about the recipe, including: name, ingredients, cookingTime, instructions and image.
 
 - **Shopping Cart**<br>
-  The website includes a shopping cart functionality where users can add plants they wish to purchase. Additionally, users can create a wishlist to save plants for future reference or sharing with others.
-
+  The website includes a shopping cart functionality where users can add foods they wish to purchase.
+  
 - **Secure Checkout and Payment Process**<br>
   The website ensures a secure and hassle-free checkout process, and make payments through a secure payment gateway.
 
