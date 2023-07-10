@@ -13,9 +13,9 @@
   </pre>
 
 - **BACK-END INSTALLATION**
+  first use the command cd followed by the directory path backend
   <pre>
-    - cd BackEnd
-    - npm install
+     cd BackEnd
   </pre>
 
   Run Back-End Server
@@ -29,6 +29,8 @@
   - npm install
   - ng serve -o
 </pre>
+
+Open your web browser and navigate to `http://localhost:7000` to access the Threads & Beads website.
 
 
 ## **TECHNOLOGIES**
