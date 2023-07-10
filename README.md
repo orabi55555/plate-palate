@@ -24,7 +24,7 @@
 - **Detailed Food Information**<br>
   The website provides the required information about the food like: name, category, description, cookingTime and price.
   
-  - **Detailed Recipe Information**<br>
+- **Detailed Recipe Information**<br>
   The website provides the detailed information about the recipe, including: name, ingredients, cookingTime, instructions and image.
 
 - **Shopping Cart**<br>
