@@ -5,6 +5,10 @@
   </a>
 </div>
 
+## **INTRODUCTION**
+
+`Plate Palate` is an E-Commerce platform that allows users to buy food online and discover new recipes from different cultures around the world. With Palate, users can browse a wide selection of dishes and ingredients, order their favorite meals, and learn about new cuisines from the comfort of their own homes. Palate is perfect for food enthusiasts who want to explore new flavors and cuisines, and for anyone who wants to enjoy delicious, high-quality food without leaving their house. 
+
 ## **INSTALLATION**
 
 - **CLONE THE REPOSITORY**
@@ -13,38 +17,38 @@
   </pre>
 
 - **BACK-END INSTALLATION**
-  Use the command cd followed by the directory path backend
+  <h4>Use the command cd followed by the directory path backend</h4>
   <pre>
     cd BackEnd
   </pre>
 
-  Install the necessary dependencies by running the following command
+ <h4>Install the necessary dependencies by running the following command</h4>
   <pre>
     npm install
   </pre>
 
-  Run Back-End Server
+  <h4>Run Back-End Server</h4>
   <pre>
     nodemon main.js
   </pre>
 
 - **FRONT-END INSTALLATION**
- Use the command cd followed by the directory path frontend
+ <h4>Use the command cd followed by the directory path frontend</h4>
   <pre>
     cd FrontEnd
   </pre>
 
-  Install the necessary dependencies by running the following command
+  <h4>Install the necessary dependencies by running the following command</h4>
   <pre>
     npm install
   </pre>
 
-  Run Front-End Server
+  <h4>Run Front-End Server</h4>
   <pre>
     ng serve -o
   </pre>
 
-<h4>Open your web browser and navigate to `http://localhost:7000` to access the Threads & Beads website.</h4>
+<h3>Open your web browser and navigate to `http://localhost:7000` to access the Threads & Beads website.</h3>
 
 
 ## **TECHNOLOGIES**
