@@ -94,7 +94,7 @@
     ng serve -o
   </pre>
 
-<h4>Open your web browser and navigate to `http://localhost:7000` to access the Threads & Beads website.</h4>
+<h4>Open your web browser and navigate to `http://localhost:7000` to access the Threads & Beads website.</h4><br>
 
 
 ## **TECHNOLOGIES**
