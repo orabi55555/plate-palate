@@ -106,6 +106,7 @@
 - HTML/CSS
 - Bootstrap
 
+<br>
 
  ## **CONTRIBUTORS**
 
